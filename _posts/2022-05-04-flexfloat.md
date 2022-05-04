@@ -52,8 +52,27 @@ flex의 사용방법은 다음과 같다.
 
 
 또한, float의 경우 자식요소의 너비값이 부모요소의 너비를 넘길때 자동으로 줄바꿈 처리가 되지만, 
-flex는 부모의 너비값이 자식요소에게 영향을 끼치게 된다.
+flex는 부모의 너비값이 자식요소에게 영향을 끼치게 된다.<br>
+이럴땐 아래와 같은 요소를 추가하면 부모 기준보다 자식의 합이 넘칠때 다음줄로 자동이동 하게된다.
+```html
+정렬할요소의부모{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+```
 
 
 ## 위치를 마음껏
 ### 부유하는 position
+position속성은 속성 값에 따라서 다음과 같이 나누어볼 수 있다.
+<dl>
+<dt>position : relative</dt>
+<dd>- 현재 위치한 내용 그대로 부유만 시킨다.</dd>
+<dt>position : abolute</dt>
+<dd>- 부모요소 기준으로 좌표를 찍어서 갈 수 있다. (기준: left , right, top, bottom)</dd>
+<dt>position : fixed</dt>
+<dd>- ViewPort 기준으로 좌표를 찍어서 갈 수 있으며, 고정된다 (기준: left , right, top, bottom)</dd>
+<dt>position : sticky</dt>
+<dd>- ViewPort 기준으로 좌표를 고정시킬 수 있으며 같은 속성을 가진 다음 요소가 나올때까지 고정된 좌표가 유지된다. (기준: left , right, top, bottom)</dd>
+</dl>
