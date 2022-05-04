@@ -15,8 +15,6 @@ author:
 <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a> 에 접속한다.<br>
 본인이 사용하는 운영체제버전에 맞는 것을 다운로드 한다.
 설치 후 window에서 cmd창을 열어서 git이라고 입력했을때 아래와 같이 노출된다면 성공이다.
-<img src="../images/image_cmd.jpg"/>
-
 
 
 
