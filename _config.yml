@@ -1,4 +1,4 @@
-title: personal webpublishing blog
+title: Annie Park
 description: A minimal and beautiful Jekyll theme best for writing and note-taking.
 author: Annie Park
 avatar: /logo.png
@@ -13,7 +13,8 @@ plugins:
   
 remote_theme: ngzhio/jekyll-theme-hamilton
 
-paginate: 3
+paginate: 10
+skin: daylight
 
 # Uncomment the below line and set the tracking ID for enabling Google Analytics
 # 
@@ -30,6 +31,9 @@ exclude:
   - README.md
   - jekyll-theme-hamilton.gemspec
 
+
+subscribe: false
+
 # Jekyll SEO Tag (Optional)
 # =========================
 #twitter:
@@ -37,10 +41,10 @@ exclude:
   #card: summary
 logo: logo.png
 social:
-  name: Annie Park
+  name: Shangzhi Huang
   links:
-    #- https://twitter.com/ngzhio
-    #- https://www.facebook.com/ngzhio
+    - https://twitter.com/ngzhio
+    - https://www.facebook.com/ngzhio
     - https://github.com/anniep8911
 #google_site_verification: u4WXQl0Eu66rsQo2kRdCNx
 lang: en

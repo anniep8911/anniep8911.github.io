@@ -1,7 +1,7 @@
 ---
 layout: post
 toc: true
-title: "This post demonstrates post content styles"
+title: "This is testing post"
 categories: junk
 tags: [markdown, css, html]
 author:
