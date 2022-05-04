@@ -3,7 +3,7 @@ layout: post
 toc: true
 title: "GIT-Hub를 연동하는 여러가지 방법"
 categories: junk
-tags: [tips,git]
+tags: [tools,git]
 author:
   - 박정아(Annie Park)
 ---

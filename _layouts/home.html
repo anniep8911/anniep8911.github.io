@@ -3,63 +3,57 @@ layout: default
 ---
 
 <div class="home">
-
-  {{ content }}
-
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
-
-  {%- if posts.size > 0 -%}
-    <ul class="post-list">
-      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <h2>
-          <a href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h2>
-        <p class="post-meta">
-          <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-            {{ post.date | date: date_format }}
-          </time>
-          {%- if jekyll.environment == "production" and site.disqus -%}
-            • <a href="{{ post.url | relative_url }}#disqus_thread">
-                <span class="disqus-comment-count" data-disqus-url="{{ post.url | absolute_url }}"></span>
-              </a>
-          {%- endif -%}
-        </p>
-        {%- if post.show_excerpts != false -%}
-          <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
-  {%- endif -%}
+  각 기술별 능력 <br>
   
-  {%- if jekyll.environment == "production" and site.disqus -%}
-    <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
-  {%- endif -%}
+  <img src="https://img.shields.io/badge/HTML5-ff0000?style=flat-square&logo=html5&logoColor=white"/>
+  <ul>
+    <li><a href="../junk/2022/05/04/sementic.html">직관성있는 문서 작성(시멘틱 태그)</a></li>
+    <li><a href="../junk/2022/05/04/webBasic.html">웹표준에 맞는 문서 작성</a></li>
+    <li><a href="../junk/2022/05/04/webAcceess.html">웹 접근성을 고려한 문서 작성</a></li>
+  </ul>
+  
+  <img src="https://img.shields.io/badge/CSS3-ff4e00?style=flat-square&logo=CSS3&logoColor=white"/>
+   <ul>
+    <li><a href="../junk/2022/05/04/grid.html">그리드 기반 웹 제작</a></li>
+    <li><a href="../junk/2022/05/04/zeplin.html">zeplin 활용 신속한 웹 제작</a></li>
+  </ul>
+  
+  <img src="https://img.shields.io/badge/SCSS-0096ff?style=flat-square&logo=Sass&logoColor=white"/>
+  <ul>
+    <li>변수및 기본 함수(반복, 제어문)활용하여 반복부분 자동화</li>
+    <li>환경설정을 통한 스타일시트 minimize compiling</li>
+    <li>minxin , include의 명확한 활용</li>
+    <li>media query설정을 통한 반응형 및 적응형웹 스타일 제작</li>
+  </ul>
+  
+  <img src="https://img.shields.io/badge/JavaScript-ffc000?style=flat-square&logo=JavaScript&logoColor=white"/>
+   <ul>
+    <li>ES5, ES6 버전별로 명확한 돔탐색(element, query selector)</li>
+    <li>파라미터를 활용한 함수 간소화</li>
+    <li>코드에따라 동기, 비동기 절차에 대한 이해</li>
+    <li>ES5의 함수 ES6의 화살표 함수에 대한 명확한 이해</li>
+    <li>자료형(일반, 배열, 오브젝트)에 대한 명확한 이해 및 활용</li>
+    <li>var, let, const 의 차이를 명확히 이해하여 변수 선언</li>
+    <li>minimize compiling을 통한 용량 개선</li>
+    <li>script 링크 배치를 통한 속도 개선</li>
+    <li>animate를 활용하여 레퍼런스 없이 동적요소 구현</li>
+    <li>반응형 동적요소 구현</li> 
+  </ul>
+  
+  <img src="https://img.shields.io/badge/jQuery-24ac00?style=flat-square&logo=jQuery&logoColor=white"/>
+   <ul>
+    <li>명확한 돔탐색</li>
+    <li>파라미터를 활용한 함수 간소화</li>
+    <li>자료형(일반, 배열, 오브젝트)에 대한 명확한 이해 및 활용</li>
+    <li>var, let, const 의 차이를 명확히 이해하여 변수 선언</li>
+    <li>minimize compiling을 통한 용량 개선</li>
+    <li>script 링크 배치를 통한 속도 개선</li>
+    <li>animate를 활용하여 레퍼런스 없이 동적요소 구현</li>
+    <li>반응형 동적요소 구현</li> 
+    <li>jquery ui, jquery mobile plugin 사용</li>
+    <li>jQuery cookie 활용</li>
+    <li>jQuery load활용</li>
+    <li>jQuery ajax통신</li>
+  </ul>
+  
 </div>
