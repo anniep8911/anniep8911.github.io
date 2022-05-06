@@ -3,7 +3,7 @@ layout: post
 toc: true
 title: "자바스크립트 압축하기"
 categories: junk
-tags: [tools,design]
+tags: [javascript]
 author:
   - 박정아(Annie Park)
 ---
