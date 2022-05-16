@@ -1,1 +1,72 @@
 // Placeholder to allow customizing styles.
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital@1&display=swap');
+.site-container{
+  overflow-x: hidden;
+  font-family: 'Mali';
+  .site-header{
+    background-color: transparent;
+    border: 0;
+    
+    .site-title{
+      color: #666;
+      font-family: 'Mali';
+      text-shadow: 2px 2px 4px #fcd4d2, -2px -2px 4px #fcd4d2;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    .trigger{
+      a{
+        transition : all 0.5s;
+        color: #666;
+          font-weight: 700;
+          &:hover{
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px #fcd4d2, -2px -2px 4px #fcd4d2;
+            color: #666;
+          }
+          &.current-page{
+            text-decoration: none;
+            color: #666;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px #fcd4d2,  -2px -2px 4px #fcd4d2;
+            
+          }
+          
+        }
+      }
+      
+    }
+  .site-body.wrapper{
+    overflow: visible;
+    height: 100vh;
+    .site-sidebar{
+      position: relative;
+      border: 0;
+
+      .sidebar-section{
+        img{
+          border: 5px solid #fcd4d2;
+        }
+      }
+      .toc-nav{
+        background-color: rgba(255,255,255,0.7);
+      }
+      
+      &::after{
+        content:'';
+        left: 0;top: -80px;
+        display: block;
+        position:absolute;
+        width: calc(100% + 200%);
+        height: calc(100vh + 80px);
+        margin-left: -200%;
+        background-image: url('../../assets/images/asideBg.jpg');
+        z-index: -5;
+        opacity: 0.5;
+      }
+    } 
+  }
+
+}

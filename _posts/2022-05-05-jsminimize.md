@@ -29,5 +29,10 @@ author:
 ## Javascript Uglify
 자바스크립트의 난독화는 코드 자체를 분석하기 어렵게 만들기 위함이다 그러나,난독화 단계를 높힐수록 코드를 해석하고 실행하는 속도가 느려질 수 있으므로 프로젝트에 맞춰 선택하는것이 좋다.
 
+### skalman
+<a href="https://skalman.github.io/UglifyJS-online/">https://skalman.github.io/UglifyJS-online/</a>에 접속하여 코드를 입력한 후 복사한다.
+
+### npm으로 설치 후 압축하기
+
 
 

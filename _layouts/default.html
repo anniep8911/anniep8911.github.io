@@ -10,13 +10,12 @@
       <header class="site-header">
         {% include header.html %}
       </header>
-      
       <div class="site-body wrapper">
         <aside class="site-sidebar" id="site-sidebar">
           {% if page.toc %}
-            {% include sidebar-toc.html %}
+          {% include sidebar-toc.html %}
           {% else %}
-            {% include sidebar.html %}
+          {% include sidebar.html %}
           {% endif %}
         </aside>
         <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
