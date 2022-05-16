@@ -264,3 +264,26 @@ $tabwidth: 1024px;
   }
 }
 ```
+
+### @extend
+extend란 상속을 의미한다. <br>
+만약 아래와 같은 내용을 그대로 상속 받는다고 하면,
+```scss
+  div{
+    width: 80%;
+    max-width:1080px;
+    margin : 0 auto;
+  }
+```
+아래와 같이 새로운 선택자에 상속 받을 수 있다.
+```scss
+  div{
+    width: 80%;
+    max-width:1080px;
+    margin : 0 auto;
+  }
+
+  div#div2{
+    @extend div;
+  }
+```

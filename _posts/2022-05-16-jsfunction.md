@@ -8,8 +8,14 @@ author:
   - 박정아(Annie Park)
 ---
 
-## 함수선언
-### function
+## 함수
+함수를 만드는 이유는 간단히 다음과 같다
+<ol>
+    <li>기능을 한 단어로 축약하고 싶을 때</li>
+    <li>입출력 기능을 하는 기계를 만들고 싶을 때</li>
+</ol>
+
+### function fn(){}
 함수 선언방법은 다음과 같다.
 ```js
     function 함수명(){
@@ -48,10 +54,14 @@ author:
    document.queryseletor('함수').onclick = function(){this};  
 ```
 
-위와 아랫줄의 this의 차이는 확실하게 구분이된다.
-먼저 화살표 함수의 this는 클릭된 자체, 즉 콜백 함수를 발생시키는 대상이 아닌 window가 대상이 되고 , 아래의 일반 함수의 this의 경우엔 클릭된 자체, 즉 콜백함수를 발생시키는 대상을 의미한다.
+위와 아랫줄의 this의 차이는 확실하게 구분이된다.<br>
+먼저 화살표 함수의 this는 클릭된 자체, 즉 콜백 함수를 발생시키는 대상이 아닌 window가 대상이 되고 , 아래의 일반 함수의 this의 경우엔 클릭된 자체, 즉 콜백함수를 발생시키는 대상을 의미한다.<br>
 
-
+따라서, 화살표 함수에서 this를 사용하고 싶다면 다음과 같이 사용하면 된다.
+```js
+   document.queryseletor('함수').onclick = function(e){e.currentTarget};  
+```
+**결론은 this가 가르키는 방향으로 봤을때 화살표함수는 완벽한 function(){}의 대용품이라고 할 수 없는 것이다. 그러나, this 구조를 잘 이해하고 사용한다면 충분히 직관적인 코드를 짤때 유용할 것이다.
 
 
 ## parameter
@@ -109,3 +119,5 @@ crousel slide(무한루프 슬라이드)는 다음과 같은 로직을 가지게
 ```
 
 animate를 통해 이동했던 css를 다시 원래의 view로 돌리고 맨 앞에있는애를 맨 뒤의 요소로 보냈다. <br> 이렇게 진행을하면 animate에서 from,to를 활용해서 한번에 진행했을때 발생하는 깜빡임이 사라진다. <br> 
+
+## accordion
