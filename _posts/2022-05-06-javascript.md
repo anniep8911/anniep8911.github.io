@@ -40,7 +40,54 @@ console.log(k);
 
 hoisting현상은 사용한 변수가 아래가 선언되었을때 자바스크립트 자체에서 변수만 위로 올려서 읽는 것이다. (함수도 마찬가지!)
 
+### template literals
+원래 문자와 특정 변수를 같이 쓰려면 다음과 같이 설정해야했다.
+```js
+let name = 'annie';
+console.log('내 이름은'+name+'입니다.');
+```
+ES6부터 backtick[``]을 활용하면 아래와 같이 사용할 수 있다.
+```js
+let name = 'annie';
+console.log(`내 이름은 ${name}입니다.`);
+```
+
+### tagged literal
+또한, 함수 뒤에도 사용할 수 있다. 
+```js
+  function fn (a,b){
+    console.log(a);
+    console.log(b);
+    return 10;
+  }
+  fn `fn에서 나오는 값은${fn(1,2)}입니다.`;
+
+```
+
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEhv2vVN0q-WTtr5myvkFbRWgwhorrATov5I744ftGp32PKUnMPiLkWIRHjxIXgeU2uaMyvqdpYgghDWp0TO4opJEqfrbk0QRRbGyGcUN51ZChpBAwypqV-dREJTB7M8a322N_p9ACgnUkrhwsxfI79ghMY_yZWUiC4Bmm-lssdychnyE0GSQ-tGH5vX=w537-h136" /> <br>
+이때는, 안에 들어간 함수가 먼저 작동 된 후 값이 각각 문자열, 입력수로 나누어져서 입력된다.<br>
+자세한 설명은 아래와 같다.
+
+### 순서바꾸기
+function에서 사용한 tagged literal은 문자와 변수를 분리해주는 역할을 하며, 함수에 첫번째 파라미터는 입력된 literal의 문자 개수를 배열로 가져오고, 첫번째 이후의 파라마터에는 변수의 개수만큼 변수들이 나오게된다. <br>
+따라서 아래와 같이 글자 순서를 쉽게 바꿀 수 있다.<br>
+```js
+  var pants = '20개';
+  var socks = '100개';
+
+  function 해체분석기(a,...b){
+    console.log(a[1],b[0],a[0],b[1]);
+  }
+  해체분석기 `바지${pants} 양말${socks}`;
+```
+위의 결과를 보면 아래와 같다. <br>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEgeUs7mvjSU915IsSslu8Gnex7RFAYa2qZBjxeCisycS-UZkDLtj5MAG2F7DZ-umluOslmwt8w7WkBMrCOICVGP2MUEnjSuIjoNJYuM4ZUj5DJKez8HE6TukSKzdwra4leWyFwBu__wkt-r-zsL8kVXhPDcMLJ6AdZ6VWOrtO0mXuEpQC6g2LO0WoyL" />
+
+위와같이 입력된 이유는, 함수안에 parameter가 각각 변수 기준으로, 문자 먼저 첫번째 파라미터로 가져온 후 , 변수들을 두번째 파라미터에 넣었기때문이다. <br>
+이때, spread를 사용하면 두번째 값들이 변수로 들어오게 된다.
+
 ## DOM
+문서 객체 모델(Document Object Model)을 의미하며, XML이나 HTML문서에 접근하기 위한 일종의 인터페이스다.
 ### ES5
 ```js
   document.getElementById('아이디명');
