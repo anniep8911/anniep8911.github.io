@@ -233,6 +233,34 @@ div.text{
 ```
 
 
+
+### @extend
+extend란 상속을 의미한다. <br>
+만약 아래와 같은 내용을 그대로 상속 받는다고 하면,
+```scss
+  div{
+    width: 80%;
+    max-width:1080px;
+    margin : 0 auto;
+  }
+```
+아래와 같이 새로운 선택자에 상속 받을 수 있다.
+```scss
+  div{
+    width: 80%;
+    max-width:1080px;
+    margin : 0 auto;
+  }
+
+  div#div2{
+    @extend div;
+  }
+```
+
+## responsible
+반응형 웹은 디바이스 사이즈에 따라서 레이어가 깨지지 않도록 작성된 웹을 말한다.<br>
+반응형은 media query를 이용한다.
+
 ### @mediaquery
 SCSS에서 media query를 사용하는 방법은 기존 css와 같으나, 아래와 같이 변수와 mixin을 활용하여 간편하게 작성할 수 있다.
 ```scss
@@ -264,15 +292,10 @@ $tabwidth: 1024px;
   }
 }
 ```
-
-### responsible
-반응형 웹은 디바이스 사이즈에 따라서 레이어가 깨지지 않도록 작성된 웹을 말한다.<br>
-반응형은 media query를 이용한다.
-
-
-### adaptive
+## adaptive
 적응형 웹은 특정 디바이스에 도달하였을때, 해당 디바이스용 페이지가 노출 될 수 있도록 작성된 웹을 말한다. <br>
 적응형은 아래의 javascript를 이용하여 디바이스를 구분한 뒤 필요한 페이지를 노출한다.
+### javascript
 ```js
    var brow = navigator.userAgent;
       if(brow.match('ios | Android | Symbian | Apple | Samsung | LG | Blackberry | iPhone | Gallaxy')){
@@ -283,26 +306,3 @@ $tabwidth: 1024px;
       }
 ```
 
-
-### @extend
-extend란 상속을 의미한다. <br>
-만약 아래와 같은 내용을 그대로 상속 받는다고 하면,
-```scss
-  div{
-    width: 80%;
-    max-width:1080px;
-    margin : 0 auto;
-  }
-```
-아래와 같이 새로운 선택자에 상속 받을 수 있다.
-```scss
-  div{
-    width: 80%;
-    max-width:1080px;
-    margin : 0 auto;
-  }
-
-  div#div2{
-    @extend div;
-  }
-```

@@ -66,3 +66,32 @@ animate를 통해 이동했던 css를 다시 원래의 view로 돌리고 맨 앞
 ## accordion
 ### logic
 
+## touch(swipe action)
+### logic
+event method중 touchstart, touchend를 활용하여, 위아래 스크롤용 터치인지, 좌우 스와이프 터치인지 구분한다.<br>
+우선 changetouch.screen값을 활용하여 터치가 시작될 시점의 가로, 세로 기준의 터치좌표와 끝날 시점의 가로, 세로 기준의 터치 좌표를 알아낸다.<br>
+그다음 시작터치의 Y좌표를 확인하여(위아래) 범주가 10px내에 있다면(작다면) 위아래 스크롤을 위한 터치가 아닌 좌우 스와이프로 간주했다. <br>
+그리고 만약 시작점이 끝점보다 작다면 , 오른쪽 으로 슬라이드가 이동 된다고 간주했으며, 반대의 경우 오른쪽 슬라이드라고 간주했다. (crousel 참고) <br>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEhAkqs2m_9Xj6VWT05BrDlbgdENt5iqA78DxA3cN8ltxSBnjuSvwPq21dvuvpe53yG2ir72tFjFCOdPoXaJjWfQh0ScG3H4WnThNd-J7JFciVuHyPY0jFYCjOt69ofC-szivauEyelu0mOM1uGY6B46lQK2B-H429Dpqz8RAGc274SNTyptiZu8V2i1=w272-h355" />
+### code
+
+```js
+artGr.forEach((e,i)=>{
+    let [stX,stY,edX,edY] =[0,0];
+    e.addEventListener('touchstart',function(ev){
+        stX = ev.changedTouches[0].screenX;
+        stY = ev.changedTouches[0].screenY;
+    },false);
+    e.addEventListener('touchend',function(ev){
+        edX = ev.changedTouches[0].screenX;
+        edY = ev.changedTouches[0].screenY;
+        if(stX>edX && Math.abs(stY-edY)<=10){
+            leftSlide();
+        }else if(stX<edX && Math.abs(stY-edY)<=10){
+            rightSlide();
+        }
+    },false);
+});
+```
+
+
