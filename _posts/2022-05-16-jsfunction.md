@@ -65,7 +65,156 @@ author:
 
 
 ## parameter
-### 함수의 재활용
+parameter는 마치 자판기에 넣는 동전과 비슷하다고 생각할 수 있다.<br>
+자판기에 500원짜리가 들어왔을때, 500원짜리 콜라를 보내주는 함수를 작성했다고 가정하면,
+500원 이라는것이 파라미터 값으로 '입력'되었을때 사용되는것이 파라미터라고 볼 수 있다.<br>
+
+```js
+
+    function 자판기(넣은돈){
+        if(넣은돈  == '500원'){
+            return 콜라;
+        }else{
+            return 물;
+        }
+    }
+
+    자판기('500원');
+```
+
+이러한 parameter는 이벤트의 경우 이벤트가 발생한 돔 그 자체를 의미할수도있고, 입력받은 값을 내가 마음데로 사용할 수도 있다.<br>
+여기에는 직접적으로 값을 입력할수도있지만, '변수'에 값을 담고 변수를 활용할 수도있는데,
+이때 활용되는 변수를 다음과 같이 나눠볼 수 있다.
+
+### primitive data
+변수타입중 다음과 같은 일반 변수를 의미한다
+```js
+var 변수 = 1234;
+var 문자 = '안녕하세요';
+```
+
+### reference data 
+변수 타입중 배열과 오브젝트를 의미한다.
+```js
+var arr = [1,2,3];
+var obj = {1:1,2:2,3:3};
+```
+
+### 차이점
+둘의 차이는 데이터를 직접적으로 저장하는가와 데이터가 어디에 위치해 있는가에 대한 차이이다. <br>
+일반 변수에 들어간 숫자나 문자는 변수 그 자체에 바로 데이터를 저장한것이고, 변수에 들어간 오브젝트나 배열의 값을 그 변수의 위치를 의미한다.
+따라서 아래와 같은 코드의 경우 
+```js
+ var 이름1 = {name: '김'};
+    var 이름2 = 이름1;
+    이름1.name = '박';
+    console.log(이름2);
+```
+아래와 같은 결과를 만들어 낸다. <br>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEg6gi92L2AR0C3agn5nfw8hm0QWkMGdhh3ZYSr09eXlEpj5T4I9IawNs8AdWThXLVJBLAfZCJhQem7NiZnXZokUsUp-O80fsMsN0fSq7Cms01gO87CwSd-DfjHJws7g7DdpsKlCPhO6EHdUSJGLMRXtsfQha6zD8By6mftUhjJxm_IS8PIedVp9V6PI=w473-h136"><br>
+위와 같은 결과가 발생한이유는 이름2에는 이름1의 값이 아닌, 이름1이 가르키는 주소를 저장했기때문이다.<br>
+따라서, 다음과 같이 이름1, 이름2에 똑같은 값을 줘도
+
+```js
+var 이름1 = {name: '김'};
+var 이름2 ={name: '김'};
+```
+말그대로 위치가 저장되는 것이기때문에 이름1에는 이름1의 위치, 이름2에는 이름2의 위치가 저장된다. <br>
+그러면, 아래와 같은 함수를 거친다면 어떻게 될까??
+```js
+var 이름1= {name : '김'};
+function 이름체인저(obj){
+    obj.name = '오';
+}
+이름체인저(이름1);
+```
+아마 이름1의 name이 '오'로 변경되어있을것이다.
+```js
+var 이름1 = ['김'];
+function 이름체인저(arr){
+    arr=['오'];
+}
+이름체인저(이름1);
+```
+위의 함수를 거진차면 이름1의 값은 변경되지 않고 arr이라는 새로운 변수가 '오'라는 값을 배열로 갖게 될것이다. 오브젝트, 배열타입의 데이터는 이와같이 '위치의값'을 저장한다.
+
+
+### spread operator
+array사용시, 배열 자체를 제거하고 나열해주는 방법이다. 표현법은 ... 이다. <br>
+```js
+var arr=[1,2,3,4,5];
+console.log(...arr);
+```
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEiMZOTg4g0eGY8Anf2qCPgsbK4edNaC2JDvv7yP0D9TtsNNk7BUBZCULzAmywEtNTtAMREw5I-zpyRIsIIyfuN0SM6yLqe31qCCVHcW0rrjgr2sO_7oOotfj5A4Dz6h20NZNJU9B0XRbzot8HnJswsJrelyzEDFwXiHeEqy4htnWIsdE53qEWk9-NGt"/>
+
+문자 spread시 문자를 한글자씩 해체시켜 나열해준다.<br>
+**문자는 array는 아니지만, array와 비슷하게 나눌 수 있기때문에 spread를 활용하면 펼쳐서 보여준다.
+
+```js
+var arr='hello';
+console.log(...arr);
+```
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEgCoSGxygGaHPCe6jvIWb2gb7kaFczMbGO50sWJyzHX8NIa7oljYUG_KRKf_d0AKCuffLvs0olGKpXXnrElRdD-Y4T8656I7uuCE0Zs3AJq4YOHuGMY4S5rGvqcM_MEKCxXQCWvQnqQApnkFxys8aJwFDTe33tMNHHqHf0M8gE0aQqmXEIeYnrCb6VM" />
+array자체를 합치거나 복사할 수 있다.
+```js
+var a =  'hello';
+var b = [4,5];
+var c = [...a,...b];
+console.log(c);
+```
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEgPWMHUGXhuMmvXrTXaz1X7iDkikwfQvEcqqZTWW55pNu4E-ub4V2zAk2kHHr2hiMi2amteHeg8n9IQ16MNGYHmCjt9klWw1JGOt7gKhGkT2Umz-mRijn71euNpw7D0o4t20mYNCz2D9yEGB8vRr-0uQpJph5HWq4c5nTaYMQahKslLKnCGvfEObgMR" />
+
+#### deepcopy
+이러한 spread는 deepcopy를 하고싶을때 사용한다. (array 복사 자체를 독립적으로 만들고 싶을 때) <br> array와 obj는 일반적으로 카피할경우 공유가 일어나기때문에[reference data 부분 참조!]
+반드시 deepcopy가 필요하다.
+```js
+    var a = [1,2,3,4,5];
+    var b = [4,5];
+    var c= [...a];
+    a[4]=4;
+    console.log(a);
+    console.log(c);
+```
+
+#### 오브젝트의 중괄호 해체
+또한 아래와 같이 오브젝트의 중괄호를 해체하는 역할도 한다. <br>
+```js
+var obj={ a:1, b:2, c:3};
+var obj2={d:4};
+var obj3={...obj,...obj2};
+
+console.log(obj3);
+```
+
+만약, 아래와같이 중복값이 발생된다면 
+```js
+var obj={ a:1, b:2, c:3};
+var obj3={a:9,...obj};
+console.log(obj3);
+```
+뒤에 오는 값이 최종값으로 설정된다.
+
+#### parameter에 사용하는 방법
+아래와 같이 parameter에 넣을 때 사용하기도 한다.
+```js
+var arr=[1,2,3];
+
+function fn(a,b,c){
+console.log(a+b+c);
+}
+
+// 원래 넣는방법
+fn(arr[0],arr[1],arr[2]);
+// spread 활용
+fn(...arr);
+```
+
+
+
+
+
+
+
 
 
 ## crousel slide
@@ -119,5 +268,6 @@ crousel slide(무한루프 슬라이드)는 다음과 같은 로직을 가지게
 ```
 
 animate를 통해 이동했던 css를 다시 원래의 view로 돌리고 맨 앞에있는애를 맨 뒤의 요소로 보냈다. <br> 이렇게 진행을하면 animate에서 from,to를 활용해서 한번에 진행했을때 발생하는 깜빡임이 사라진다. <br> 
+
 
 ## accordion

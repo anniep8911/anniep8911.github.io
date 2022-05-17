@@ -265,6 +265,25 @@ $tabwidth: 1024px;
 }
 ```
 
+### responsible
+반응형 웹은 디바이스 사이즈에 따라서 레이어가 깨지지 않도록 작성된 웹을 말한다.<br>
+반응형은 media query를 이용한다.
+
+
+### adaptive
+적응형 웹은 특정 디바이스에 도달하였을때, 해당 디바이스용 페이지가 노출 될 수 있도록 작성된 웹을 말한다. <br>
+적응형은 아래의 javascript를 이용하여 디바이스를 구분한 뒤 필요한 페이지를 노출한다.
+```js
+   var brow = navigator.userAgent;
+      if(brow.match('ios | Android | Symbian | Apple | Samsung | LG | Blackberry | iPhone | Gallaxy')){
+          /*조건이 참이면 실행하게됨*/
+          window.location.href = '경로'
+      }else if(brow.match('iPad')){
+          window.location.href = '경로'
+      }
+```
+
+
 ### @extend
 extend란 상속을 의미한다. <br>
 만약 아래와 같은 내용을 그대로 상속 받는다고 하면,
