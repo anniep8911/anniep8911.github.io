@@ -115,7 +115,7 @@ console.log(obj);
 
 
 
-### dom애
+### dom
 dom 탐색 후 function의 this는 탐색한 dom을 의미한다.
 ```js
 window.onload=function(){
