@@ -115,9 +115,16 @@ console.log(obj);
 
 
 
-### dom
-
-
+### dom애
+dom 탐색 후 function의 this는 탐색한 dom을 의미한다.
+```js
+window.onload=function(){
+  document.querySelectorAll('button')[0].onclick=function(){
+    console.log(this);
+  }
+}
+```
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEhgwbeaGUZxzcZ4QxHCr-HVl7sQfpQJN13xLx8sR2t76fEupjuy2w1rue5l-023NiJLFeyUMLrFZgITFtVE9JIN9BAXiIKkfLyr2HwdhYJphmNrxkbmX1qrHhEWjBOlDBqJ_oWNeUqG4uIYYzyx5s7SUOgwcPE4k5SVbm89iq2TtYFHIAihPITYsRL4" />
 
 
 ## parameter
