@@ -65,10 +65,19 @@ author:
 
 
 ## this
-위에 작성한 내용 중 function(){}과 ()=>의 this가 차이가 나기때문에 완벽히 function을 압축한것이 ()=> 화살표 함수가 아니라고 이야기하였는데, <br>
+위에 작성한 내용 중 function(){}과 ()=>의 this가 차이가 나기때문에 완벽히 function을 압축한것이 ()=> 화살표 함수가 아니라고 이야기하였는데, 
 그러면, 이 this는 무엇일까?
 
 ### window
+this키워드의 첫번째 뜻은 window를 의미하며, 스크립트 최상단에 use strict를 쓰면, 엄격하게 실행 할 수 있다. <br> 
+strict를 실행하는 순간부터 함수 안의 this는 파악할 수 없는 것으로 정의되니 유의하자.
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEg_a5wdUeOu-IjVzOq5KFIIeuerkhpfMVK40wjby8t0gjiRqNrZilv8jElo_yKmb0-OFr439Og8Za9AaVzwYfMPxA1suVZeSNqh18xzf8oL5_x-m3BQOjt1CmgTSLXOp4xk9qayobqT6aihuSXx7IT7pHAR2VQqh6xjOknsgbQKipRbFteBrGU0BgOD"/>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEh4KdTe2SN4lLng6y0kG-NXnonhMi3q3iJEGbERcD3U2_gSN3aLcu5jYXKZYHeuhOBLJNjhG3m3RPOjS_evaK859uJ5lJZBO1ccBYkiDtvbsMvOP8d-0MVynwGITX5iImVfmWgazvu75sjkByxuF9IvBff7jOCUB0N11pDJRyJoi6fTUaQmaZPczLEe"/>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjAD6YHr0bURyLam_FK_jRourcGob7sy6ddmphbDsmKo6_csNNF1gtgGZwtUQBxAzX_DBJOjGSD-NN_J_OlK8qqcB_LKI28i2aNkboyp4VULis9BRJv_m9vXAmzvQyw2Mu1vlGg_eh_AN4YevvwEgsspsp90Pn1uawhDqpSh2P6ld3egY_c7Q5kIgcF" />
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEiYNm5He0JUHKG1PNBARbgVI4m3JfLsIOvoHDwll3xuYLOdgBPXxw33_mrsZdZiLZPnTcb3syDVy7fm5GtCK2wtBDAtNgyaFPqKOvxenelqNBtShPEHZiTkOB20d9vZR8LlAPn8D8Twh7WviDKvlngKATCSlMbY1YgYvHmmb8qaeB-_U_etg3AD9tgW"/>
+
+
+
 ### method안의 object
 
 
