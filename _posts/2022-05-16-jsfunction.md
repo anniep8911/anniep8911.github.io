@@ -84,12 +84,38 @@ strict를 실행하는 순간부터 함수 안의 this는 파악할 수 없는 �
 var obj= {data:'value', function(){this}};
 ```
 
+```js
+var obj = {val:'value',fn:function(){ console.log(this)}};
+obj.fn();
+```
+
 (요새는 object안에 함수를 입력할 경우 function에 이름이 없어도 된다.)<br>
 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgCZG2JqZsxunwjwx78rn43UH7JzkotKKBQ-dE9uoBZevXO2D9VplKsRF--Tzwdw_cDqmXYnOmVMA-7u1XX1US73Qk416kSn52oz-3iKyPWPNz1EKPMNjynj9Sx_dJ3SZaLBl1Z5J_29PIM1amiCWZdSlZl8YZf0hwfyYglc6OKBjMyv5SrU1KPzbuh"/>
 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiTTP5UODaF9g_VpDgnmOWEyj6xchcCCzBqDcmGjOTJOPkMV73jOX8xXOz50Ab-up58krAyy4J2r7Yt5Laj8IhnXYXl_z6dtwnCQwM4oqp5axA6cgDg8gFZZvTBp0VaqikCzbnJfFq4VZZnogZ0e2xkkqTN71z-Tdf5B76zZdh8QLNNhJ2yRlSkZMT-"/>
 
-번외, arrow function의 경우에는 this의 값을 최상위에서 물려받아 쓰게된다.
+arrow function의 경우에는 this의 값을 최상위에서 물려받아 쓰게된다.
+```js
+var obj = {val:'value',fn:()=>{ console.log(this)}};
+obj.fn();
+```
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEgrevKRnkTCpI3Xr5R0M-aIF00496klU1HkHgnGbbt9fhots2rgcd8Kl6zs2QqTcFIVziRA12dVMUU24olOz2D0iGBg1Kp_61-KZBnh1YDKLZMbYwG9yfJMIDg86OA1Ki6c9PnUiyaUhBMT496I6jcAdf7N2M7bzZWj54HwzSonyAMKCRpV4QeVnpVV" />
 
+### instance
+aa라는 함수로 부터 생성되는 새로운 값을 obj에 object형식으로 담아준다. 
+```js
+function aa(){
+    this.nameOn = 'alala';
+    this.good = 'test02';
+    this.hey = 'test03';
+}
+var obj= new aa();
+console.log(obj);
+```
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEh03gDyGmYBO4oeuECS_5_9y4rs0snBrrofZq872SSQHPtBjc8cHXfB-N3skMmxWGZ9wT9ij9CFtY4CU3jLlVg1sHcWxaDSwYz_XYumlMusU7SCnHGLs5JLyDWRA10mgWaJONo0AnrK3-9Yo_9YyrWPNqWLTAGVMwV13og6B06hOqxIIoKFuQsVWHhG" />
+
+
+
+### dom
 
 
 
