@@ -77,7 +77,7 @@ event method중 touchstart, touchend를 활용하여, 위아래 스크롤용 터
 
 ```js
 artGr.forEach((e,i)=>{
-    let [stX,stY,edX,edY] =[0,0];
+    let [stX,stY,edX,edY] =[0,0,0,0];
     e.addEventListener('touchstart',function(ev){
         stX = ev.changedTouches[0].screenX;
         stY = ev.changedTouches[0].screenY;
