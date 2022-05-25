@@ -65,6 +65,45 @@ animate를 통해 이동했던 css를 다시 원래의 view로 돌리고 맨 앞
 
 ## accordion
 ### logic
+아코디언의 경우 타이틀을 클릭할때마다 아래 내용이 나타나는 구조이기때문에, addClass와 removeClass를 활용한 로직을 짜고, 동적요소 자체는 css가 적용되면서 움직일 수 있도록 구현한다.
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjvLKjj8eOxlC1PMMjwHvbWstkip24iZRitkT3XiLy9YJ9ZoC7gxi-w9muNhswySKyKNnOQd4xcfdJoC9knA54iXB5ZemE0iv71WW2RancBU40WYDE2uKiZC5JK7XNDXQ-zkTq5gTdi3Wsmvj1qrihe1CypkUTBNou7Q-XygOBo72syYIanD17ystd2=w627-h315">
+
+### code
+```html
+<ul>
+    <li>타이틀</li>
+    <li>내용</li>
+    <li>타이틀</li>
+    <li>내용</li>
+    <li>타이틀</li>
+    <li>내용</li>
+</ul>
+```
+
+```css
+ul{
+    width: 500px;
+}
+li:nth-of-child(odd){
+    line-height : 40px;
+}
+li:nth-of-child(even){
+    height: 0px;
+    overflow: hidden;
+    transition : height 0.5s;
+}
+li.show+li{
+   height : 200px;
+}
+```
+
+```js
+$('li').even().click(function(){
+    $('li').removeClass('show');
+    this.addClass('show');
+});
+```
+
 
 ## touch(swipe action)
 ### logic
