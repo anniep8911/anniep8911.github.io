@@ -1,0 +1,65 @@
+{
+    "projects":[
+        {
+            "name":"메인 고도화 및 UI개편",
+            "hashes":["html","scss","JavaScript","node.js","webpack"],
+            "company":"잡코리아",
+            "year":2023,
+            "month":12,
+            "goal":"메인페이지 로딩속도 3s이상 개선, 중도 이탈률 1만건 이상 개선",
+            "icon":"./assets/image/logo-jobkorea.png",
+            "link":"https://anniep8911.github.io/absolutWebpack/dist/",
+            "path":"./assets/image/jobko-main.jpg"
+        },
+        {
+            "name":"LGoled.com ",
+            "hashes":["html","scss","webpack"],
+            "company":"퍼스트 컴퓨터 바리스타학원",
+            "year":2024,
+            "month":2,
+            "goal":"학생 취업률 90% 이상 달성",
+            "link":"https://anniep8911.github.io/absolutWebpack/dist/",
+            "path":"./assets/image/iconbuilder.pdf"
+        },
+        {
+            "name":"삼성전자 한국dsdsdsd총판",
+            "hashes":["html","scss","webpack"],
+            "company":"퍼스트 컴퓨터 바리스타학원",
+            "year":2024,
+            "month":3,
+            "goal":"학생 취업률 90% 이상 달성",
+            "link":"https://anniep8911.github.io/absolutWebpack/dist/",
+            "path":"./assets/image/queicons.png"
+        },
+        {
+            "name":"삼성전자 한국총판",
+            "hashes":["html","scss","webpack"],
+            "company":"퍼스트 컴퓨터 바리스타학원",
+            "year":2024,
+            "month":3,
+            "goal":"학생 취업률 90% 이상 달성",
+            "link":"https://anniep8911.github.io/absolutWebpack/dist/",
+            "path":"./assets/image/iconbuilder.pdf"
+        },
+        {
+            "name":"삼성전자 한국총판",
+            "hashes":["html","scss","webpack"],
+            "company":"퍼스트 컴퓨터 바리스타학원",
+            "year":2024,
+            "month":2,
+            "goal":"학생 취업률 90% 이상 달성",
+            "link":"https://anniep8911.github.io/absolutWebpack/dist/",
+            "path":"./assets/image/queicons.png"
+        },
+        {
+            "name":"삼성전자 한국총판",
+            "hashes":["html","scss","webpack"],
+            "company":"퍼스트 컴퓨터 바리스타학원",
+            "year":2024,
+            "month":1,
+            "goal":"학생 취업률 90% 이상 달성",
+            "link":"https://anniep8911.github.io/absolutWebpack/dist/",
+            "path":"./assets/image/queicons.png"
+        }
+    ]
+}
