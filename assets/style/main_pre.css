@@ -90,12 +90,6 @@ h1{
     background-size: cover;
     background-position: center;
 }
-.robot-response:hover::before{
-    position: fixed;
-    background-color: transparent;
-    font-size: 2rem;
-    color: #000;
-}
 .robot-response .hdr{
     position: inherit;
     display: none;
@@ -108,24 +102,23 @@ h1{
     height: calc(100% - 4rem);
     background: rgba(189, 225, 241, 1);
     border-radius: 2rem;
-    padding: 2rem;
+    padding-left: 2rem;
     padding-top: 0;
     animation: unset;
-    overflow-y: scroll;
     color: #000;
 }
 
 
-.robot-response.open::-webkit-scrollbar,.right-wrap::-webkit-scrollbar,.left-wrap section section::-webkit-scrollbar {
+.robot-response.open .answer::-webkit-scrollbar,.right-wrap::-webkit-scrollbar,.left-wrap section section::-webkit-scrollbar ,.detailed-pops::-webkit-scrollbar {
     width: 1.5rem;
     background-color: transparent;
     margin-top: 1rem;
 }
-.robot-response.open::-webkit-scrollbar-thumb,.right-wrap::-webkit-scrollbar-thumb,.left-wrap section section::-webkit-scrollbar-thumb {
+.robot-response.open .answer::-webkit-scrollbar-thumb,.right-wrap::-webkit-scrollbar-thumb,.left-wrap section section::-webkit-scrollbar-thumb,.detailed-pops::-webkit-scrollbar-thumb {
     background-color: rgb(74, 112, 128,0.2);
     border-radius: 1rem;
 }
-.robot-response.open::-webkit-scrollbar-track,.right-wrap::-webkit-scrollbar-track ,.left-wrap section section::-webkit-scrollbar-track{
+.robot-response.open .answer::-webkit-scrollbar-track,.right-wrap::-webkit-scrollbar-track ,.left-wrap section section::-webkit-scrollbar-track,.detailed-pops::-webkit-scrollbar-track{
     background-color: transparent;
 }
 
@@ -135,11 +128,9 @@ h1{
 }
 .robot-response.open .hdr{
     display: block;
-    position: fixed;
+    width: calc(100% - 2rem);
     padding-top: 2rem;
     background-color: rgba(189, 225, 241, 1);
-    width: calc(60% / 2 - 5.5rem);
-    max-width: calc(363px - 4rem);
 }
 .robot-response.open .hdr .btn-close{
     position: absolute;
@@ -161,6 +152,8 @@ h1{
 .robot-response .answer{
     margin-top: 8rem;
     display: none;
+    height: calc(100vh - 20rem);
+    overflow-y: scroll;
 }
 .robot-response .answer li{
     background-color: #fff;
@@ -235,7 +228,7 @@ h1{
 .detailed-pops{
     position: absolute;
     width: calc(100% / 12 * 8 );
-    height: 100%;
+    height: calc(100% - 4rem);
     background-color: #fff;
     margin: auto;
     top: 4rem;left: 0;
@@ -538,7 +531,6 @@ h1{
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 2.5rem;
     height: calc(100vh - 8rem);
-    overflow-y: scroll;
 }
 .right-wrap header{
     display: flex;
@@ -570,6 +562,10 @@ h1{
 }
 .right-wrap header ul li{
     cursor: pointer;
+}
+.right-wrap section {
+    height: calc(100vh - 20rem);
+    overflow-y: scroll;
 }
 .right-wrap section article{
     width: 90%;
