@@ -5,13 +5,14 @@ getData('./assets/data/data.json').then(async res=>{
     let prd = await dataLoading(res.projects);
     const cont01Prd = document.querySelector('.cont01 .projects');
     const cont02Prd = document.querySelector('.cont02');
+
     prd.forEach(p=>{
         let hashes = [];
         p.hashes.forEach((e)=>{
             hashes.push(` <span>#${e}</span> `)
         });
 
-        let addPrd = `<article data-attr=${p.month}>
+        let addPrd = `<article data-month=${p.month} data-year=${p.year}>
                         <div class="image" style="background:url('${p.icon}') #fff no-repeat center left; background-size:contain">projects image</div>
                         <div class="texts">
                             <h3>${p.name}</h3>
