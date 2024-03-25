@@ -12,7 +12,7 @@ getData('./assets/data/data.json').then(async res=>{
             hashes.push(` <span>#${e}</span> `)
         });
 
-        let addPrd = `<article data-month=${p.month} data-year=${p.year}>
+        let addPrd = `<article data-month=${p.month} data-year=${p.year} data-cat="${p.company}">
                         <div class="image" style="background:url('${p.icon}') #fff no-repeat center left; background-size:contain">projects image</div>
                         <div class="texts">
                             <h3>${p.name}</h3>
@@ -26,7 +26,7 @@ getData('./assets/data/data.json').then(async res=>{
             <div class="texts">
                 <div class="btns">
                     <div class="btn">${p.year}</div>
-                    <div class="btn-more">･･･</div>
+                    <div class="btn">${p.company}</div>
                 </div>
                 <h3>${p.name}</h3>
                 <p>

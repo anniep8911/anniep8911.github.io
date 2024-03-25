@@ -48,8 +48,7 @@ export default{
         dom.popHdrCompany.innerText =company;
         dom.popHdrDate.innerText = date;
         dom.popHdrGoal.innerText=goal;
-        dom.popHdrHashes.innerHTML = hashes.join('');
-        // let type = details.split('.');
+        dom.popHdrHashes.innerHTML = hashes.map(m=>`<span>#${m}</span>`).join('');
         dom.popDetail.innerHTML =`<md-block src="./assets/posts/${details}">
         <!-- README.md 로드 실패시 보이는 문구 -->
         ${details} was *not* found </md-block>`;

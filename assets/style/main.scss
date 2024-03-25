@@ -27,6 +27,13 @@
     }
 }
 
+@mixin ellipse(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
 @mixin img($urls){
     background-image: url('#{$urls}');
     background-size: cover;
@@ -89,6 +96,7 @@ html{
                 height: 100%;
                 top: 0;
                 left: 0;
+                cursor: pointer;
             }
             &.open{
                 height: auto;
@@ -204,6 +212,7 @@ html{
         animation: unset;
         color: #000;
         -webkit-tap-highlight-color :transparent;
+        cursor: auto;
         .robot{
             display: none;
         }
@@ -225,10 +234,17 @@ html{
                 right: 2rem;
                 top: 2rem;
                 font-size: 3rem;
+                cursor: pointer;
             }
         }
         .answer{
             display: block;
+            .others{
+                span{
+                    cursor: pointer;
+                }
+            }
+            
         }
     } 
 
@@ -249,10 +265,15 @@ html{
     opacity: 1;
     transition: opacity 0.5s;
     box-shadow: 1rem 1rem 2rem #ccc;
+    &.expand{
+        width: 100%;
+    }
     header{
         h2{
             line-height: 5rem;
             font-size: 3.5rem;
+            width: calc(100% - 5rem);
+            word-break: normal;
         }
         h4,h3{
             line-height: 4rem;
@@ -262,12 +283,19 @@ html{
             span:nth-last-child(1){
                 background-color: #ccc;
                 padding: 0 1rem;
+                font-size: 1.3rem;
                 border-radius: 1rem;
             }
         }
         p{
             line-height: 4rem;
             font-size: 1.5rem;
+            span{
+                padding: 0 0.5rem;
+                background-color: rgba(62, 122, 164, 0.1);
+                margin-right: 1rem;
+                border-radius: 1rem;
+            }
         }
     }
     section{
@@ -461,6 +489,23 @@ html{
                     }
                 }
             }
+            section{
+                ul{
+                    li{
+                        min-width: auto;
+                    }
+                }
+                .projects:not([data-year="2024"]):not([data-year="Show all"]){
+                    article{
+                        width: calc(100% / 12);
+                        @for $i from 1 through 12{
+                            &[data-month='#{$i}']{
+                                margin-left: calc(((100% - 2.5rem) / 12) * (#{$i} - 1));
+                            }
+                        }
+                    }
+                }
+            }
         }
         header{
             align-items: center;
@@ -521,7 +566,6 @@ html{
                 justify-content: space-between;
                 li{
                     width: calc(100% / 3);
-                    min-width: 174px;
                     text-align: center;
                     line-height: 2rem;
                     font-size: 1.5rem;
@@ -546,7 +590,7 @@ html{
                         @for $i from 1 through 12{
                             article{
                                 &[data-month='#{$i}']{
-                                    margin-left: calc(174px * (#{$i} - 1));
+                                    margin-left: calc(((100% - 15rem) / 12) * (#{$i} - 1));
                                 }
                             }
                         }
@@ -569,7 +613,7 @@ html{
                         display: flex;
                         @for $i from 1 through 4{
                             &[data-year='202#{$i}']{
-                                margin-left: calc(174px * (4 - #{$i}));
+                                margin-left: calc(((100% - 4rem) / 4) * (4 - #{$i}));
                             }
                         }
                     }
@@ -616,10 +660,7 @@ html{
                         cursor: pointer;
                         width: 100%;
                         h3{
-                            overflow: hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                            word-break: break-all;
+                           @include ellipse;
                         }
                         .months,.stmonth{
                             display: none;
@@ -692,6 +733,8 @@ html{
                 h3{
                     line-height: 4rem;
                     font-size: 2.4rem;
+                    height: 4rem;
+                    @include ellipse();
                 }
                 p{
                     line-height: 2rem;
@@ -699,13 +742,16 @@ html{
                 }
                 .btns{
                     display: flex;
-                    justify-content: space-between;
+                    column-gap: 1rem;
                     line-height: 1.5rem;
                     font-size: 1.2rem;
                     .btn{
                         background-color: #ccc;
                         padding: 0px 4px;
                         border-radius: 1rem;
+                        &:nth-of-type(2){
+                            background-color: rgba(62, 122, 164, 0.1);
+                        }
                     }
                 }
             } 
