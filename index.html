@@ -104,18 +104,22 @@
                 <p><span>hash1</span><span>hash1</span><span>hash1</span><span>hash1</span></p>
             </header>
             <section>
-                <div class="image"></div>
+                <md-block src="./assets/posts/posts1.md">
+                    <!-- README.md 로드 실패시 보이는 문구 -->
+                    `README.md` was *not* found
+                </md-block>
             </section>
             <div class="btn-close">X</div>
         </div>
     </div>
 
-    <!-- 데이터 바인딩 스크립트 -->
-    <script src="./assets/js/setData.js" type="module"></script>
-
-
     <!-- 차트용 플러그인 -->
     <script src="./assets/js/chart.js"></script>
+    <!-- 데이터 바인딩 스크립트 -->
+    <script src="./assets/js/setData.js" type="module"></script>
+    <!-- 메인 스크립트 -->
     <script src="./assets/js/main.js" type="module"></script>
+    <!-- 마크다운 포스팅 스크립트 -->
+    <script src="./assets/js/markdown.js" type="module"></script>
 </body>
 </html>

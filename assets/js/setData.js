@@ -6,7 +6,7 @@ getData('./assets/data/data.json').then(async res=>{
     const cont01Prd = document.querySelector('.cont01 .projects');
     const cont02Prd = document.querySelector('.cont02');
 
-    prd.forEach(p=>{
+    prd.forEach((p,i)=>{
         let hashes = [];
         p.hashes.forEach((e)=>{
             hashes.push(` <span>#${e}</span> `)
@@ -38,7 +38,10 @@ getData('./assets/data/data.json').then(async res=>{
         cont01Prd.innerHTML += addPrd;
         cont02Prd.innerHTML += addPrd2;
         prd.hashes= hashes;
+        prd.prdno = `post0${i+1}`;
     });
+
+    console.log(prd.prdno);
     // UI함수 실행
     return uiWorks(prd);
 });
