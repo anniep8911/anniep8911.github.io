@@ -80,12 +80,27 @@ html{
         .btn-more{
             cursor: pointer;
         }
-        .opts.open{
-            height: auto;
-            li:hover{
-                color: rgb(47, 113, 141);
-                font-weight: 700;
+        .opts{
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
             }
+            &.open{
+                height: auto;
+                &::after{
+                    display: none;
+                }
+                li:hover{
+                    color: rgb(47, 113, 141);
+                    font-weight: 700;
+                }
+            }
+
         }
         .close{
             height: 0;
