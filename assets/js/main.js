@@ -29,7 +29,7 @@ function uiWorks(prd){
             i>=6? cont02Prd.setAttribute('data-cat',er.currentTarget.innerText):'';
             i>=2&& i<=6? (fn.setMonths(er.currentTarget.innerText),cont01Prd.setAttribute('data-year',`${er.currentTarget.innerText}`)):'';
             i<2?er.currentTarget.innerText=='Tools'?
-            fn.setChart(['Git', 'SVN', 'Jira', 'Confluence','slack'],[4,4.5,4.8,4,4],'rgba(62, 122, 164, 0.5)'): fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],'rgba(255, 99, 71, 0.4)'):'';
+            fn.setChart(['Git', 'Photoshop', 'Jira', 'Illustrator','Figma'],[4,4.5,4.8,4,4],'rgba(62, 122, 164, 0.5)'): fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],'rgba(255, 99, 71, 0.4)'):'';
         })
     });
     

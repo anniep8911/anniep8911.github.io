@@ -188,6 +188,7 @@ html{
         padding-top: 0;
         animation: unset;
         color: #000;
+        -webkit-tap-highlight-color :transparent;
         .robot{
             display: none;
         }
@@ -743,7 +744,7 @@ html{
         z-index: 3;
         &.open{
             width: 100vw;
-            height: 100vh;
+            height: 100svh;
             bottom: 0;
             .hdr{
                 border-radius: 2rem;
