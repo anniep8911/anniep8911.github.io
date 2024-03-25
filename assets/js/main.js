@@ -11,6 +11,7 @@ function uiWorks(prd){
     const modal = document.querySelector('.detailed-pops');
     const modalClose = document.querySelector('.detailed-pops .btn-close');
     const cont01 = document.querySelector('.cont01');
+    const cont02Prd = document.querySelector('.cont02');
     const cont01Prd = document.querySelector('.cont01 .projects');
     const cont01Exp = document.querySelector('.cont01 header .btn');
 
@@ -25,6 +26,7 @@ function uiWorks(prd){
             let par = er.currentTarget.parentElement;
             par.prepend(er.currentTarget);
             
+            i>=6? cont02Prd.setAttribute('data-cat',er.currentTarget.innerText):'';
             i>=2&& i<=6? (fn.setMonths(er.currentTarget.innerText),cont01Prd.setAttribute('data-year',`${er.currentTarget.innerText}`)):'';
             i<2?er.currentTarget.innerText=='Tools'?
             fn.setChart(['Git', 'SVN', 'Jira', 'Confluence','slack'],[4,4.5,4.8,4,4],'rgba(62, 122, 164, 0.5)'): fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],'rgba(255, 99, 71, 0.4)'):'';

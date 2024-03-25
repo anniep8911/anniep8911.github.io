@@ -3,13 +3,13 @@
         {
             "name":"메인 고도화 및 UI개편",
             "hashes":["html","scss","JavaScript","node.js","webpack","PC/Mobile(Adaptive web)"],
-            "company":"잡코리아",
+            "company":"personal",
             "year":2023,
             "month":12,
             "goal":"메인페이지 로딩속도 3s이상 개선, 중도 이탈률 1만건 이상 개선",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.jobkorea.co.kr/",
-            "path":"./assets/image/jobko-main.jpg"
+            "path":"posts1.md"
         },
         {
             "name":"TVC이벤트페이지 UI구축",
@@ -19,7 +19,7 @@
             "month":9,
             "goal":"이벤트 페이지 1주일 이상 빠르게 완료, QA시간 확보로인한 UI수정사항 미발생",
             "link":"",
-            "path":""
+            "path":"dskfjkdjfkdj"
         },
         {
             "name":"리브랜딩 마이크로사이트 interaction 설계/구축",
@@ -39,7 +39,7 @@
             "month":12,
             "goal":"프로젝트 별 총 작업시간 2일 이상 단축",
             "link":"https://anniep8911.github.io/absolutWebpack/dist/",
-            "path":"./assets/image/iconbuilder.pdf"
+            "path":"posts2.md"
         },
         {
             "name":"스타일 일괄 중복제거 프로그램 개발",
@@ -74,7 +74,7 @@
         {
             "name":"페이지 스타일 탐색 프로그램 개발",
             "hashes":["javascript","node.js"],
-            "company":"잡코리아",
+            "company":"personal",
             "year":2021,
             "month":12,
             "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
@@ -104,7 +104,7 @@
         {
             "name":"페이지 스타일 탐색 프로그램 개발",
             "hashes":["javascript","node.js"],
-            "company":"잡코리아",
+            "company":"personal",
             "year":2021,
             "month":12,
             "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",

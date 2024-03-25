@@ -21,7 +21,7 @@ getData('./assets/data/data.json').then(async res=>{
                         </div>
                     </article>`;
 
-        let addPrd2 = `<article>
+        let addPrd2 = `<article data-cat="${p.company}">
             <div class="image"></div>
             <div class="texts">
                 <div class="btns">
@@ -38,10 +38,7 @@ getData('./assets/data/data.json').then(async res=>{
         cont01Prd.innerHTML += addPrd;
         cont02Prd.innerHTML += addPrd2;
         prd.hashes= hashes;
-        prd.prdno = `post0${i+1}`;
     });
-
-    console.log(prd.prdno);
     // UI함수 실행
     return uiWorks(prd);
 });

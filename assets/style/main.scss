@@ -1,4 +1,5 @@
-@import url('./reset.min.css');
+@use './reset.min.css';
+@use './prism.css';
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 @mixin scroll(){
@@ -402,6 +403,9 @@ html{
                 outline: 1px solid #ccc;
                 border-radius: 1rem;
                 @include options();
+                li{
+                    cursor: pointer;
+                }
                 &.open{
                     height: auto;
                 }
@@ -641,6 +645,7 @@ html{
             };
             li{
                 cursor: pointer;
+                text-transform: capitalize;
             }
         }
     }
@@ -648,7 +653,18 @@ html{
         height: calc(100vh - 20rem);
         overflow-y: scroll;
         @include scroll();
+        &[data-cat="Personal"]{
+            article[data-cat="personal"]{
+                display: block;
+            }
+        }
+        &[data-cat="Company"]{
+            article:not([data-cat="personal"]){
+                display: block;
+            }
+        }
         article{
+            display: none;
             width: 90%;
             margin: 0 auto;
             padding: 2rem 1rem;

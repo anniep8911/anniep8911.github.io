@@ -4,7 +4,7 @@ const dom={
     popHdrGoal : document.querySelector('.detailed-pops header h3 span'),
     popHdrDate : document.querySelector('.detailed-pops header h4 span:nth-of-type(2)'),
     popHdrHashes : document.querySelector('.detailed-pops header p'),
-    popDetail : document.querySelector('.detailed-pops section .image'),
+    popDetail : document.querySelector('.detailed-pops section'),
     cont1month : document.querySelector('.cont01 .chart-prog')
 
 }
@@ -49,14 +49,10 @@ export default{
         dom.popHdrDate.innerText = date;
         dom.popHdrGoal.innerText=goal;
         dom.popHdrHashes.innerHTML = hashes.join('');
-        let type = details.split('.');
-        type[type.length-1]==='pdf'?
-        dom.popDetail.innerHTML = `<embed type="application/pdf" src="${details}" width="100%" height="800" />`
-        :
-        dom.popDetail.innerHTML = `<img src="${details}">`;
-    },
-    setProjects:(prd)=>{
-        console.log(prd);
+        // let type = details.split('.');
+        dom.popDetail.innerHTML =`<md-block src="./assets/posts/${details}">
+        <!-- README.md 로드 실패시 보이는 문구 -->
+        ${details} was *not* found </md-block>`;
     },
     setMonths:(y)=>{
         let mtn=0;
@@ -79,7 +75,6 @@ export default{
         node.classList[1]==classname?'':node.className +=` ${classname}`;
     },
     removeClass:(node,classname)=>{
-        console.log(node.classList[1]);
         node.classList.remove(classname);
     },
     toggleClass:(node,className)=>{
