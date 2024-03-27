@@ -3,23 +3,13 @@
         {
             "name":"메인 고도화 및 UI개편",
             "hashes":["html","scss","JavaScript","node.js","webpack","PC/Mobile(Adaptive web)"],
-            "company":"personal",
-            "year":2023,
-            "month":12,
+            "company":"잡코리아",
+            "year":2024,
+            "month":1,
             "goal":"메인페이지 로딩속도 3s이상 개선, 중도 이탈률 1만건 이상 개선",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.jobkorea.co.kr/",
             "path":"posts1.md"
-        },
-        {
-            "name":"TVC이벤트페이지 UI구축",
-            "hashes":["html","scss","javascript","webpack","PC/Mobile(Adaptive web)","kakao share"],
-            "company":"잡코리아",
-            "year":2023,
-            "month":9,
-            "goal":"이벤트 페이지 1주일 이상 빠르게 완료, QA시간 확보로인한 UI수정사항 미발생",
-            "link":"",
-            "path":"dskfjkdjfkdj"
         },
         {
             "name":"리브랜딩 마이크로사이트 interaction 설계/구축",
@@ -27,9 +17,10 @@
             "company":"잡코리아",
             "year":2023,
             "month":7,
-            "goal":"리브랜딩 프로덕트 다운로드 수 1만건 이상 발생",
+            "goal":"리브랜딩 프로덕트(배경화면) 다운로드 수 1만건 이상 발생",
+            "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.jobkorea.co.kr/brand/",
-            "path":"./assets/image/queicons.png"
+            "path":"posts3.md"
         },
         {
             "name":"아이콘 자동생성기 프로그램 개발",
@@ -38,78 +29,86 @@
             "year":2023,
             "month":12,
             "goal":"프로젝트 별 총 작업시간 2일 이상 단축",
+            "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://anniep8911.github.io/absolutWebpack/dist/",
             "path":"posts2.md"
         },
         {
-            "name":"스타일 일괄 중복제거 프로그램 개발",
+            "name":"webpack용 buildmaker개발",
             "hashes":["javascript","node.js"],
             "company":"잡코리아",
             "year":2023,
-            "month":11,
-            "goal":"잡코리아 전체 스타일 5mb이상 용량 감소",
+            "month":12,
+            "goal":"CSS작업시간 파일당 10분이상 단축",
+            "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"./assets/image/queicons.png"
+            "path":"posts4.md"
         },
         {
-            "name":"TVC이벤트페이지 UI구축",
-            "hashes":["javascript","node.js"],
-            "company":"잡코리아",
-            "year":2022,
-            "month":12,
-            "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"./assets/image/queicons.png"
-        },
-        {
-            "name":"페이지 스타일 탐색 프로그램 개발",
-            "hashes":["javascript","node.js"],
-            "company":"잡코리아",
-            "year":2021,
-            "month":12,
-            "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"./assets/image/queicons.png"
-        },
-        {
-            "name":"페이지 스타일 탐색 프로그램 개발",
-            "hashes":["javascript","node.js"],
+            "name":"WKAUT(내 근처 운동시설 찾아주는 사이트) 개발",
+            "hashes":["javascript","node.js","aws","react.js","react-hook","next.js","next_auth"],
             "company":"personal",
-            "year":2021,
+            "year":2023,
+            "month":4,
+            "goal":"리액트에 대한 프로젝트를 full-stack구현",
+            "icon":"./assets/image/personal.png",
+            "link":"https://www.npmjs.com/package/style-crawl",
+            "path":"posts5.md"
+        },
+        {
+            "name":"webpack용 buildmaker개발",
+            "hashes":["javascript","node.js"],
+            "company":"잡코리아",
+            "year":2023,
             "month":12,
-            "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"./assets/image/queicons.png"
+            "goal":"CSS작업시간 파일당 10분이상 단축",
+            "icon":"./assets/image/logo-jobkorea.png",
+            "link":"https://www.npmjs.com/package/scss-cleans",
+            "path":"posts4.md"
         },
         {
-            "name":"페이지 스타일 탐색 프로그램 개발",
-            "hashes":["javascript","node.js"],
-            "company":"잡코리아",
-            "year":2024,
-            "month":2,
-            "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"./assets/image/queicons.png"
-        },
-        {
-            "name":"페이지 스타일 탐색 프로그램 개발",
-            "hashes":["javascript","node.js"],
-            "company":"잡코리아",
+            "name":"한국총판 시스템 고도화",
+            "hashes":["jsp(jstl,el)","css/scss","javascript","jquery"],
+            "company":"삼성SDS(프리랜서)",
             "year":2022,
-            "month":12,
-            "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"./assets/image/queicons.png"
+            "month":7,
+            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
+            "icon":"./assets/image/samsung.png",
+            "link":"https://www.npmjs.com/package/scss-cleans",
+            "path":"posts6.md"
         },
         {
-            "name":"페이지 스타일 탐색 프로그램 개발",
-            "hashes":["javascript","node.js"],
-            "company":"personal",
+            "name":"myrtip(여행 사이트) vue 마이그레이션",
+            "hashes":["html","css","javascript","jquery"],
+            "company":"퍼스트컴퓨터바리스타학원",
+            "year":2022,
+            "month":4,
+            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
+            "icon":"./assets/image/firts.jpg",
+            "link":"https://www.npmjs.com/package/scss-cleans",
+            "path":"posts8.md"
+        },
+        {
+            "name":"리타케팅 플랫폼 구축 및 광고 플랫폼 구축",
+            "hashes":["html","css","javascript","jquery"],
+            "company":"이베이코리아",
             "year":2021,
-            "month":12,
-            "goal":"페이지 별 스타일파일 탐색시간 감축으로 인한 평균 40분 이상 작업시간 단축",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"./assets/image/queicons.png"
+            "month":9,
+            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
+            "icon":"./assets/image/ebay.png",
+            "link":"https://www.npmjs.com/package/scss-cleans",
+            "path":"posts7.md"
+        },
+        {
+            "name":"oled.com 구축 및 유지보수",
+            "hashes":["html","css","javascript","jquery"],
+            "company":"LG CNG(프리랜서)",
+            "year":2021,
+            "month":9,
+            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
+            "icon":"./assets/image/lgcns.svg",
+            "link":"https://www.npmjs.com/package/scss-cleans",
+            "path":"posts9.md"
         }
     ]
 }
