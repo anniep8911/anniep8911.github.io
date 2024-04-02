@@ -45,17 +45,6 @@
             "path":"posts4.md"
         },
         {
-            "name":"WKAUT(내 근처 운동시설 찾아주는 사이트) 개발",
-            "hashes":["javascript","node.js","aws","react.js","react-hook","next.js","next_auth"],
-            "company":"personal",
-            "year":2023,
-            "month":4,
-            "goal":"리액트에 대한 프로젝트를 full-stack구현",
-            "icon":"./assets/image/personal.png",
-            "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"posts5.md"
-        },
-        {
             "name":"webpack용 buildmaker개발",
             "hashes":["javascript","node.js"],
             "company":"잡코리아",
@@ -65,6 +54,17 @@
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.npmjs.com/package/scss-cleans",
             "path":"posts4.md"
+        },
+        {
+            "name":"WKAUT(내 근처 운동시설 찾아주는 사이트) 개발",
+            "hashes":["javascript","node.js","aws","react.js","react-hook","next.js","next_auth"],
+            "company":"personal",
+            "year":2022,
+            "month":4,
+            "goal":"리액트에 대한 프로젝트를 full-stack구현",
+            "icon":"./assets/image/personal.png",
+            "link":"https://www.npmjs.com/package/style-crawl",
+            "path":"posts5.md"
         },
         {
             "name":"한국총판 시스템 고도화",
@@ -103,7 +103,7 @@
             "name":"oled.com 구축 및 유지보수",
             "hashes":["html","css","javascript","jquery"],
             "company":"LG CNG(프리랜서)",
-            "year":2021,
+            "year":2017,
             "month":9,
             "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
             "icon":"./assets/image/lgcns.svg",

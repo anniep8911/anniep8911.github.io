@@ -1,1 +1,1 @@
-![메인개편](/assets/image/jobko-main.jpg);
+![메인개편](/assets/image/jobko-main.jpg)

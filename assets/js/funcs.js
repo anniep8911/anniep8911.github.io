@@ -38,8 +38,12 @@ export default{
                     plugins:{
                         legend:{
                             display:false
+                        },
+                        tooltip:{
+                            enabled:true,
+                            
                         }
-                    }
+                    },
                 }
             });
     },
@@ -77,7 +81,7 @@ export default{
         node.classList.remove(classname);
     },
     toggleClass:(node,className)=>{
-        node.classList[1]==className?
+        node.classList.toString().indexOf(className)>0?
         node.classList.remove(className):node.className +=` ${className}`;
     }
 }

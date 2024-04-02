@@ -611,9 +611,9 @@ html{
                 &[data-year='Show all']{
                     article{
                         display: flex;
-                        @for $i from 1 through 4{
-                            &[data-year='202#{$i}']{
-                                margin-left: calc(((100% - 4rem) / 4) * (4 - #{$i}));
+                        @for $i from 2024 through 2017{
+                            &[data-year='#{$i}']{
+                                margin-left: calc((100% / 8) * (2024 - #{$i}));
                             }
                         }
                     }
@@ -622,7 +622,7 @@ html{
 
 
                 article{
-                    width: calc((100% / 3 ) * 0.8);
+                    width: calc((100% / 8 ) * 0.8);
                     line-height: 4rem;
                     border-radius: 1rem;
                     margin-top: 1rem;
