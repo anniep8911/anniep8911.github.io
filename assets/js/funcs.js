@@ -6,7 +6,6 @@ const dom={
     popHdrHashes : document.querySelector('.detailed-pops header p'),
     popDetail : document.querySelector('.detailed-pops section'),
     cont1month : document.querySelector('.cont01 .chart-prog')
-
 }
 export default{
     setChart:(label,datas,bgc)=>{
@@ -53,9 +52,12 @@ export default{
         dom.popHdrDate.innerText = date;
         dom.popHdrGoal.innerText=goal;
         dom.popHdrHashes.innerHTML = hashes.map(m=>`<span>#${m}</span>`).join('');
+        !details.includes('pdf')?
         dom.popDetail.innerHTML =`<md-block src="./assets/posts/${details}">
         <!-- README.md 로드 실패시 보이는 문구 -->
-        ${details} was *not* found </md-block>`;
+        ${details} was *not* found </md-block>`:
+        dom.popDetail.innerHTML =`<iframe width="100%" height="100%" src="./assets/posts/${details}"></iframe>`;
+
     },
     setMonths:(y)=>{
         let mtn=0;

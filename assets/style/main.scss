@@ -147,7 +147,6 @@ html{
         margin-top: 8rem;
         display: none;
         height: calc(100vh - 20rem);
-        overflow-y: scroll;
         @include scroll();
         li{
             background-color: #fff;
@@ -170,7 +169,7 @@ html{
                 text-align: right;
                 word-break: break-word;
                 span{
-                    background-color: #fff;
+                    background-color: #dcdfeb;
                     padding: 0 2rem;
                     display: inline-block;
                     border-radius: 2rem;
@@ -207,7 +206,7 @@ html{
         height: calc(100% - 4rem);
         background: rgba(189, 225, 241, 1);
         border-radius: 2rem;
-        padding-left: 2rem;
+        padding:  0 4rem;
         padding-top: 0;
         animation: unset;
         color: #000;
@@ -218,7 +217,7 @@ html{
         }
         .hdr{
             display: block;
-            width: calc(100% - 2rem);
+            width: calc(100% - 6rem);
             padding-top: 2rem;
             background-color: rgba(189, 225, 241, 1);
             h3{

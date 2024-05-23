@@ -1,0 +1,1 @@
+![마이트립스토어](/assets/data/CV/pdf);

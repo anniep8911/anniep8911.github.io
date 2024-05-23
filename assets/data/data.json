@@ -1,6 +1,16 @@
 {
     "projects":[
         {
+            "name":"경력기술서",
+            "hashes":["경력기술서"],
+            "company":"personal",
+            "year":2024,
+            "month":5,
+            "goal":"경력기술서 입니다.",
+            "icon":"./assets/image/personal.png",
+            "path":"CV.pdf"
+        },
+        {
             "name":"메인 고도화 및 UI개편",
             "hashes":["html","scss","JavaScript","node.js","webpack","PC/Mobile(Adaptive web)"],
             "company":"잡코리아",
