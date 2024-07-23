@@ -55,6 +55,7 @@
             "link":"https://www.npmjs.com/package/scss-cleans",
             "path":"posts4.md"
         },
+     
         {
             "name":"WKAUT(내 근처 운동시설 찾아주는 사이트) 개발",
             "hashes":["javascript","node.js","aws","react.js","react-hook","next.js","next_auth"],
@@ -65,6 +66,18 @@
             "icon":"./assets/image/personal.png",
             "link":"https://www.npmjs.com/package/style-crawl",
             "path":"posts5.md"
+        },
+
+        {
+            "name":"myrtip(여행 사이트) vue 마이그레이션",
+            "hashes":["html","css","javascript","jquery"],
+            "company":"퍼스트컴퓨터바리스타학원",
+            "year":2022,
+            "month":4,
+            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
+            "icon":"./assets/image/firts.jpg",
+            "link":"https://www.npmjs.com/package/scss-cleans",
+            "path":"posts8.md"
         },
         {
             "name":"한국총판 시스템 고도화",
@@ -78,17 +91,6 @@
             "path":"posts6.md"
         },
         {
-            "name":"myrtip(여행 사이트) vue 마이그레이션",
-            "hashes":["html","css","javascript","jquery"],
-            "company":"퍼스트컴퓨터바리스타학원",
-            "year":2022,
-            "month":4,
-            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
-            "icon":"./assets/image/firts.jpg",
-            "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"posts8.md"
-        },
-        {
             "name":"리타케팅 플랫폼 구축 및 광고 플랫폼 구축",
             "hashes":["html","css","javascript","jquery"],
             "company":"이베이코리아",
@@ -98,17 +100,6 @@
             "icon":"./assets/image/ebay.png",
             "link":"https://www.npmjs.com/package/scss-cleans",
             "path":"posts7.md"
-        },
-        {
-            "name":"oled.com 구축 및 유지보수",
-            "hashes":["html","css","javascript","jquery"],
-            "company":"LG CNG(프리랜서)",
-            "year":2017,
-            "month":9,
-            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
-            "icon":"./assets/image/lgcns.svg",
-            "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"posts9.md"
         }
     ]
 }

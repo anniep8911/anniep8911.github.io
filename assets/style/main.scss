@@ -53,6 +53,9 @@ $blue-hov:rgb(47, 113, 141, 1);
 $wh-bg :rgba(255, 255, 255, 0.8);
 
 
+:root{
+    --cnt-art:4;
+}
 // common
 html{
     font-size: min(0.7vw,10px);
@@ -147,6 +150,7 @@ html{
         margin-top: 8rem;
         display: none;
         height: calc(100vh - 20rem);
+        overflow-y: scroll;
         @include scroll();
         li{
             background-color: #fff;
@@ -496,8 +500,6 @@ html{
         position: absolute;
         left: 0;
         bottom: 0;
-
-
         &.expand{
             background-color: #fff;
             width: 100%;
@@ -537,6 +539,9 @@ html{
             h2{
                 font-size: 2.5rem;
                 line-height: 4rem;
+                span{
+                    font-size: 14px;
+                }
             }
             ul{
                 line-height: 2rem;
@@ -614,7 +619,7 @@ html{
                         @for $i from 1 through 12{
                             article{
                                 &[data-month='#{$i}']{
-                                    margin-left: calc(((100% - 15rem) / 12) * (#{$i} - 1));
+                                    margin-left: calc((100% / 12) * (#{$i} - 1));
                                 }
                             }
                         }
@@ -629,15 +634,12 @@ html{
                         }
                     }
                 }
-
-
-
                 &[data-year='Show all']{
                     article{
                         display: flex;
                         @for $i from 2024 through 2017{
                             &[data-year='#{$i}']{
-                                margin-left: calc((100% / 8) * (2024 - #{$i}));
+                                margin-left: calc((100% / 4) * (2024 - #{$i}));
                             }
                         }
                     }
@@ -646,7 +648,8 @@ html{
 
 
                 article{
-                    width: calc((100% / 8 ) * 0.8);
+                    overflow: hidden;
+                    width: calc(100% / var(--cnt-art));
                     line-height: 4rem;
                     border-radius: 1rem;
                     margin-top: 1rem;
@@ -659,9 +662,8 @@ html{
                         margin-left: calc((100% / 3 )*2);
                     }
                     &:hover{
-                        .texts{
-                           box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
-                        }
+                        box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+                        border-radius: 20px;
                     }
                     .image{
                         color: transparent;
@@ -683,6 +685,7 @@ html{
                         background-color: rgba(255, 99, 71, 0.1);
                         cursor: pointer;
                         width: 100%;
+                        @include ellipse;
                         h3{
                            @include ellipse;
                         }
