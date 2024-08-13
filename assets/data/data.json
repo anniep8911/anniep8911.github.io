@@ -1,6 +1,17 @@
 {
     "projects":[
         {
+            "name":"태양광에너지 솔루션 구축(Chart,Dash board)",
+            "hashes":["html","css","JavaScript","PC","Chart.js"],
+            "company":"현대태양광에너지(프리랜서)",
+            "year":2024,
+            "month":8,
+            "goal":"chart.js 모듈화, UI규칙 제작, 70개 통계 신규페이지 5주 완성",
+            "icon":"./assets/image/HD.png",
+            "link":"./",
+            "path":"posts11.md"
+        },
+        {
             "name":"메인 고도화 및 UI개편",
             "hashes":["html","scss","JavaScript","node.js","webpack","PC/Mobile(Adaptive web)"],
             "company":"잡코리아",
@@ -45,15 +56,15 @@
             "path":"posts4.md"
         },
         {
-            "name":"webpack용 buildmaker개발",
-            "hashes":["javascript","node.js"],
+            "name":"TVC이벤트페이지 vue3작업",
+            "hashes":["javascript","Vue3"],
             "company":"잡코리아",
             "year":2023,
-            "month":12,
-            "goal":"CSS작업시간 파일당 10분이상 단축",
+            "month":10,
+            "goal":"컴포넌트 설계 및 재활용 , 모듈화 작업",
             "icon":"./assets/image/logo-jobkorea.png",
-            "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"posts4.md"
+            "link":"",
+            "path":"posts12.md"
         },
      
         {
@@ -74,7 +85,7 @@
             "company":"퍼스트컴퓨터바리스타학원",
             "year":2022,
             "month":4,
-            "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
+            "goal":"컴포넌트 설계 및 재활용 , 모듈화 작업",
             "icon":"./assets/image/firts.jpg",
             "link":"https://www.npmjs.com/package/scss-cleans",
             "path":"posts8.md"
@@ -87,7 +98,7 @@
             "month":7,
             "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
             "icon":"./assets/image/samsung.png",
-            "link":"https://www.npmjs.com/package/scss-cleans",
+            "link":"./",
             "path":"posts6.md"
         },
         {

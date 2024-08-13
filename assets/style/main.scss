@@ -256,7 +256,8 @@ html{
 // detail-pop
 .detailed-pops{
     position: absolute;
-    width: calc(100% / 12 * 8 );
+    width: 100%;
+    // width: calc(100% / 12 * 8 );
     height: calc(100% - 4rem);
     background-color: #fff;
     margin: auto;
