@@ -86,5 +86,10 @@ export default{
     toggleClass:(node,className)=>{
         node.classList.toString().indexOf(className)>0?
         node.classList.remove(className):node.className +=` ${className}`;
+    },
+    setStyle:(dom,st)=>{
+        for(let i in st){
+            dom.style[i]=st[i];
+        }
     }
 }

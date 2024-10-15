@@ -91,13 +91,22 @@ function chatBot(prd){
     const ans = document.querySelector('.robot-response .ans-gr');
     const robots = document.querySelector('.robot-response');
     const robotChar= document.querySelector('.robot-response .robot');
+    const body = document.querySelector('body');
     const robotsClose = document.querySelector('.robot-response .btn-close');
     let cnt2 = 0;
         
     robotChar.addEventListener('click',(e)=>{
+        fn.setStyle(body,{
+            'height':'100vh',
+            'overflow':'hidden'
+        });
         !robots.classList.contains('open')?fn.addClass(robots,'open',false):'';
     })
     robotsClose.addEventListener('click',(e)=>{
+        fn.setStyle(body,{
+            'height':'fit-content',
+            'overflow':'scroll'
+        });
         robots.classList.contains('open')?robots.classList.remove('open'):'';
     })
 
