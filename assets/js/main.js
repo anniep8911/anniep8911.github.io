@@ -97,15 +97,15 @@ function chatBot(prd){
         
     robotChar.addEventListener('click',(e)=>{
         fn.setStyle(body,{
-            'height':'100vh',
-            'overflow':'hidden'
+            'touch-action': 'none',
+            'position':'fixed'
         });
         !robots.classList.contains('open')?fn.addClass(robots,'open',false):'';
     })
     robotsClose.addEventListener('click',(e)=>{
         fn.setStyle(body,{
-            'height':'fit-content',
-            'overflow':'scroll'
+            'touch-action': 'inherit',
+            'position':'relative'
         });
         robots.classList.contains('open')?robots.classList.remove('open'):'';
     })
