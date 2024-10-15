@@ -64,7 +64,7 @@ export default{
         let months = '';
         let mon =  ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
         let years = [2024,2023,2022,2021];
-        y<2024 && y!=='Show all'? mtn=12: y=='Show all'?mtn=4:mtn=7;
+        y<2024 && y!=='Show all'? mtn=12: y=='Show all'?mtn=4:mtn=12;
         for(let i =0; i<mtn; i++){
             if(y !=='Show all'){
                 months += `<li>${mon[i]}</li>`;
@@ -75,7 +75,6 @@ export default{
         }
         dom.cont1month.innerHTML = months;
         document.documentElement.style.setProperty(`--cnt-art`,`${mtn}`);
-        // dom.cont1month.setAttribute('cat-cnt',mtn)
     }
     ,
     addClass:(node,classname)=>{

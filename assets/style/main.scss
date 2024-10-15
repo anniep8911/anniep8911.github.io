@@ -196,6 +196,8 @@ html{
                     display: inline-block;
                     padding: 0 2rem;
                     margin-right: 1rem;
+                    display: block;
+                    width: fit-content;
                     &:hover{
                         background-color: #fff;
                         font-weight: 700;
@@ -840,7 +842,7 @@ html{
             }
         }
         .answer{
-            height: calc(100vh - 10rem);
+            height: calc(100vh - 18rem);
         }
     } 
 
