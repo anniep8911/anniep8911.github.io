@@ -94,12 +94,13 @@ function chatBot(prd){
     const body = document.querySelector('body');
     const robotsClose = document.querySelector('.robot-response .btn-close');
     let cnt2 = 0;
-        
+
     robotChar.addEventListener('click',(e)=>{
+        window.innerWidth <=  700?
         fn.setStyle(body,{
             'touch-action': 'none',
             'position':'fixed'
-        });
+        }):'';
         !robots.classList.contains('open')?fn.addClass(robots,'open',false):'';
     })
     robotsClose.addEventListener('click',(e)=>{
