@@ -1,0 +1,830 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>letter-spacer</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6837929f-eea5-4871-8ece-d7fd9953c677" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌪️</span></div><h1 class="page-title">letter-spacer</h1><p class="page-description"></p></header><div class="page-body"><ol type="1" id="516220cf-9423-487a-8eba-9456202d70a9" class="numbered-list" start="1"><li>프로그램 사용 목적<p id="c0bb74d8-d97a-41d0-b149-c5af9ac254a7" class="">레거시 코드에 대한 모든 파일 일괄적용 용도 </p><p id="4c790c77-a9fd-4b62-9e56-2695890ca4ad" class="">
+</p></li></ol><ol type="1" id="0d297247-9869-4e06-bc84-ba7de5a63caf" class="numbered-list" start="2"><li>프로그램 사용 시 기대 효과 <ol type="a" id="c413fe72-91db-4e9b-89e6-979da1006974" class="numbered-list" start="1"><li>700개 이상의 스타일파일에 대하여, 디자인 가이드 신규 변경건 일괄적용을 목표로 모든 글자크기당 조건을 파악하여 글자에대한 자간을 일괄적으로 수정하는 프로그램으로, 하루 8시간 기준 50개 파일(최대치)작업량 대비하여 200개 이상의 파일을 처리할 수 있음 </li></ol><ol type="a" id="1ad7cd4a-3657-44c8-8dbe-9d7b02d98b35" class="numbered-list" start="2"><li>불필요한 주석 자동 제거 및 더이상 사용하지 않는 css hack속성 제거 </li></ol><p id="235f665f-c740-46c7-92fe-7d29937f9fbb" class="">
+</p></li></ol><ol type="1" id="f5e0e348-0ff1-45de-980d-e939b92ba961" class="numbered-list" start="3"><li>로직 워크플로우 <ol type="a" id="b49ab1b0-dcc7-48f9-8fc7-10bb4d77f4e3" class="numbered-list" start="1"><li>디자인 가이드에 맞는 요구 사항 파악 </li></ol><ol type="a" id="064f7cc9-4112-4260-ba76-6fa33e019e14" class="numbered-list" start="2"><li>폰트 사이즈가 발생할 수 있는 속성명 파악 </li></ol><ol type="a" id="5a39cccb-c27c-49ee-97da-301c0863eb3f" class="numbered-list" start="3"><li>불필요한 주석 타입의 형태 파악 </li></ol><ol type="a" id="5d633f97-61f3-474a-97cf-e926a858ee73" class="numbered-list" start="4"><li>node활용, 스타일파일을 읽어내며 지워야 할 값들 리스트업 (letter-spacing, 불필요 주석, css hack) </li></ol><ol type="a" id="30c451d4-7e95-4d18-996a-65c734089f2a" class="numbered-list" start="5"><li>node를 활용하여 스타일 파일을 읽어낸 뒤 폰트 사이즈관련 속성명 뒤 바로 가이드에 맞는 레터 스페이싱 추가 한 뒤 배열로 저장 </li></ol><ol type="a" id="d2cfc6f8-2a17-4a80-924d-ab1385754789" class="numbered-list" start="6"><li>스트링타입으로 반환한뒤 다시 해당 파일에 덮어쓰기</li></ol><p id="f8d94b4e-18df-43a6-84d7-e6c115cea6ce" class=""> </p></li></ol><ol type="1" id="cfc9f119-2be9-4907-a469-a139ceb9d9fc" class="numbered-list" start="4"><li>프로그램 개발환경<ol type="a" id="4c79a908-f0cf-4dd8-8aa1-f47437c3e037" class="numbered-list" start="1"><li>node : 14.17.0</li></ol><ol type="a" id="e91cd3d9-c094-49a7-b1d5-b44395bfd3f5" class="numbered-list" start="2"><li>dependencies: none</li></ol><p id="abcf78d2-b61c-4a68-b329-3782ce35ba01" class="">
+</p></li></ol><ol type="1" id="f212410b-e838-4a9e-9f1d-0e3225bd2cbc" class="numbered-list" start="5"><li>프로그램의 효과 <p id="e0d64aa9-5e85-4f87-b31c-5536d11c6c2c" class="">: 일괄적인 작업처리가 가능하므로, 가이드가 변경될때마다 언제든 파일 전체 일괄적용 가능 </p><p id="072a78d4-e829-431a-af7c-e5e1d10cf145" class="">
+</p></li></ol><ol type="1" id="d8fb4947-45cc-4155-aeb9-7853514d9b96" class="numbered-list" start="6"><li>codes<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="777ac8c9-398e-44ac-8c9b-11ddd73e8324" class="code"><code class="language-JavaScript">import { createRequire } from &quot;module&quot;;
+const require = createRequire(import.meta.url);
+const fs = require(&#x27;fs&#x27;);
+const readline = require(&#x27;readline&#x27;);
+const rl = readline.createInterface({input: process.stdin,output: process.stdout,});
+let dts = ``;
+let reg = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g;
+let exp = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-z|A-Z]/g;
+let exp2 = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-z|A-Z|:|;]/g;
+let exp3 = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-z|A-Z|:|;| |&#x27; |&quot;]/g;
+let names = [&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;];
+let ttDats=&#x27;&#x27;;
+let jsState = false;
+let dir  =  &#x27;./&#x27;;
+let fileRd = [
+    &#x27;./ver_2/member/mbr_style.css&#x27;
+];
+
+
+const mkdir= (dir)=&gt;{
+    fs.readdir(dir, function (err, files) {
+        files !== undefined ?
+            files.forEach((e) =&gt; {
+              let file = `${dir + &quot;/&quot; + e}`;
+              file = file.replace(&quot;//&quot;, &quot;/&quot;);
+              !file.includes(&quot;.js&quot;) ? mkdir(file) : console.log(`&#x27;${file}&#x27;,`);
+            })
+          : &#x27;&#x27;;
+    })
+}
+
+const fontWtReturner = (m, fz, fz1, ls) =&gt; { 
+    return  (m.includes(&quot;bold&quot;) ? `font-size:${fz}px;\n font-weight:bold;\n ${ls!==0?`letter-spacing: ${ls}px;\n`:&#x27;&#x27;} ${fz1&gt;0 ? `line-height:${fz1};\n`:&#x27;&#x27;}`
+    : m.includes(&quot;normal&quot;) ? `font-size:${fz}px;\n font-weight:normal; \n ${ls!==0?`letter-spacing: ${ls}px;\n`:&#x27;&#x27;} ${fz1&gt;0 ? `line-height:${fz1};\n`:&#x27;&#x27;}`
+    : `font-size:${fz}px;\n ${fz1&gt;0 ? `line-height:${fz1};\n`:&#x27;&#x27;} ${`letter-spacing: ${ls}px;\n`}`); 
+}
+
+
+fileRd.length == 0 ? mkdir(dir) : &#x27;&#x27;;
+
+
+fileRd.forEach(e =&gt; {
+    fs.readFile(e, &quot;utf-8&quot;, (err, dt) =&gt; {
+        err ? console.log(`${e} 가 없어요..`) : dt;
+        let nowon = e.slice(e.lastIndexOf(&quot;.&quot;) + 1);
+        dt.includes(&quot;*********&quot;)
+            ? console.log(`${e} 에 ascii art지우고 시작해주세요!`)
+            : // 반환 파일명
+            fs.writeFile(e, jsDelete(dt.toString(), nowon, e),
+                (err) =&gt; {
+                    console.log(&quot;폰트 일괄적용 완료!&quot;);
+                    rl.close();
+                    if (err) throw err;
+                }
+            );
+    });
+});
+
+const jsDelete = (dt,nowon, rdfile)=&gt;{
+    let dep = rdfile.split(&#x27;/&#x27;).length-4;
+    let fz= 0;
+    let fz1= 0;
+    let fnData=&#x27;&#x27;;
+    let flag=false;
+    let flag2=false;
+    nowon === &#x27;css&#x27;
+      ? (dt = dt
+          .replace(/{/g, &#x27;{\n&#x27;)
+          .replace(/}/g, &#x27;}\n&#x27;)
+          .replace(/;/g, &#x27;;\n&#x27;)
+          .replace(/\*\//g, &#x27;*/\n&#x27;))
+      :&#x27;&#x27;;
+    dts = dt.split(&#x27;\n&#x27;);
+    nowon ===&#x27;scss&#x27;? dts=dts.map(m=&gt; !m.includes(&#x27;#&#x27;) ? m.replace(/{/g,&#x27;{\n&#x27;) : m.replace(/;/,&#x27;;\n&#x27;)):&#x27;&#x27;;
+    nowon===&#x27;css&#x27;?&#x27;&#x27;:dts.forEach(e=&gt;e.includes(&#x27;/abstracts/font&#x27;)?flag=true:e.includes(&#x27;font-size&#x27;)?flag2=true:&#x27;&#x27;);
+    nowon===&#x27;scss&#x27; &amp;&amp; !flag &amp;&amp; flag2 ?dts[0] = `${dts[0]}\n@use &#x27;${&#x27;../&#x27;.repeat(dep)}abstracts/font&#x27; as font;\n`:&#x27;&#x27;;
+
+    let ttDats =dts.map(m=&gt;(m.includes(&#x27;letter-spacing&#x27;) &amp;&amp; (!m.includes(&#x27;#{&#x27;)  || !m.includes(`&#x27;`)))?m.search(reg)&gt;0?(`${m}\n`):&#x27;&#x27;:`${m}\n`).reduce((p,r)=&gt;p+r).split(&#x27;\n&#x27;); 
+    nowon ===&#x27;css&#x27;?
+    fnData = ttDats.map(m=&gt;
+        (m.includes(&#x27;font-size&#x27;) &amp;&amp; !m.includes(&#x27;/*&#x27;)|| m.trim().includes(&#x27;font:&#x27;)) &amp;&amp; !m.includes(&#x27;/*&#x27;)?
+        (fz = parseInt(m.slice(m.indexOf(&#x27;:&#x27;)).replace(exp2,&#x27;&#x27;)),
+        fz1 = m.slice(m.indexOf(&#x27;/&#x27;)).includes(&#x27;px&#x27;) ? m.slice(m.indexOf(&#x27;/&#x27;)+1,m.lastIndexOf(&#x27;px&#x27;))+&#x27;px&#x27;: m.slice(m.indexOf(&#x27;/&#x27;)+1,m.indexOf(&#x27;/&#x27;)+5).replace(exp3,&#x27;&#x27;).trim(),
+        (fz&gt;=0 &amp;&amp; m.includes(&#x27;px&#x27;)) ?        
+         m.includes(&#x27;/&#x27;)?
+            fz&gt;= 32 ?fontWtReturner(m,fz,fz1,-1)
+            : fz&gt; 19? fontWtReturner(m,fz,fz1,-0.5)
+            :fontWtReturner(m,fz,fz1,0)
+        : 
+            fz&gt;= 32 ?fontWtReturner(m,fz,fz1,-1)
+            : fz&gt; 19? fontWtReturner(m,fz,fz1,-0.5)
+            :fontWtReturner(m,fz,fz1,0)
+         :`${m}\n`)
+         :
+         m.includes(&#x27;font-family&#x27;)  &amp;&amp; !m.includes(&#x27;/*&#x27;) ?&#x27;&#x27;
+         :
+         m.includes(&#x27;*&#x27;) &amp;&amp; !m.includes(&#x27;{&#x27;)?(!m.includes(&#x27;/&#x27;)||!m.includes(&#x27;/&#x27;))? &#x27;&#x27;:`${m}\n`
+         : 
+         `${m}\n`).reduce((p,c)=&gt;p+c)
+    :fnData= ttDats.map(m=&gt; (
+        fz = parseInt(m.slice(m.indexOf(&#x27;:&#x27;)).replace(exp2,&#x27;&#x27;)),
+        fz1 = m.slice(m.indexOf(&#x27;/&#x27;)).includes(&#x27;px&#x27;) ? m.slice(m.indexOf(&#x27;/&#x27;)+1,m.lastIndexOf(&#x27;px&#x27;))+&#x27;px&#x27;: m.slice(m.indexOf(&#x27;/&#x27;)+1,m.indexOf(&#x27;.&#x27;)+2),
+        ((m.includes(&#x27;font-size&#x27;)||m.trim().includes(&#x27;font:&#x27;))&amp;&amp; !m.includes(&#x27;#{&#x27;) &amp;&amp; !m.includes(&#x27;/&#x27;) &amp;&amp; m.includes(&#x27;px&#x27;))?fz&gt;0?
+        m.includes(&#x27;bold&#x27;)?  `${&#x27; &#x27;.repeat(m.search(exp))}@include font.fontSize(${fz});\n font-weight:bold;\n`
+        :m.includes(&#x27;normal&#x27;)? `${&#x27; &#x27;.repeat(m.search(exp))}@include font.fontSize(${fz});\n font-weight:normal;\n`
+        :m.includes(&#x27;/&#x27;)? `${&#x27; &#x27;.repeat(m.search(exp))}@include font.fontSize(${fz});\n line-height:${fz1};\n`
+        :`${&#x27; &#x27;.repeat(m.search(exp))}@include font.fontSize(${fz});\n`
+        :`${m}\n`
+        :(m.includes(&#x27;font-family&#x27;) &amp;&amp; m.search(exp)&gt;0)?&#x27;&#x27;:`${m}\n`))
+        .reduce((p,r)=&gt;p+r);
+        return jsDel(fnData.toString(),nowon);
+}
+
+const jsDel=(dt,nowon)=&gt;{
+    dts = dt.split(&#x27;\n&#x27;);
+    names.forEach(n=&gt;{
+        dts.forEach((e,i,a)=&gt;{
+            e.includes(n)?a[i]=&#x27;&#x27;:a[i]=e;
+        });
+    });
+
+    dts= dts.map(m=&gt; (m.includes(&#x27;/*&#x27;) &amp;&amp; m.includes(&#x27;*/&#x27;) &amp;&amp; !m.includes(&#x27;:&#x27;))?!m.trim().includes(&#x27;*/}&#x27;)?(m.replace(&#x27;**&#x27;,&#x27;*&#x27;).replace(&#x27;/*&#x27;,&#x27;//&#x27;).replace(&#x27;*/&#x27;,&#x27;&#x27;)):m.replace(&#x27;/*&#x27;,&#x27;//&#x27;).replace(&#x27;*/&#x27;,&#x27;}&#x27;):m);
+    dts.forEach((e,i,a)=&gt;{
+        e.includes(&#x27;/*&#x27;) || e.includes(&#x27;*/&#x27;)?jsState= true:&#x27;&#x27;;
+        e.includes(&#x27;/*&#x27;)? jsState = true:&#x27;&#x27;;
+        e.includes(&#x27;*/&#x27;)? jsState = false:&#x27;&#x27;;
+        jsState===true||e.includes(&#x27;*/&#x27;)? a[i]=&#x27;&#x27;:a[i]=e; 
+    });
+
+    nowon ===&#x27;css&#x27;? dts= dts.map(m=&gt; m.includes(&#x27;//&#x27;)&amp;&amp;!m.includes(&#x27;htt&#x27;)?m.replace(&#x27;//&#x27;,&#x27;/*&#x27;)+&#x27;*/&#x27;:m):&#x27;&#x27;;
+    nowon === &#x27;css&#x27;? dts = dts.filter(f=&gt;f!=&#x27;&#x27;):&#x27;&#x27;;
+
+    nowon === &#x27;css&#x27;? dts = dts.map(m=&gt; m.replace(/  /g,&#x27;&#x27;)):&#x27;&#x27;;
+    ttDats =dts.map((m,i)=&gt;(m.includes(&#x27;//&#x27;)&amp;&amp;!m.includes(&#x27;http&#x27;) &amp;&amp;!m.includes(&#x27;svg&#x27;)&amp;&amp;(m.includes(&#x27;:&#x27;)||m.includes(&#x27;{&#x27;)||m.includes(&#x27;}&#x27;)))?(m.search(reg)&gt;0 || m.search(names)&gt;0)?`${m}\n`:&#x27;&#x27;:`${m}\n`).reduce((p,r)=&gt;p+r);
+    nowon === &#x27;css&#x27;? ttDats = ttDats.toString().replace(/{\n/g,&#x27;{&#x27;).replace(/;\n/g,&#x27;;&#x27;):&#x27;&#x27;;
+    ttDats = ttDats.split(&#x27;\n&#x27;);
+    nowon==&#x27;css&#x27;?ttDats = ttDats.map(m=&gt; m.includes(&#x27;root&#x27;)?&#x27;&#x27;:m):&#x27;&#x27;;
+    ttDats = ttDats.map(m=&gt; m.includes(&#x27;@charset&#x27;)?m.replace(/;/,&#x27;;\n&#x27;):m);
+    ttDats = ttDats.map(m=&gt;m.includes(&#x27;{}&#x27;) ||m.includes(&#x27;{ }&#x27;) ||m.includes(&#x27;{\t}&#x27;)?&#x27;&#x27;:m+&#x27;\n&#x27;);
+    ttDats = ttDats.filter(f=&gt;f!==&#x27;\n&#x27;);
+    return ttDats.join(&#x27;&#x27;).toString();
+}</code></pre><p id="0d9f0244-b825-4634-941f-92f814f17226" class="">
+</p></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
