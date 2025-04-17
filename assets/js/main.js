@@ -1,5 +1,9 @@
 import fn from './funcs.js';
-fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],'rgba(255, 99, 71, 0.4)');
+let skillCol = 'rgba(255,206,40,0.9)';
+let toolCol = 'rgba(42, 157, 143,0.9)';
+
+fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],skillCol);
+
 
 // 컨텐츠 ui 스크립트 
 function uiWorks(prd){
@@ -37,7 +41,7 @@ function uiWorks(prd){
             ):
             '';
             i<2?er.currentTarget.innerText=='Tools'?
-            fn.setChart(['Git', 'Photoshop', 'Jira', 'Illustrator','Figma'],[4,4.5,4.8,4,4],'rgba(62, 122, 164, 0.5)'): fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],'rgba(255, 99, 71, 0.4)'):'';
+            fn.setChart(['Git', 'Photoshop', 'Jira', 'Illustrator','Figma', 'Zeplin'],[5,4,5,4,4,4],toolCol): fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],skillCol):'';
         
         })
     });

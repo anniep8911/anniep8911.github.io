@@ -1,6 +1,8 @@
 @use './reset.min.css';
 @use './prism.css';
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
 
 @mixin scroll(){
     &::-webkit-scrollbar{
@@ -51,17 +53,29 @@
 $blue:rgba(189, 225, 241, 0.4);
 $blue-hov:rgb(47, 113, 141, 1);
 $wh-bg :rgba(255, 255, 255, 0.8);
-
+$cursors :  url('../image/cursor.png') 2 2, auto;
+$pointers :  url('../image/pointer.png') 2 2, auto;
+$shadow : 4px 4px 0#fea21d;
 
 :root{
     --cnt-art:4;
 }
+
+
+* ::selection {
+    background: #FECB00;   /* 노랑 블럭색 */
+    color: #1A1A1A;         /* 진한 텍스트 */
+  }
 // common
 html{
     font-size: min(0.7vw,10px);
-    font-family: "Gowun Dodum", sans-serif;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    cursor: $cursors;
+    a{
+        cursor: $pointers;
+    }
     body{
-        background-color: #e0e2e9;
+        background-image: url('../image/bg.png');
         position: relative;
         h1{
             opacity: 0;
@@ -88,7 +102,20 @@ html{
             display: none;
         }
         .btn-more{
-            cursor: pointer;
+            cursor: $pointers;
+            span{
+                font-size: 30px;
+                cursor: $pointers;
+                &:nth-of-type(1){
+                    color: yellow;
+                }
+                &:nth-of-type(2){
+                    color: green;
+                }
+                &:nth-of-type(3){
+                    color: orange;
+                }
+            }
         }
         .opts{
             &::after{
@@ -99,7 +126,7 @@ html{
                 height: 100%;
                 top: 0;
                 left: 0;
-                cursor: pointer;
+                cursor: $pointers;
             }
             &.open{
                 height: auto;
@@ -123,24 +150,42 @@ html{
 
 // chatbot
 .robot-response{
-    width: 10rem;
-    height: 10rem;
+    width: 20rem;
+    height: 20rem;
     position: absolute;
     border-radius: 50%;
     right: 0;bottom: 0;
     animation: mov 2s infinite linear;
-    cursor: pointer;
+    cursor: $pointers;
     overflow: hidden;
     transition: height 0.5s;
     position: absolute;
     color: transparent;
     .robot{
         position: absolute;
-        width: 10rem;
-        height: 10rem;
+        width: 20rem;
+        height: 20rem;
         z-index: 2;
-        @include img('../image/queicons.png');
+        animation: robot 1.5s infinite;
     }
+    &:hover .robot{
+        animation: unset;
+        left: 0rem;
+        @include img('../image/queicons2.png');
+    }
+    
+    @keyframes robot {
+        0%{
+            @include img('../image/queicons.png');
+        }
+        50%{
+            @include img('../image/queicons1.png');
+        }
+        100%{
+            @include img('../image/queicons.png');
+        }
+    }
+
     .hdr{
         position: inherit;
         display: none;
@@ -159,7 +204,7 @@ html{
             margin-top: 1rem;
             display: inline-block;
             padding:0 2rem;
-            border-radius: 2rem;
+            border-radius: 1rem;
             &.ans{
                 max-width: 85%;
                 word-break: keep-all;
@@ -198,6 +243,7 @@ html{
                     margin-right: 1rem;
                     display: block;
                     width: fit-content;
+                    
                     &:hover{
                         background-color: #fff;
                         font-weight: 700;
@@ -210,14 +256,26 @@ html{
     &.open{
         width: calc(100% / 12 * 4);
         height: calc(100% - 4rem);
-        background: rgba(189, 225, 241, 1);
-        border-radius: 2rem;
+        background: #0079cb;
+        border-radius: 0.5rem;
+        border: 5px solid black;
         padding:  0 4rem;
         padding-top: 0;
         animation: unset;
         color: #000;
         -webkit-tap-highlight-color :transparent;
         cursor: auto;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            margin: auto;
+            top: 0;left: 0;right: 0;bottom: 0;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            border: 3px solid black;
+            background-color: #1c9be9;
+        }
         .robot{
             display: none;
         }
@@ -225,7 +283,6 @@ html{
             display: block;
             width: calc(100% - 6rem);
             padding-top: 2rem;
-            background-color: rgba(189, 225, 241, 1);
             h3{
                 line-height: 2rem;
                 font-size: 1.8rem;
@@ -239,14 +296,16 @@ html{
                 right: 2rem;
                 top: 2rem;
                 font-size: 3rem;
-                cursor: pointer;
+                cursor: $pointers;
             }
         }
         .answer{
             display: block;
+            z-index: 3;
+            position: relative;
             .others{
                 span{
-                    cursor: pointer;
+                    cursor: $pointers;
                 }
             }
             
@@ -265,7 +324,8 @@ html{
     margin: auto;
     top: 4rem;left: 0;
     z-index: 3;
-    border-radius: 3rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
     padding: 3rem;
     padding-right: 2rem;
     opacity: 1;
@@ -345,7 +405,7 @@ html{
         right: 3rem;
         line-height: 5rem;
         font-size: 3.8rem;
-        cursor: pointer;
+        cursor: $pointers;
     }
     &.close{
         height: 100%;
@@ -364,11 +424,13 @@ html{
         justify-content: space-between;
         &>article{
             width: calc(50% - 10px);
-            border-radius:2.5rem;
+            border-radius:0.5rem;
             position: relative;
+            border: 1px solid black;
+            box-shadow: $shadow;
         }
         .hdr-left{
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255,255,255,0.5);
             padding: 2rem;
             overflow: hidden;
             .btns{
@@ -389,7 +451,7 @@ html{
                     font-size: 1.4rem;
                     line-height: 2rem;
                     li{
-                        cursor: pointer;
+                        cursor: $pointers;
                         &:hover{
                             color: rgb(47, 113, 141);
                          }
@@ -397,8 +459,8 @@ html{
                 }
             }
             .image{
-                width:15rem;
-                height:15rem;
+                width:18rem;
+                height:18rem;
                 border-radius: 50%;
                 background-image: url('../image/annie.jpg');
                 background-size: 200%;
@@ -416,23 +478,15 @@ html{
                     height: 2.5rem;
                     font-size: 1.4rem;
                     font-weight: 700;
-                    line-height: 2.5rem;
+                    line-height: 2.8rem;
                     text-align: center;
                     text-transform: capitalize;
                     bottom: 0;
                     left: 0;right: 0;
-                    background-color: #fff;
+                    background-color: #34C759;
+                    color: #000;
                     border-radius: 1rem;
                     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-                    &::before{
-                        content:'';
-                        display: inline-block;
-                        width: 1rem;
-                        height: 1rem;
-                        background-color: greenyellow;
-                        border-radius: 50%;
-                        margin-right: 2px;
-                    }
                 }  
             }
             .txts{
@@ -452,17 +506,17 @@ html{
 
             video{
                 position: absolute;
-                top: 0;
+                top: -20%;
                 left: 0;
                 z-index: -1;
-                height: 100%;
+                width: 100%;
             }
         }
 
 
         .hdr-right{
             position: relative;
-            background-color: #fff;
+            background-color:#C7E9F1;
             .opts{
                 padding: 0 1.5rem 0 1rem;
                 text-align: center;
@@ -479,7 +533,7 @@ html{
                 border-radius: 1rem;
                 @include options();
                 li{
-                    cursor: pointer;
+                    cursor: $pointers;
                 }
                 &.open{
                     height: auto;
@@ -493,8 +547,9 @@ html{
 // section - cont01
 .left-wrap{
     &>section{
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 2.5rem;
+        background-color: #ffd6dc;
+        border-radius: 0.5rem;
+        border: 1px solid black;
         margin-top: 3rem;
         padding: 2rem;
         width:calc(100% / 12 * 8 - 20px);
@@ -503,6 +558,7 @@ html{
         position: absolute;
         left: 0;
         bottom: 0;
+        box-shadow: $shadow;
         &.expand{
             background-color: #fff;
             width: 100%;
@@ -565,12 +621,12 @@ html{
                 li{
                     line-height: 2rem;
                     font-size: 1.4rem;
-                    cursor: pointer;
+                    cursor: $pointers;
                 }
             }
             .btn{
                 line-height: 2rem;
-                cursor: pointer;
+                cursor: $pointers;
                 color: transparent;
                 width: 3rem;
                 height: 2rem;
@@ -686,7 +742,7 @@ html{
                         padding-right: 1rem;
                         border-radius: 0 2rem 2rem 0;
                         background-color: rgba(255, 99, 71, 0.1);
-                        cursor: pointer;
+                        cursor: $pointers;
                         width: 100%;
                         @include ellipse;
                         h3{
@@ -705,9 +761,11 @@ html{
 // right-cont02
 .right-wrap{
     width: calc(100% / 12 * 4 - 1.85%);
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 2.5rem;
+    background-color: #D9D4F2;
+    border-radius: 0.5rem;
+    border: 1px solid black;
     height: calc(100vh - 8rem);
+    box-shadow: $shadow;
     header{
         display: flex;
         justify-content: space-between;
@@ -731,7 +789,7 @@ html{
                 right: 0;
             };
             li{
-                cursor: pointer;
+                cursor: $pointers;
                 text-transform: capitalize;
             }
         }
@@ -758,7 +816,7 @@ html{
             border-bottom: 1px solid #ccc;
             margin-top: 1rem;
             transition: all 0.5s;
-            cursor: pointer;
+            cursor: $pointers;
             .texts{
                 h3{
                     line-height: 4rem;
@@ -837,7 +895,7 @@ html{
         z-index: 3;
         &.open{
             width: 100vw;
-            height: 100svh;
+            height: 100dvh;
             bottom: 0;
             .hdr{
                 border-radius: 2rem;

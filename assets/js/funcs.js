@@ -19,7 +19,9 @@ export default{
                 datasets: [{
                     label: 'Level',
                     data: datas,
-                    borderWidth: 0,
+                    borderWidth: 2,
+                    borderColor: '#000',
+                    pointRadius: 0, 
                     backgroundColor:bgc,
                     hoverBackgroundColor:'blue',
                     pointRotation:5,
@@ -32,6 +34,26 @@ export default{
                         min:0,
                         max:5,
                         stepSize:1,
+                        angleLines: {
+                            color: '#000',      // 축 선 색
+                            lineWidth: 2
+                          },
+                          grid: {
+                            color: '#000',      // 동심원 색
+                            lineWidth: 1.5
+                            
+                          },
+                          ticks: {
+                            stepSize: 1,  
+                            display: false    // ✅ 숫자 숨김
+                          },
+                          pointLabels: {
+                            color: '#000', // ← 여기!
+                            font: {
+                              size: 11,
+                              weight: 'bold'
+                            }
+                          },
                         }
                     },
                     plugins:{
@@ -40,7 +62,6 @@ export default{
                         },
                         tooltip:{
                             enabled:true,
-                            
                         }
                     },
                 }

@@ -1,122 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹 퍼블리셔 박정아</title>
-    <link rel="stylesheet" href="./assets/style/main.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 퍼블리셔 박정아</title>
+  <link rel="stylesheet" href="./assets/style/main.min.css">
 </head>
+
 <body>
-    <h1>웹퍼블리셔 박정아 개인 페이지입니다.</h1>
-    <div class="wrap">
-        <div class="left-wrap">
-            <header>
-                <article class="hdr-left">
-                    <div class="btns">
-                        <h3>profile</h3>
-                        <div class="btn-more">•••</div>
-                        <ul class="option-list close">
-                            <li><a href="https://github.com/anniep8911" target="_blank">git</a></li>
-                            <li><a href="https://www.npmjs.com/~anniepark" target="_blank">npm</a></li>
-                            <!-- <li><a href="./assets/posts/CV.pdf" target="_blank" download="경력기술서_박정아">경력기술서</a></li> -->
-                        </ul>
-                    </div>
-                    <div class="image">personal image
-                        <span>available</span>
-                    </div>
-                    <div class="txts">
-                        <h2>Jeong A Park</h2>
-                        <p>UI Developer</p>
-                    </div>
-                    <video src="./assets/image/sulsan.mp4" muted autoplay loop></video>
-                </article>
-                <article class="hdr-right">
-                    <ul class="opts">
-                        <li>skills</li>
-                        <li>tools</li>
-                    </ul>
-                    <div class="charts">
-
-                    </div>
-                    <!-- <canvas id="charts"></canvas> -->
-                </article>
-            </header>
-            <section class="cont01">
-                <header>
-                    <h2>Projects <span>in 2024~2021</span></h2>
-                    <ul class="opts" state="fixed">
-                        <li>Show all</li>
-                        <li>2024</li>
-                        <li>2023</li>
-                        <li>2022</li>
-                        <li>2021</li>
-                    </ul>
-                    <div class="btn">확장클릭</div>
-                </header>
-               <section>
-                    <ul class="chart-prog">
-                        <li>2024</li>
-                        <li>2023</li>
-                        <li>2022</li>
-                        <li>2021</li>
-                    </ul>
-                    <div class="projects" data-year="Show all">
-                       <!-- 프로젝트 데이터 들어가는 자리 -->
-                    </div>
-                </section>
-            </section>
-        </div>
-        <div class="right-wrap">
-            <header>
-                <h2>Works</h2>
-                <ul class="opts">
-                    <li>company</li>
-                    <li>personal</li>
-                </ul>
-            </header>
-            <section class="cont02" data-cat="Company">
-             <!-- 프로젝트 데이터 들어가는 자리 -->
-            </section>
-        </div>
-        <!-- 챗봇 -->
-        <div class="robot-response">
-            <div class="robot">챗봇</div>
-            <div class="hdr">
-                <h3>저에 대해서 궁금한점이 있나요?</h3>
-                <p>궁금한 내용을 선택해주세요!</p>
-                <div class="btn-close">X</div>
-            </div>
-            <ul class="answer">
-                <div class="ans-gr">
-                  <!-- 질문내용 바인딩 될 곳 -->
-                </div>
-                <li class="others">
-                    <!-- 질문 데이터 들어오는곳 -->
-                </li>
+  <h1>웹퍼블리셔 박정아 개인 페이지입니다.</h1>
+  <div class="wrap">
+    <div class="left-wrap">
+      <header>
+        <article class="hdr-left">
+          <div class="btns">
+            <h3>profile</h3>
+            <div class="btn-more"><span>•</span><span>•</span><span>•</span></div>
+            <ul class="option-list close">
+              <li><a href="https://github.com/anniep8911" target="_blank">git</a></li>
+              <li><a href="https://www.npmjs.com/~anniepark" target="_blank">npm</a></li>
+              <!-- <li><a href="./assets/posts/CV.pdf" target="_blank" download="경력기술서_박정아">경력기술서</a></li> -->
             </ul>
-        </div>
-        <!-- 디테일 팝업 -->
-        <div class="detailed-pops close">
-            <header>
-                <h2>프로젝트명</h2>
-                <h4><span>진행 회사명</span> <span>진행 년월</span></h4>
-                <h3>주요 성과: <span>성과내용</span></h3>
-                <p><span>hash1</span><span>hash1</span><span>hash1</span><span>hash1</span></p>
-            </header>
-            <section>
-                <!-- 내용들어갈 위치 -->
-            </section>
-            <div class="btn-close">X</div>
-        </div>
-    </div>
+          </div>
+          <div class="image">personal image
+            <span>available</span>
+          </div>
+          <div class="txts">
+            <h2>Jeong A Park</h2>
+            <p>UI Developer</p>
+          </div>
+          <video src="./assets/image/sulsan.mp4" muted autoplay loop></video>
+        </article>
+        <article class="hdr-right">
+          <ul class="opts">
+            <li>skills</li>
+            <li>tools</li>
+          </ul>
+          <div class="charts">
 
-    <!-- 차트용 플러그인 -->
-    <script src="./assets/js/chart.js"></script>
-    <!-- 데이터 바인딩 스크립트 -->
-    <script src="./assets/js/setData.js" type="module"></script>
-    <!-- 메인 스크립트 -->
-    <script src="./assets/js/main.js" type="module"></script>
-    <!-- 마크다운 포스팅 스크립트 -->
-    <script src="./assets/js/markdown.js" type="module"></script>
+          </div>
+          <!-- <canvas id="charts"></canvas> -->
+        </article>
+      </header>
+      <section class="cont01">
+        <header>
+          <h2>Projects <span>in 2024~2021</span></h2>
+          <ul class="opts" state="fixed">
+            <li>Show all</li>
+            <li>2024</li>
+            <li>2023</li>
+            <li>2022</li>
+            <li>2021</li>
+          </ul>
+          <div class="btn">확장클릭</div>
+        </header>
+        <section>
+          <ul class="chart-prog">
+            <li>2024</li>
+            <li>2023</li>
+            <li>2022</li>
+            <li>2021</li>
+          </ul>
+          <div class="projects" data-year="Show all">
+            <!-- 프로젝트 데이터 들어가는 자리 -->
+          </div>
+        </section>
+      </section>
+    </div>
+    <div class="right-wrap">
+      <header>
+        <h2>Works</h2>
+        <ul class="opts">
+          <li>company</li>
+          <li>personal</li>
+        </ul>
+      </header>
+      <section class="cont02" data-cat="Company">
+        <!-- 프로젝트 데이터 들어가는 자리 -->
+      </section>
+    </div>
+    <!-- 챗봇 -->
+    <div class="robot-response">
+      <div class="robot">챗봇</div>
+      <div class="hdr">
+        <h3>저에 대해서 궁금한점이 있나요?</h3>
+        <p>궁금한 내용을 선택해주세요!</p>
+        <div class="btn-close">X</div>
+      </div>
+      <ul class="answer">
+        <div class="ans-gr">
+          <!-- 질문내용 바인딩 될 곳 -->
+        </div>
+        <li class="others">
+          <!-- 질문 데이터 들어오는곳 -->
+        </li>
+      </ul>
+    </div>
+    <!-- 디테일 팝업 -->
+    <div class="detailed-pops close">
+      <header>
+        <h2>프로젝트명</h2>
+        <h4><span>진행 회사명</span> <span>진행 년월</span></h4>
+        <h3>주요 성과: <span>성과내용</span></h3>
+        <p><span>hash1</span><span>hash1</span><span>hash1</span><span>hash1</span></p>
+      </header>
+      <section>
+        <!-- 내용들어갈 위치 -->
+      </section>
+      <div class="btn-close">X</div>
+    </div>
+  </div>
+
+  <!-- 차트용 플러그인 -->
+  <script src="./assets/js/chart.js"></script>
+  <!-- 데이터 바인딩 스크립트 -->
+  <script src="./assets/js/setData.js" type="module"></script>
+  <!-- 메인 스크립트 -->
+  <script src="./assets/js/main.js" type="module"></script>
+  <!-- 마크다운 포스팅 스크립트 -->
+  <script src="./assets/js/markdown.js" type="module"></script>
 </body>
+
 </html>
