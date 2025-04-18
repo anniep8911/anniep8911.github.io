@@ -10,13 +10,13 @@ function uiWorks(prd){
     const opt= document.querySelector('.opt');
     const mores =  document.querySelectorAll('.btn-more');
     const cont1Art = document.querySelectorAll('.cont01 article');
-    const cont2Art = document.querySelectorAll('.cont02 article');
     const modal = document.querySelector('.detailed-pops');
     const modalClose = document.querySelector('.detailed-pops .btn-close');
     const cont01List = document.querySelectorAll('.cont01 li');
     const cont01 = document.querySelector('.cont01 .chart-prog');
     const prj = document.querySelector('.cont01 .projects');
     const dev = fn.checkWin();
+    const keys= document.querySelectorAll('.hdr-exp p span');
 
     opt.addEventListener('click',(e)=>{
         fn.toggleClass(e.currentTarget,'tool');
@@ -41,23 +41,11 @@ function uiWorks(prd){
         })
     });
     
-    cont2Art.forEach((e,i)=>{
-        e.addEventListener('click',(ee)=>{
-            cont2Art.forEach((el)=>{
-                el.classList.remove('selected');
-            });
-            ee.currentTarget.className += ' selected';
-            modal.classList.remove('close');
-            fn.setModal(prd[i].name,prd[i].company,`${prd[i].year}.${prd[i].month}`,prd[i].hashes,prd[i].path,prd[i].goal);
-        })
-    });
+  
 
     cont1Art.forEach((e,i)=>{
         e.addEventListener('click',()=>{
             modal.classList.remove('close');
-            cont2Art.forEach((el)=>{
-                el.classList.remove('selected');
-            });
             fn.setModal(prd[i].name,prd[i].company,`${prd[i].year}.${prd[i].month}`,prd[i].hashes,prd[i].path,prd[i].goal);
         })
     });
@@ -84,6 +72,23 @@ function uiWorks(prd){
             fn.addClass(prj,'single')
             :
             fn.removeClass(prj,'single');
+        })
+    })
+
+    keys.forEach((e)=>{
+        e.addEventListener('click',(e)=>{
+            fn.toggleClass(e.currentTarget,'sel');
+            let now = keys;
+            now= Array.from(now).filter(f=>f.classList.contains('sel')).map(m=> m.innerText);
+            
+            cont1Art.forEach((a)=>{
+                let hash = a.getAttribute('data-hasy');
+                hash = now.some(s=> hash.includes(s));
+                hash?
+                a.setAttribute('data-show','show')
+                :
+                a.setAttribute('data-show','none');
+            })
         })
     })
 }

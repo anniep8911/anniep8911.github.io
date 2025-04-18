@@ -714,29 +714,17 @@ html{
             padding-bottom: 2rem;
             padding-right: 7rem;
             .projects{
-                margin-top: 3rem;
-                @for $i from 1 through 5{
-                    &[data-year='202#{$i}']{
-                        article{
-                            &[data-year='202#{$i}']{
-                                display: flex;
-                            }
-                        }
-                    }
-                }
+                margin-top: 3rem;        
+
                 &[data-year='ALL']{
                     article{
-                        display: flex;
-                        align-items: center;
                         @for $i from 2026 through 2021{
                             &[data-year='#{$i}']{
                                 margin-left: calc((100% / 6) * (2026 - #{$i}));
                             }
                         }
                     }
-                    
                 }
-
 
                 article{
                     overflow: hidden;
@@ -749,6 +737,9 @@ html{
                     display: none;
                     align-items: center;
                     background-color: rgba(255,255,255,0.3);
+                    &[data-show="show"] {
+                        display: flex;
+                    }
                     &[data-attr="2"]{
                         margin-left: calc((100% / 3 ));
                     }

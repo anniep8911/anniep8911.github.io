@@ -14,7 +14,7 @@ getData('./assets/data/data.json').then(async res=>{
             totalHash.push(e);
         });
 
-        let addPrd = `<article data-month=${p.month} data-year=${p.year} data-cat="${p.company}">
+        let addPrd = `<article data-month=${p.month} data-year=${p.year} data-cat="${p.company}"  data-hasy="${p.hashes}" data-show="show">
                         <div class="image" style="background:url('${p.icon}') #fff no-repeat center left; background-size:contain">projects image</div>
                         <div class="texts">
                             <h3>${p.name}</h3>
