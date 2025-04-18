@@ -157,7 +157,7 @@ html{
     position: absolute;
     border-radius: 50%;
     right: -10rem;
-    bottom: 3rem;
+    bottom: 0;
     animation: mov 2s infinite linear;
     cursor: $pointers;
     transition: height 0.5s;
@@ -260,13 +260,14 @@ html{
 
     &.open{
         width: 100%;
-        height: calc(100% - 4rem);
+        height: calc(100% - 1rem);
         border-radius: 0.5rem;
         padding-top: 0;
         animation: unset;
         right: 0;
         color: #000;
         overflow: hidden;
+        box-shadow: $shadow;
         *{
             cursor: $cursors;
         }
@@ -335,13 +336,14 @@ html{
 .detailed-pops{
     position: absolute;
     width: 100%;
-    height: calc(100% - 4rem);
+    height: calc(100% - 2rem);
     margin: auto;
     top: 0.8rem;left: 0;
     z-index: 3;
     border-radius: 0.5rem;
     opacity: 1;
     transition: opacity 0.5s;
+    box-shadow: $shadow;
     &::before{
         content: '';
         display: block;
