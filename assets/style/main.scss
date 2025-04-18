@@ -714,30 +714,11 @@ html{
             padding-right: 7rem;
             .projects{
                 margin-top: 3rem;
-                @for $i from 1 through 4{
+                @for $i from 1 through 5{
                     &[data-year='202#{$i}']{
                         article{
                             &[data-year='202#{$i}']{
                                 display: flex;
-                            }
-                        }
-                    }
-
-                    @if $i < 4{
-                        @for $i from 1 through 12{
-                            article{
-                                &[data-month='#{$i}']{
-                                    margin-left: calc((100% / 12) * (#{$i} - 1));
-                                }
-                            }
-                        }
-                    }
-                    @else{
-                        @for $i from 1 through 3{
-                            article{
-                                &[data-month='#{$i}']{
-                                    margin-left: calc(100% / 3 * (#{$i} - 1));
-                                }
                             }
                         }
                     }
@@ -952,6 +933,61 @@ html{
                }
            } 
         }
+        &>section{
+            display: flex;
+            height: calc(100vh - 40rem);
+            header{
+                width: 20%;
+                .chart-prog{
+                    border-bottom: 0px solid transparent;
+                    border-left: 5px dotted #9c3264;
+                    display: block;
+                    text-align: center;
+                    &::after{
+                        width: 5px;
+                        top: 0;
+                        left: -5px;
+                        height: calc(16.66%*var(--packman) - 2.5rem);
+                        transition: height 0.5s;
+                    }
+                    &::before{
+                        left: -18px;
+                        top: calc(16.66%*var(--packman) - 2.5rem);
+                        transition: top 0.5s;
+                    }
+                    li{
+                        width: 100%;
+                        padding-left: 10px;
+                        &::after{
+                            left: -10px;
+                            right: auto;
+                            bottom: 2rem;
+                        }
+                    }
+                }
+            }
+            section{
+                width: calc(80% - 10px);
+                margin-left: 10px;
+                padding: 0;
+                height: 100%;
+                .projects{
+                    &[data-year='ALL']{
+                        article{
+                            display: flex;
+                            align-items: center;
+                            @for $i from 2026 through 2021{
+                                &[data-year='#{$i}']{
+                                    margin-left: 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
     .robot-response{
@@ -963,6 +999,11 @@ html{
             width: 100vw;
             height: 100dvh;
             bottom: 0;
+            .hdr{
+                h3{
+                    font-size: 2.3rem;
+                }
+            }
         }
         .answer{
             height: calc(100vh - 18rem);

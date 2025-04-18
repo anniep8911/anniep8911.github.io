@@ -72,9 +72,11 @@ function uiWorks(prd){
             let now = i+0.5;
             anc = prev;
             prev=i;
+            
+            fn.checkWin()!=='mob'?
             anc>prev?
-            fn.addClass(cont01,'prev'):
-            fn.removeClass(cont01,'prev')
+            fn.addClass(cont01,'prev'):fn.removeClass(cont01,'prev'):'';
+            
             document.querySelector('.cont01').style.setProperty('--packman', now);
             prj.setAttribute('data-year',e.innerText);
             e.innerText!=='ALL'?

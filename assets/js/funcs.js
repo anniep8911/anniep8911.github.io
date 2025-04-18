@@ -5,7 +5,8 @@ const dom={
     popHdrDate : document.querySelector('.detailed-pops header h4 span:nth-of-type(2)'),
     popHdrHashes : document.querySelector('.detailed-pops header p'),
     popDetail : document.querySelector('.detailed-pops section'),
-    cont1month : document.querySelector('.cont01 .chart-prog')
+    cont1month : document.querySelector('.cont01 .chart-prog'),
+    windowWidth : window.innerWidth
 }
 export default{
     setChart:(label,datas,bgc)=>{
@@ -112,5 +113,10 @@ export default{
         for(let i in st){
             dom.style[i]=st[i];
         }
+    },
+    checkWin(){
+        let st = '';
+        dom.windowWidth>700 ? st='pc':st='mob';
+        return st;
     }
 }

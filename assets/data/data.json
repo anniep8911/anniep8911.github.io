@@ -1,6 +1,28 @@
 {
     "projects":[
         {
+            "name":"주말강의",
+            "hashes":["javascript","html","CSS"],
+            "company":"현대태양광에너지(프리랜서)",
+            "year":2025,
+            "month":8,
+            "goal":"chart.js 모듈화, UI규칙 제작, 70개 통계 신규페이지 5주 완성",
+            "icon":"./assets/image/personal.png",
+            "link":"./",
+            "path":"posts11.md"
+        },
+        {
+            "name":"키보드 응용프로그램",
+            "hashes":["javascript","electron"],
+            "company":"현대태양광에너지(프리랜서)",
+            "year":2025,
+            "month":8,
+            "goal":"chart.js 모듈화, UI규칙 제작, 70개 통계 신규페이지 5주 완성",
+            "icon":"./assets/image/personal.png",
+            "link":"./",
+            "path":"posts11.md"
+        },
+        {
             "name":"태양광에너지 솔루션 구축(Chart,Dash board)",
             "hashes":["Chart.js","고정형","웹표준","크로스브라우징"],
             "company":"현대태양광에너지(프리랜서)",
