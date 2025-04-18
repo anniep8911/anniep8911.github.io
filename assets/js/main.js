@@ -16,6 +16,7 @@ function uiWorks(prd){
     const cont01List = document.querySelectorAll('.cont01 li');
     const cont01 = document.querySelector('.cont01 .chart-prog');
     const prj = document.querySelector('.cont01 .projects');
+    const dev = fn.checkWin();
 
     opt.addEventListener('click',(e)=>{
         fn.toggleClass(e.currentTarget,'tool');
@@ -73,7 +74,7 @@ function uiWorks(prd){
             anc = prev;
             prev=i;
             
-            fn.checkWin()!=='mob'?
+            dev!=='mob'?
             anc>prev?
             fn.addClass(cont01,'prev'):fn.removeClass(cont01,'prev'):'';
             

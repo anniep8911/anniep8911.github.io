@@ -995,6 +995,12 @@ html{
         bottom: 2rem;
         right: 0;
         z-index: 3;
+        width: 10rem;
+        height: 10rem;
+        .robot{
+            width: 10rem;
+            height: 10rem;
+        }
         &.open{
             width: 100vw;
             height: 100dvh;
