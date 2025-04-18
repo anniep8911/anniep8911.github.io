@@ -4,12 +4,14 @@ import {uiWorks,chatBot} from './main.js';
 getData('./assets/data/data.json').then(async res=>{
     let prd = await dataLoading(res.projects);
     const cont01Prd = document.querySelector('.cont01 .projects');
-    const cont02Prd = document.querySelector('.cont02');
+    const cont02Prd = document.querySelector('.hdr-exp p');
+    let totalHash = [];
 
     prd.forEach((p,i)=>{
         let hashes = [];
         p.hashes.forEach((e)=>{
             hashes.push(` <span>#${e}</span> `)
+            totalHash.push(e);
         });
 
         let addPrd = `<article data-month=${p.month} data-year=${p.year} data-cat="${p.company}">
@@ -21,23 +23,16 @@ getData('./assets/data/data.json').then(async res=>{
                         </div>
                     </article>`;
 
-        let addPrd2 = `<article data-cat="${p.company}">
-            <div class="image"></div>
-            <div class="texts">
-                <div class="btns">
-                    <div class="btn">${p.year}</div>
-                    <div class="btn">${p.company}</div>
-                </div>
-                <h3>${p.name}</h3>
-                <p>
-                    ${hashes.join('')}
-                </p>
-            </div>
-        </article>`;
-
         cont01Prd.innerHTML += addPrd;
-        cont02Prd.innerHTML += addPrd2;
         prd.hashes= hashes;
+    });
+
+    totalHash= new Set(totalHash);
+    totalHash.forEach((e)=>{
+        let sp =  document.createElement('span');
+        sp.innerText =  e;
+        
+        cont02Prd.append(sp);
     });
     // UI함수 실행
     return uiWorks(prd);

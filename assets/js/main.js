@@ -7,8 +7,7 @@ fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],
 
 // 컨텐츠 ui 스크립트 
 function uiWorks(prd){
-    const opts = document.querySelectorAll('.opts');
-    const optsList = document.querySelectorAll('.opts li');
+    const opt= document.querySelector('.opt');
     const mores =  document.querySelectorAll('.btn-more');
     const cont1Art = document.querySelectorAll('.cont01 article');
     const cont2Art = document.querySelectorAll('.cont02 article');
@@ -18,33 +17,22 @@ function uiWorks(prd){
     const cont02Prd = document.querySelector('.cont02');
     const cont01ttl = document.querySelector('.cont01 header h2 span');
     const cont01Prd = document.querySelector('.cont01 .projects');
-    const cont01Exp = document.querySelector('.cont01 header .btn');
 
-    opts.forEach(e=>{
-        e.addEventListener('click',(er)=>{
-            fn.toggleClass(er.currentTarget,'open',true);
-        })
-    });
-
-    optsList.forEach((e,i)=>{
-        e.addEventListener('click',(er)=>{
-            let par = er.currentTarget.parentElement;
-            par.getAttribute('state')!==null?(
-                e.innerText==='Show all'?
-                cont01ttl.innerText=`in 2021~2024`:cont01ttl.innerText=`in ${e.innerText}`
-
-            ):par.prepend(er.currentTarget);
-            i>6? cont02Prd.setAttribute('data-cat',er.currentTarget.innerText):'';
-            i>=2&& i<=6? (
-                fn.setMonths(er.currentTarget.innerText),
-                cont01Prd.setAttribute('data-year',`${er.currentTarget.innerText}`)
-            ):
-            '';
-            i<2?er.currentTarget.innerText=='Tools'?
-            fn.setChart(['Git', 'Photoshop', 'Jira', 'Illustrator','Figma', 'Zeplin'],[5,4,5,4,4,4],toolCol): fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],skillCol):'';
-        
-        })
-    });
+    opt.addEventListener('click',(e)=>{
+        fn.toggleClass(e.currentTarget,'tool');
+        let sp = e.currentTarget.querySelector('span');
+        e.currentTarget.classList.length>1?
+        (
+            fn.setChart(['Git', 'Photoshop', 'Jira', 'Illustrator','Figma', 'Zeplin'],[5,4,5,4,4,4],toolCol),
+            sp.innerText = 'click here to see skill'
+            
+        )
+        : 
+        (
+            fn.setChart(['HTML', 'CSS/SCSS', 'JavaScript', 'Node.js', 'Vue.js', 'React.js'],[4,4.5,4.8,3.9,3,3],skillCol),
+            sp.innerText = 'click here to see tool'
+        )
+    })
     
     mores.forEach(e=>{
         e.addEventListener('click',(ee)=>{
@@ -70,7 +58,6 @@ function uiWorks(prd){
             cont2Art.forEach((el)=>{
                 el.classList.remove('selected');
             });
-            cont2Art[i].className += ' selected';
             fn.setModal(prd[i].name,prd[i].company,`${prd[i].year}.${prd[i].month}`,prd[i].hashes,prd[i].path,prd[i].goal);
         })
     });
@@ -79,10 +66,6 @@ function uiWorks(prd){
         modal.className += ' close';
     });
 
-    cont01Exp.addEventListener('click',()=>{
-        fn.toggleClass(cont01, 'expand');
-        fn.toggleClass(modal,'expand');
-    })
 
 
 

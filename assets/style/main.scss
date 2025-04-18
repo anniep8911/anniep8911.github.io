@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
 
-
 @mixin scroll(){
     &::-webkit-scrollbar{
         width: 1.5rem;
@@ -172,6 +171,7 @@ html{
         animation: unset;
         left: 0rem;
         @include img('../image/queicons2.png');
+        filter: drop-shadow(4px 4px 0px #fc0);
     }
     
     @keyframes robot {
@@ -254,7 +254,7 @@ html{
     }
 
     &.open{
-        width: calc(100% / 12 * 4);
+        width: 100%;
         height: calc(100% - 4rem);
         background: #0079cb;
         border-radius: 0.5rem;
@@ -264,7 +264,9 @@ html{
         animation: unset;
         color: #000;
         -webkit-tap-highlight-color :transparent;
-        cursor: auto;
+        *{
+            cursor: $cursors;
+        }
         &::before{
             content: '';
             display: block;
@@ -418,12 +420,12 @@ html{
 
 // header-left
 .left-wrap{
-    width: calc((100% / 12) * 8 - 1.85%);
+    width: 100%;
     header{
         display: flex;
         justify-content: space-between;
         &>article{
-            width: calc(50% - 10px);
+            width: calc(33.333% - 10px);
             border-radius:0.5rem;
             position: relative;
             border: 1px solid black;
@@ -517,30 +519,62 @@ html{
         .hdr-right{
             position: relative;
             background-color:#C7E9F1;
-            .opts{
-                padding: 0 1.5rem 0 1rem;
-                text-align: center;
-                width: 20%;
-                top: 2rem;
-                right: 2rem;
-                line-height: 2rem;
-                font-size: 1.3rem;
-                text-transform: capitalize;
-                height: 2rem;
-                overflow: hidden;
+            .opt{
+                width: 10rem;
+                height: 10rem;
                 position: absolute;
-                outline: 1px solid #ccc;
-                border-radius: 1rem;
-                @include options();
-                li{
-                    cursor: $pointers;
+                right: 0;
+                bottom: 0; 
+                @include img('../image/skill.png');
+                cursor: $pointers;
+                span{
+                    background-color: #33959e;
+                    color: #fff;
+                    display: none;
                 }
-                &.open{
-                    height: auto;
+                
+                &:hover{
+                    filter: drop-shadow(4px 4px 0px #fc0);
+                    span{
+                        display: block;
+                    }
+                }
+                &.tool{
+                    @include img('../image/tool.png');
                 }
             }
         }
 
+        .hdr-exp{
+            background-color: #D9D4F2;
+            border-radius: 0.5rem;
+            border: 1px solid black;
+            box-shadow: $shadow;
+            padding: 3rem;
+            h3{
+                font-size: 3rem;
+                font-weight: 700;
+                color: #4e285f;
+            }
+            p{
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.2rem;
+                max-height: 18rem;
+                overflow-y: scroll;
+                span{
+                    padding: 0.5rem 1rem;
+                    background-color: rgba(255,255,255,0.5);
+                    border-radius: 0.5rem;
+                    font-size: 1.8rem;  
+                    cursor: $pointers;
+                    &.sel{
+                        background-color: rgba(255,255,255,0.8);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -552,119 +586,50 @@ html{
         border: 1px solid black;
         margin-top: 3rem;
         padding: 2rem;
-        width:calc(100% / 12 * 8 - 20px);
+        width: 100%;
         height: calc(100vh - 41rem);
         transition: all 0.5s;
-        position: absolute;
         left: 0;
         bottom: 0;
         box-shadow: $shadow;
-        &.expand{
-            background-color: #fff;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 3;
-            height: calc(100vh - 8rem);
-            header{
-                .btn{
-                    &::before{
-                        content: '↙';             
-                    }
-                }
-            }
-            section{
-                ul{
-                    li{
-                        min-width: auto;
-                    }
-                }
-                .projects:not([data-year="2024"]):not([data-year="Show all"]){
-                    article{
-                        width: calc(100% / 12);
-                        @for $i from 1 through 12{
-                            &[data-month='#{$i}']{
-                                margin-left: calc(((100% - 2.5rem) / 12) * (#{$i} - 1));
-                            }
-                        }
-                    }
-                }
-            }
-        }
         header{
-            align-items: center;
-            position: relative;
-            h2{
-                font-size: 2.5rem;
-                line-height: 4rem;
-                span{
-                    font-size: 14px;
-                }
-            }
-            ul{
-                line-height: 2rem;
-                height: 2rem;
-                overflow: hidden;
-                outline: 1px solid #ccc;
-                border-radius: 1rem;
-                text-align: center;
-                position: absolute;
-                right: 4rem;
-                top: 1rem;
-                padding: 0 3.5rem 0 2rem;
-                background-color: #fff;
-                z-index: 1;
-                @include options(){
-                    font-size: 1.5rem;
-                };
+            width: 100%;
+            display: block;
+            .chart-prog{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 5px solid #9c3264;
                 li{
-                    line-height: 2rem;
-                    font-size: 1.4rem;
-                    cursor: $pointers;
-                }
-            }
-            .btn{
-                line-height: 2rem;
-                cursor: $pointers;
-                color: transparent;
-                width: 3rem;
-                height: 2rem;
-                overflow: hidden;
-                outline: 1px solid #ccc;
-                padding: 0 0.5rem;
-                border-radius:0.2rem;
-                &::before{
-                    content: '↗';
-                    display: block;
-                    color: #969696;
-                    font-size: 1.8rem;
+                    width: calc(100% / 3);
                     text-align: center;
-                    
+                    line-height: 6rem;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    position: relative;
+                    color:#9c3264;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 2rem;
+                        height: 2rem;
+                        background-color: #9c3264;
+                        position: absolute;
+                        margin: auto;
+                        left: 0;right: 0;
+                        bottom: calc(-1rem - 2.5px);
+                    }           
                 }
             }
-
         }
         section{
             height: calc(100% - 8rem);
             overflow-y: scroll;
             @include scroll();
-            .chart-prog{
-                display: flex;
-                justify-content: space-between;
-                li{
-                    width: calc(100% / 3);
-                    text-align: center;
-                    line-height: 2rem;
-                    font-size: 1.5rem;
-                    text-transform: uppercase;
-                    background-color: rgba(0,0,0,0.04);
-                    &:nth-of-type(odd){
-                        background-color: rgba(189, 225, 241, 0.4);
-                    }
-                }
-            }
+
             .projects{
+                margin-top: 3rem;
                 @for $i from 1 through 4{
                     &[data-year='202#{$i}']{
                         article{
@@ -696,9 +661,9 @@ html{
                 &[data-year='Show all']{
                     article{
                         display: flex;
-                        @for $i from 2024 through 2017{
+                        @for $i from 2025 through 2021{
                             &[data-year='#{$i}']{
-                                margin-left: calc((100% / 4) * (2024 - #{$i}));
+                                margin-left: calc((100% / 5) * (2025 - #{$i}));
                             }
                         }
                     }
@@ -758,7 +723,7 @@ html{
     }
 }
 
-// right-cont02
+// right-cont02 삭제예정
 .right-wrap{
     width: calc(100% / 12 * 4 - 1.85%);
     background-color: #D9D4F2;
