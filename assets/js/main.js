@@ -13,10 +13,8 @@ function uiWorks(prd){
     const cont2Art = document.querySelectorAll('.cont02 article');
     const modal = document.querySelector('.detailed-pops');
     const modalClose = document.querySelector('.detailed-pops .btn-close');
-    const cont01 = document.querySelector('.cont01');
-    const cont02Prd = document.querySelector('.cont02');
-    const cont01ttl = document.querySelector('.cont01 header h2 span');
-    const cont01Prd = document.querySelector('.cont01 .projects');
+    const cont01List = document.querySelectorAll('.cont01 li');
+    const cont01 = document.querySelector('.cont01 .chart-prog');
 
     opt.addEventListener('click',(e)=>{
         fn.toggleClass(e.currentTarget,'tool');
@@ -66,10 +64,19 @@ function uiWorks(prd){
         modal.className += ' close';
     });
 
-
-
-
-
+    let anc =0;
+    let prev= 0;
+    cont01List.forEach((e,i)=>{
+        e.addEventListener('click',()=>{
+            let now = i+0.5;
+            anc = prev;
+            prev=i;
+            anc>prev?
+            fn.addClass(cont01,'prev'):
+            fn.removeClass(cont01,'prev')
+            document.querySelector('.cont01').style.setProperty('--packman', now);
+        })
+    })
 }
 
 // 챗봇 ui스크립트 
