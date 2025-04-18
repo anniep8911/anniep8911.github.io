@@ -59,6 +59,7 @@ $shadow : 4px 4px 0#fea21d;
 
 :root{
     --cnt-art:4;
+    --packman:0;
 }
 
 
@@ -634,6 +635,40 @@ html{
                 display: flex;
                 justify-content: space-between;
                 border-bottom: 5px dotted #9c3264;
+                position: relative;
+                &::after{
+                    content: '';
+                    display: block;
+                    width: calc(10.5% - 2.5rem);
+                    height: 5px;
+                    background-color: #9c3264;
+                    left: 0;
+                    position: absolute;
+                    bottom: -5px;
+                }
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 5rem;
+                    height: 5rem;
+                    position: absolute;
+                    left: calc(10% - 2.5rem);
+                    z-index: 3;
+                    bottom: -2.5rem;
+                    animation: packman 0.8s infinite;
+                    background-size: contain;
+                    @keyframes packman {
+                        0%{
+                            background-image: url('../image/pack1.png');
+                        }
+                        50%{
+                            background-image: url('../image/pack2.png');
+                        }
+                        100%{
+                            background-image: url('../image/pack1.png');
+                        }
+                    }
+                }
                 li{
                     width: calc(100% / 3);
                     text-align: center;
@@ -644,6 +679,7 @@ html{
                     color:#9c3264;
                     font-size: 2.5rem;
                     font-weight: 700;
+                    cursor: $pointers;
                     &::after{
                         content: '';
                         display: block;
@@ -863,6 +899,7 @@ html{
     html{
         font-size: max(0.7vw,8px);
         body{
+            overflow: scroll;
             .wrap{           
                 display: block;
             }
@@ -874,9 +911,14 @@ html{
         width: 100%;
         header{
             display: block;
-           width: 100%;
+            row-gap: 5rem;
+            width: 100%;
            >article{
             width: 100%;
+            margin-top: 2.5rem;
+            &:nth-of-type(1){
+                margin-top: 0;
+            }
            }
            .hdr-left{
                video{
@@ -886,18 +928,13 @@ html{
                 height: auto;
                }
            } 
-           .hdr-right{
-            margin-top: 2rem;
-           }
-        }
-        section{
-            display: none;
         }
     }
 
     .robot-response{
         position: fixed;
         bottom: 2rem;
+        right: 0;
         z-index: 3;
         &.open{
             width: 100vw;
