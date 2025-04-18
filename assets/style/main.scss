@@ -664,7 +664,7 @@ html{
                     left: calc(16.66% * var(--packman) - 2.5rem);
                     z-index: 3;
                     bottom: -2.5rem;
-                    animation: packman 0.8s infinite;
+                    animation: packman 1s infinite;
                     background-size: contain;
                     transition: left 1s;
                     transition-timing-function: linear;
@@ -672,7 +672,7 @@ html{
                         0%{
                             background-image: url('../image/pack1.png');
                         }
-                        50%{
+                        40%{
                             background-image: url('../image/pack2.png');
                         }
                         100%{
@@ -742,13 +742,13 @@ html{
                         }
                     }
                 }
-                &[data-year='Show all']{
+                &[data-year='ALL']{
                     article{
                         display: flex;
                         align-items: center;
-                        @for $i from 2025 through 2021{
+                        @for $i from 2026 through 2021{
                             &[data-year='#{$i}']{
-                                margin-left: calc((100% / 5) * (2025 - #{$i}));
+                                margin-left: calc((100% / 6) * (2026 - #{$i}));
                             }
                         }
                     }
@@ -765,6 +765,7 @@ html{
                     padding: 0.5rem;
                     position: relative;
                     display: none;
+                    align-items: center;
                     background-color: rgba(255,255,255,0.3);
                     &[data-attr="2"]{
                         margin-left: calc((100% / 3 ));
@@ -795,15 +796,26 @@ html{
                         @include ellipse;
                         h3{
                            @include ellipse;
-                           font-size: 1.8rem;
+                           font-size: 2rem;
+                           line-height: 3rem;
+                           color: #000;
                         }
                         h4{
-                            font-size: 1.2rem;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            color: #333;
                             @include ellipse;
                         }
                         .months,.stmonth{
                             display: none;
                         }
+                    }
+                }
+
+                &.single{
+                    article{
+                        width: 100%;
+                        margin-left: 0;
                     }
                 }
             }

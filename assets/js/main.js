@@ -15,6 +15,7 @@ function uiWorks(prd){
     const modalClose = document.querySelector('.detailed-pops .btn-close');
     const cont01List = document.querySelectorAll('.cont01 li');
     const cont01 = document.querySelector('.cont01 .chart-prog');
+    const prj = document.querySelector('.cont01 .projects');
 
     opt.addEventListener('click',(e)=>{
         fn.toggleClass(e.currentTarget,'tool');
@@ -75,6 +76,11 @@ function uiWorks(prd){
             fn.addClass(cont01,'prev'):
             fn.removeClass(cont01,'prev')
             document.querySelector('.cont01').style.setProperty('--packman', now);
+            prj.setAttribute('data-year',e.innerText);
+            e.innerText!=='ALL'?
+            fn.addClass(prj,'single')
+            :
+            fn.removeClass(prj,'single');
         })
     })
 }
