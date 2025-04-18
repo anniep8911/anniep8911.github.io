@@ -2,7 +2,7 @@
     "projects":[
         {
             "name":"태양광에너지 솔루션 구축(Chart,Dash board)",
-            "hashes":["html","css","JavaScript","PC","Chart.js"],
+            "hashes":["Chart.js","고정형","웹표준","크로스브라우징"],
             "company":"현대태양광에너지(프리랜서)",
             "year":2024,
             "month":8,
@@ -13,7 +13,7 @@
         },
         {
             "name":"메인 고도화 및 UI개편",
-            "hashes":["html","scss","JavaScript","node.js","webpack","PC/Mobile(Adaptive web)"],
+            "hashes":["반응형","모바일우선","웹표준","크로스브라우징"],
             "company":"잡코리아",
             "year":2024,
             "month":1,
@@ -24,7 +24,7 @@
         },
         {
             "name":"리브랜딩 마이크로사이트 interaction 설계/구축",
-            "hashes":["html","scss","javascript","webpack"],
+            "hashes":["반응형","크로스브라우징"],
             "company":"잡코리아",
             "year":2023,
             "month":7,
@@ -35,7 +35,7 @@
         },
         {
             "name":"아이콘 자동생성기 프로그램 개발",
-            "hashes":["javascript","node.js"],
+            "hashes":["javascript","node.js", "npm"],
             "company":"잡코리아",
             "year":2023,
             "month":12,
@@ -46,7 +46,7 @@
         },
         {
             "name":"webpack용 buildmaker개발",
-            "hashes":["javascript","node.js"],
+            "hashes":["javascript","node.js","npm"],
             "company":"잡코리아",
             "year":2023,
             "month":12,
@@ -57,7 +57,7 @@
         },
         {
             "name":"TVC이벤트페이지 vue3작업",
-            "hashes":["javascript","Vue3"],
+            "hashes":["반응형","Vue3"],
             "company":"잡코리아",
             "year":2023,
             "month":10,
@@ -69,7 +69,7 @@
      
         {
             "name":"WKAUT(내 근처 운동시설 찾아주는 사이트) 개발",
-            "hashes":["javascript","node.js","aws","react.js","react-hook","next.js","next_auth"],
+            "hashes":["React.js","next.js","AWS"],
             "company":"personal",
             "year":2022,
             "month":4,
@@ -81,7 +81,7 @@
 
         {
             "name":"myrtip(여행 사이트) vue 마이그레이션",
-            "hashes":["html","css","javascript","jquery"],
+            "hashes":["반응형","Vue3"],
             "company":"퍼스트컴퓨터바리스타학원",
             "year":2022,
             "month":4,
@@ -92,7 +92,7 @@
         },
         {
             "name":"한국총판 시스템 고도화",
-            "hashes":["jsp(jstl,el)","css/scss","javascript","jquery"],
+            "hashes":["jsp","반응형","크로스브라우징","웹표준"],
             "company":"삼성SDS(프리랜서)",
             "year":2022,
             "month":7,
@@ -103,7 +103,7 @@
         },
         {
             "name":"리타케팅 플랫폼 구축 및 광고 플랫폼 구축",
-            "hashes":["html","css","javascript","jquery"],
+            "hashes":["반응형"],
             "company":"이베이코리아",
             "year":2021,
             "month":9,

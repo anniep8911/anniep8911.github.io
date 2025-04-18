@@ -8,9 +8,10 @@
         width: 1.5rem;
         background-color: transparent;
         margin-top: 1rem;
+        background-color: rgba(255,214,96,0.3)
     }
     &::-webkit-scrollbar-thumb{
-        background-color: rgb(74, 112, 128,0.2);
+        background-color: #258ec9;
         border-radius: 1rem;
     }
     &::-webkit-scrollbar-track{
@@ -76,6 +77,8 @@ html{
     body{
         background-image: url('../image/bg.png');
         position: relative;
+        height: 100vh;
+        overflow: hidden;
         h1{
             opacity: 0;
             width: 1px;
@@ -153,10 +156,10 @@ html{
     height: 20rem;
     position: absolute;
     border-radius: 50%;
-    right: 0;bottom: 0;
+    right: -10rem;
+    bottom: 3rem;
     animation: mov 2s infinite linear;
     cursor: $pointers;
-    overflow: hidden;
     transition: height 0.5s;
     position: absolute;
     color: transparent;
@@ -194,7 +197,7 @@ html{
     .answer{
         margin-top: 8rem;
         display: none;
-        height: calc(100vh - 20rem);
+        height: calc(100vh - 25rem);
         overflow-y: scroll;
         @include scroll();
         li{
@@ -227,11 +230,11 @@ html{
             }
 
             &.others{
-                padding: 0;
+                padding: 2rem 1rem;
                 display: block;
                 width: 100%;
-                margin-top: 1rem;
                 background-color: transparent;
+                border: 4px dotted rgba(255,255,255,0.3);
                 span{
                     background-color: rgba(255,255,255,0.4);
                     margin-top: 1rem;
@@ -243,7 +246,9 @@ html{
                     margin-right: 1rem;
                     display: block;
                     width: fit-content;
-                    
+                    &:nth-of-type(1){
+                        margin-top: 0;
+                    }
                     &:hover{
                         background-color: #fff;
                         font-weight: 700;
@@ -256,55 +261,65 @@ html{
     &.open{
         width: 100%;
         height: calc(100% - 4rem);
-        background: #0079cb;
         border-radius: 0.5rem;
-        border: 5px solid black;
-        padding:  0 4rem;
         padding-top: 0;
         animation: unset;
+        right: 0;
         color: #000;
-        -webkit-tap-highlight-color :transparent;
+        overflow: hidden;
         *{
             cursor: $cursors;
         }
         &::before{
             content: '';
             display: block;
+            width:100%;
             position: absolute;
-            margin: auto;
-            top: 0;left: 0;right: 0;bottom: 0;
-            width: calc(100% - 20px);
-            height: calc(100% - 20px);
-            border: 3px solid black;
-            background-color: #1c9be9;
+            top: 0;left: 0;
+            height: 8rem;
+            background-image: url('../image/bgTop.png');
+            background-size: contain;
         }
         .robot{
             display: none;
         }
         .hdr{
+            background: #fbc6c8;
             display: block;
-            width: calc(100% - 6rem);
+            width: 100%;
             padding-top: 2rem;
+            margin-top: 8rem;
+            color: #fff;
+            padding-left: 4rem;
             h3{
-                line-height: 2rem;
-                font-size: 1.8rem;
+                line-height: 5rem;
+                font-size: 3rem;
+                font-weight: 700;
             }
             p{
-                line-height: 2.5rem;
-                font-size: 1.4rem;
+                line-height: 3rem;
+                font-size: 1.8rem;
             }
             .btn-close{
                 position: absolute;
-                right: 2rem;
+                right: 4rem;
                 top: 2rem;
-                font-size: 3rem;
+                width: 8rem;
+                height: 8rem;
                 cursor: $pointers;
+                color: transparent;
+                background-image: url('../image/cancle.png');
+                background-size: contain;
             }
         }
         .answer{
+            background: #fbc6c8;
             display: block;
             z-index: 3;
+            margin-top:18rem;
             position: relative;
+            padding: 4rem;
+            padding-top: 0;
             .others{
                 span{
                     cursor: $pointers;
@@ -320,23 +335,31 @@ html{
 .detailed-pops{
     position: absolute;
     width: 100%;
-    // width: calc(100% / 12 * 8 );
     height: calc(100% - 4rem);
-    background-color: #fff;
     margin: auto;
-    top: 4rem;left: 0;
+    top: 0.8rem;left: 0;
     z-index: 3;
     border-radius: 0.5rem;
-    border: 1px solid black;
-    padding: 3rem;
-    padding-right: 2rem;
     opacity: 1;
     transition: opacity 0.5s;
-    box-shadow: 1rem 1rem 2rem #ccc;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;left: 0;
+        width: 100%;
+        height: 8rem;
+        background-image: url('../image/bgTop2.png');
+        background-size: contain;
+    }
     &.expand{
         width: 100%;
     }
     header{
+        background-color: #c5b5e9;
+        margin-top: 8rem;
+        padding-top: 3rem;
+        padding-left: 3rem;
         h2{
             line-height: 5rem;
             font-size: 3.5rem;
@@ -367,9 +390,11 @@ html{
         }
     }
     section{
-        height: calc(100% - 20rem);
+        padding: 3rem;
+        height: calc(100% - 27rem);
         overflow-y: scroll;
         @include scroll();
+        background-color: #c5b5e9;
         .image{
             img{
                width: 100%;
@@ -403,11 +428,16 @@ html{
     }
     .btn-close{
         position: absolute;
-        top: 3rem;
+        top: 12rem;
         right: 3rem;
         line-height: 5rem;
         font-size: 3.8rem;
         cursor: $pointers;
+        color: transparent;
+        background-image: url('../image/cancle.png');
+        width: 8rem;
+        height: 8rem;
+        background-size: contain;
     }
     &.close{
         height: 100%;
@@ -557,6 +587,7 @@ html{
                 color: #4e285f;
             }
             p{
+                @include scroll();
                 margin-top: 2rem;
                 display: flex;
                 flex-wrap: wrap;
@@ -587,7 +618,7 @@ html{
         margin-top: 3rem;
         padding: 2rem;
         width: 100%;
-        height: calc(100vh - 41rem);
+        height: calc(100vh - 47rem);
         transition: all 0.5s;
         left: 0;
         bottom: 0;
@@ -595,10 +626,12 @@ html{
         header{
             width: 100%;
             display: block;
+            position: relative;
+            z-index: 1;
             .chart-prog{
                 display: flex;
                 justify-content: space-between;
-                border-bottom: 5px solid #9c3264;
+                border-bottom: 5px dotted #9c3264;
                 li{
                     width: calc(100% / 3);
                     text-align: center;
@@ -619,6 +652,7 @@ html{
                         margin: auto;
                         left: 0;right: 0;
                         bottom: calc(-1rem - 2.5px);
+                        border-radius: 50%;
                     }           
                 }
             }
@@ -627,7 +661,8 @@ html{
             height: calc(100% - 8rem);
             overflow-y: scroll;
             @include scroll();
-
+            padding-bottom: 2rem;
+            padding-right: 7rem;
             .projects{
                 margin-top: 3rem;
                 @for $i from 1 through 4{
@@ -661,6 +696,7 @@ html{
                 &[data-year='Show all']{
                     article{
                         display: flex;
+                        align-items: center;
                         @for $i from 2025 through 2021{
                             &[data-year='#{$i}']{
                                 margin-left: calc((100% / 5) * (2025 - #{$i}));
@@ -674,11 +710,13 @@ html{
                 article{
                     overflow: hidden;
                     width: calc(100% / var(--cnt-art));
-                    line-height: 4rem;
-                    border-radius: 1rem;
+                    line-height: 3rem;
+                    border-radius: 0.5rem;
                     margin-top: 1rem;
+                    padding: 0.5rem;
                     position: relative;
                     display: none;
+                    background-color: rgba(255,255,255,0.3);
                     &[data-attr="2"]{
                         margin-left: calc((100% / 3 ));
                     }
@@ -686,8 +724,7 @@ html{
                         margin-left: calc((100% / 3 )*2);
                     }
                     &:hover{
-                        box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
-                        border-radius: 20px;
+                        box-shadow: 0.3rem 0.3rem 0rem #fea21d;
                     }
                     .image{
                         color: transparent;
@@ -695,23 +732,25 @@ html{
                         width: 4rem;
                         height: 4rem;
                         background-color: rgb(26, 112, 52);
-                        border-radius: 50%;
                         z-index: 0;
                         flex: none;
                     }
                     .texts{
                         margin-left: -2rem;
-                        display: flex;
                         column-gap: 0.5rem;
                         padding-left: 2.5rem;
                         padding-right: 1rem;
                         border-radius: 0 2rem 2rem 0;
-                        background-color: rgba(255, 99, 71, 0.1);
                         cursor: $pointers;
                         width: 100%;
                         @include ellipse;
                         h3{
                            @include ellipse;
+                           font-size: 1.8rem;
+                        }
+                        h4{
+                            font-size: 1.2rem;
+                            @include ellipse;
                         }
                         .months,.stmonth{
                             display: none;
@@ -862,9 +901,6 @@ html{
             width: 100vw;
             height: 100dvh;
             bottom: 0;
-            .hdr{
-                border-radius: 2rem;
-            }
         }
         .answer{
             height: calc(100vh - 18rem);

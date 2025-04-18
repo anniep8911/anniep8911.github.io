@@ -18,6 +18,7 @@ getData('./assets/data/data.json').then(async res=>{
                         <div class="image" style="background:url('${p.icon}') #fff no-repeat center left; background-size:contain">projects image</div>
                         <div class="texts">
                             <h3>${p.name}</h3>
+                            <h4>${hashes}</h4>
                             <div class="months">${p.month}</div>
                             <div class="stmonth">1</div>
                         </div>
