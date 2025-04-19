@@ -28,13 +28,6 @@ getData('./assets/data/data.json').then(async res=>{
         prd.hashes= hashes;
     });
 
-    totalHash= new Set(totalHash);
-    totalHash.forEach((e)=>{
-        let sp =  document.createElement('span');
-        sp.innerText =  e;
-        
-        cont02Prd.append(sp);
-    });
     // UI함수 실행
     return uiWorks(prd);
 });
@@ -49,3 +42,31 @@ getData('./assets/data/que.json').then(async res=>{
     // UI함수 실행
     return chatBot(prd);
 })
+
+
+// npm패키지 다운로드 확인
+const today = new Date().toISOString().slice(0, 10);
+const packages = [
+    // 패키지 이름과 출시일 조정
+  { name: 'scss-cleans', id: 'scss-cleans-count', start: '2023-10-18' },
+  { name: 'style-crawl', id: 'style-crawl-count', start: '2024-01-01' } 
+];
+
+packages.forEach(pkg => {
+  const url = `https://api.npmjs.org/downloads/point/${pkg.start}:${today}/${pkg.name}`;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        let dw =  data.downloads.toLocaleString();
+        let pkname = data.package.toLocaleString();
+        let sp = document.createElement('span');
+        sp.innerHTML = `<a href="https://www.npmjs.com/package/${pkname}" target="_blank">${pkname} <strong></strong> ${dw}</a>`;
+        let i = sp.querySelector('strong');
+        let box =  Math.round(dw/100);
+        Array(box).fill(0).forEach(()=>{
+            i.innerText += '▮';
+        })
+        document.querySelector('.hdr-exp p').append(sp);
+    })
+    .catch(() => {});
+});

@@ -75,22 +75,6 @@ function uiWorks(prd){
         })
     })
 
-    keys.forEach((e)=>{
-        e.addEventListener('click',(e)=>{
-            fn.toggleClass(e.currentTarget,'sel');
-            let now = keys;
-            now= Array.from(now).filter(f=>f.classList.contains('sel')).map(m=> m.innerText);
-            
-            cont1Art.forEach((a)=>{
-                let hash = a.getAttribute('data-hasy');
-                hash = now.some(s=> hash.includes(s));
-                hash?
-                a.setAttribute('data-show','show')
-                :
-                a.setAttribute('data-show','none');
-            })
-        })
-    })
 }
 
 // 챗봇 ui스크립트 

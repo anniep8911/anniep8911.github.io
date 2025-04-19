@@ -718,6 +718,7 @@ html{
 
                 &[data-year='ALL']{
                     article{
+                        display: flex;
                         @for $i from 2026 through 2021{
                             &[data-year='#{$i}']{
                                 margin-left: calc((100% / 6) * (2026 - #{$i}));
@@ -725,6 +726,16 @@ html{
                         }
                     }
                 }
+                @for $i from 2026 through 2021{
+                    &[data-year='#{$i}']{
+                        article{
+                            &[data-year='#{$i}']{
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+
 
                 article{
                     overflow: hidden;
@@ -736,10 +747,8 @@ html{
                     position: relative;
                     display: none;
                     align-items: center;
+                    transition: all 0.5s;
                     background-color: rgba(255,255,255,0.3);
-                    &[data-show="show"] {
-                        display: flex;
-                    }
                     &[data-attr="2"]{
                         margin-left: calc((100% / 3 ));
                     }
