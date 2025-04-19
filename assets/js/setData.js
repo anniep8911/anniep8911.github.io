@@ -66,7 +66,7 @@ packages.forEach(pkg => {
         Array(box).fill(0).forEach(()=>{
             i.innerText += '▮';
         })
-        document.querySelector('.hdr-exp p').append(sp);
+        document.querySelector('.hdr-exp p.npm').append(sp);
     })
     .catch(() => {});
 });
