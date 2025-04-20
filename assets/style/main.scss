@@ -635,12 +635,19 @@ html{
                                 
                             }
                             span{
+                                display: flex;
+                                flex-shrink: 0;
                                 &:nth-of-type(1){
                                     font-size: 2rem;
                                 }
                                 &.icons{
                                     display: flex;
                                     align-items: center;
+                                    height: 2.5rem;
+                                    width: 50%;
+                                    justify-content: center;
+                                    overflow: hidden;
+                                    flex-wrap: wrap;                               
                                     i{
                                         background-image: url('../image/robotface.png');
                                         display: inline-block;
