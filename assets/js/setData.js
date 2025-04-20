@@ -1,6 +1,7 @@
 import {getData,dataLoading} from './model.js';
 import {uiWorks,chatBot} from './main.js';
 import fire from './firebase-init.js';
+import fn from './funcs.js';
 
 getData('./assets/data/data.json').then(async res=>{
     let prd = await dataLoading(res.projects);
@@ -33,13 +34,42 @@ getData('./assets/data/data.json').then(async res=>{
         prd.hashes= hashes;
     });
 
+    // 데이터셋(dom 추가) 후 탐색
+    let prj = document.querySelectorAll(".project");
+
     // 모든 프로젝트 카드에 클릭 이벤트 연결
-    document.querySelectorAll(".project").forEach((el) => {
+    prj.forEach((el) => {
       el.addEventListener("click", () => {
         const projectId = el.dataset.cat2;
         fire.cntUpdate('projects',projectId);
       });
     });
+
+    
+    prj = Array.from(prj);
+    // 핫 게시글 확인
+    const rank = await fire.ranking(5);
+    const ranks = document.querySelector('.ranks');
+
+    rank.forEach((e,i)=>{
+        const matchPrd =  prd.find(el=>el.path === e.id);
+        const ele = document.createElement('p');
+        ele.innerHTML = `
+            <i>${i+1}</i>
+            <span>${matchPrd.name}</span>
+            <span >${e.clicks}회</span>
+        `
+
+        console.log(matchPrd)
+        ele.setAttribute('data-name',matchPrd.name);
+        ele.setAttribute('data-year',matchPrd.year);
+        ele.setAttribute('data-company',matchPrd.company);
+        ele.setAttribute('data-month',matchPrd.month);
+        ele.setAttribute('data-path',matchPrd.path);
+        ele.setAttribute('data-goal',matchPrd.goal);
+        ele.setAttribute('data-hashes',matchPrd.hashes);
+        ranks.append(ele);
+    })
 
     // UI함수 실행
     return uiWorks(prd);
@@ -56,7 +86,6 @@ getData('./assets/data/que.json').then(async res=>{
     return chatBot(prd);
 })
 
-const visitorCountEl = document.getElementById("visitor-count");
 // 방문자 카운트 실행 
 fire.cntUpdate('stats','visits');
 // 방문자수 확인 및 세팅 
@@ -73,8 +102,9 @@ fire.getVisit((data)=>{
         })  
     })
 });
-// 핫 게시글 확인
-console.log(await fire.ranking(5))
+
+
+
 
 // npm패키지 다운로드 확인
 const today = new Date().toISOString().slice(0, 10);

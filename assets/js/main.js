@@ -52,6 +52,13 @@ function uiWorks(prd){
         })
     });
 
+    document.querySelectorAll('.ranks p').forEach(e=>{
+        e.addEventListener('click',()=>{
+            modal.classList.remove('close');
+            fn.setModal(e.dataset.name,e.dataset.company,`${e.dataset.year}.${e.dataset.month}`,[e.dataset.hashes],`${e.dataset.path}.md`,e.dataset.goal);
+        })
+    })
+
     modalClose.addEventListener('click',()=>{
         modal.className += ' close';
     });

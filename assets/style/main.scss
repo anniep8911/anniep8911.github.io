@@ -636,7 +636,7 @@ html{
                             }
                             span{
                                 &:nth-of-type(1){
-                                    font-size: 1.5rem;
+                                    font-size: 2rem;
                                 }
                                 &.icons{
                                     display: flex;
@@ -696,6 +696,34 @@ html{
                                 background-color: #433760;
                                 border-radius: 0.5rem;
                                 display: block;
+                            }
+                        }
+                    }
+                    &.ranks.selected{
+                        display: flex;
+                        flex-wrap: wrap;
+                        row-gap: 1rem;
+                        p{
+                            width: 100%;
+                            display: flex;
+                            column-gap: 1.5rem;
+                            line-height: 2.5rem;
+                            font-size: 2rem;
+                            cursor: $pointers;
+                            i{
+                                width: 2.5rem;
+                                height: 2.5rem;
+                                display: inline-block;
+                                background-color: #fc0;
+                                border-radius: 50%;
+                                text-align: center;
+                            }
+                            span{
+                                &:nth-of-type(1){
+                                    display: inline-block;
+                                    width: 60%;
+                                    @include ellipse();
+                                }
                             }
                         }
                     }
