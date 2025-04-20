@@ -81,8 +81,10 @@ export class MarkdownElement extends HTMLElement {
 
 		marked.setOptions({
 			gfm: true,
-			smartypants: true,
 			langPrefix: "language-",
+			mangle: false,
+			headerIds: false,
+			smartypants: false
 		});
 
 		marked.use({renderer: this.renderer});

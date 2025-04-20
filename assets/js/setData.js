@@ -1,10 +1,10 @@
 import {getData,dataLoading} from './model.js';
 import {uiWorks,chatBot} from './main.js';
+import fire from './firebase-init.js';
 
 getData('./assets/data/data.json').then(async res=>{
     let prd = await dataLoading(res.projects);
     const cont01Prd = document.querySelector('.cont01 .projects');
-    const cont02Prd = document.querySelector('.hdr-exp p');
     let totalHash = [];
 
     prd.forEach((p,i)=>{
@@ -14,18 +14,31 @@ getData('./assets/data/data.json').then(async res=>{
             totalHash.push(e);
         });
 
-        let addPrd = `<article data-month=${p.month} data-year=${p.year} data-cat="${p.company}"  data-hasy="${p.hashes}" data-show="show">
+        let art = document.createElement('article');
+        art.className = `project`;
+        art.setAttribute('data-month', p.month);
+        art.setAttribute('data-year', p.year);
+        art.setAttribute('data-cat', p.company);
+        art.setAttribute('data-hasy', p.hashes);
+        art.setAttribute('data-cat2', p.path);
+        art.innerHTML = `
                         <div class="image" style="background:url('${p.icon}') #fff no-repeat center left; background-size:contain">projects image</div>
                         <div class="texts">
                             <h3>${p.name}</h3>
                             <h4>${hashes}</h4>
                             <div class="months">${p.month}</div>
                             <div class="stmonth">1</div>
-                        </div>
-                    </article>`;
-
-        cont01Prd.innerHTML += addPrd;
+                        </div>`;
+        cont01Prd.append(art);
         prd.hashes= hashes;
+    });
+
+    // 모든 프로젝트 카드에 클릭 이벤트 연결
+    document.querySelectorAll(".project").forEach((el) => {
+      el.addEventListener("click", () => {
+        const projectId = el.dataset.cat2;
+        fire.cntUpdate('projects',projectId);
+      });
     });
 
     // UI함수 실행
@@ -43,6 +56,25 @@ getData('./assets/data/que.json').then(async res=>{
     return chatBot(prd);
 })
 
+const visitorCountEl = document.getElementById("visitor-count");
+// 방문자 카운트 실행 
+fire.cntUpdate('stats','visits');
+// 방문자수 확인 및 세팅 
+fire.getVisit((data)=>{
+    const dts = document.querySelectorAll('.cnts p');
+    const cat= ['total','today'];
+    dts.forEach((e,i)=>{
+        let dt = data[cat[i]];
+        e.querySelector('.val').textContent = `${dt}명`;
+        dt = Math.round(dt/10);
+        Array(dt).fill(0).forEach(ee=>{
+            let ele =  document.createElement('i');
+            e.querySelector('.icons').append(ele);
+        })  
+    })
+});
+// 핫 게시글 확인
+console.log(await fire.ranking(5))
 
 // npm패키지 다운로드 확인
 const today = new Date().toISOString().slice(0, 10);
@@ -59,14 +91,18 @@ packages.forEach(pkg => {
     .then(data => {
         let dw =  data.downloads.toLocaleString();
         let pkname = data.package.toLocaleString();
-        let sp = document.createElement('span');
-        sp.innerHTML = `<a href="https://www.npmjs.com/package/${pkname}" target="_blank">${pkname} <strong></strong> ${dw}</a>`;
-        let i = sp.querySelector('strong');
-        let box =  Math.round(dw/100);
-        Array(box).fill(0).forEach(()=>{
-            i.innerText += '▮';
-        })
-        document.querySelector('.hdr-exp p.npm').append(sp);
+        let sp = document.createElement('p');
+        sp.innerHTML = `
+        <a href="https://www.npmjs.com/package/${pkname}" target="_blank">
+            <span>${pkname}</span>  
+            <span>${dw}</span>  
+            <span class="prog"> <i></i> </span></a>`;
+        document.querySelector('.hdr-exp .npm').append(sp);
+        sp.querySelector('i').style.width = `${dw / 10}%`
     })
     .catch(() => {});
 });
+
+
+
+    

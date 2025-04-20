@@ -9,7 +9,7 @@
             "goal":"chart.js 모듈화, UI규칙 제작, 70개 통계 신규페이지 5주 완성",
             "icon":"./assets/image/personal.png",
             "link":"./",
-            "path":"posts11.md"
+            "path":"posts13"
         },
         {
             "name":"키보드 응용프로그램",
@@ -20,7 +20,7 @@
             "goal":"chart.js 모듈화, UI규칙 제작, 70개 통계 신규페이지 5주 완성",
             "icon":"./assets/image/personal.png",
             "link":"./",
-            "path":"posts11.md"
+            "path":"posts14"
         },
         {
             "name":"태양광에너지 솔루션 구축(Chart,Dash board)",
@@ -31,7 +31,7 @@
             "goal":"chart.js 모듈화, UI규칙 제작, 70개 통계 신규페이지 5주 완성",
             "icon":"./assets/image/HD.png",
             "link":"./",
-            "path":"posts11.md"
+            "path":"posts11"
         },
         {
             "name":"메인 고도화 및 UI개편",
@@ -42,7 +42,7 @@
             "goal":"메인페이지 로딩속도 3s이상 개선, 중도 이탈률 1만건 이상 개선",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.jobkorea.co.kr/",
-            "path":"posts1.md"
+            "path":"posts1"
         },
         {
             "name":"리브랜딩 마이크로사이트 interaction 설계/구축",
@@ -53,7 +53,7 @@
             "goal":"리브랜딩 프로덕트(배경화면) 다운로드 수 1만건 이상 발생",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.jobkorea.co.kr/brand/",
-            "path":"posts3.md"
+            "path":"posts3"
         },
         {
             "name":"아이콘 자동생성기 프로그램 개발",
@@ -64,7 +64,7 @@
             "goal":"프로젝트 별 총 작업시간 2일 이상 단축",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://anniep8911.github.io/absolutWebpack/dist/",
-            "path":"posts2.md"
+            "path":"posts2"
         },
         {
             "name":"webpack용 buildmaker개발",
@@ -75,7 +75,7 @@
             "goal":"CSS작업시간 파일당 10분이상 단축",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"posts4.md"
+            "path":"posts4"
         },
         {
             "name":"TVC이벤트페이지 vue3작업",
@@ -86,7 +86,7 @@
             "goal":"컴포넌트 설계 및 재활용 , 모듈화 작업",
             "icon":"./assets/image/logo-jobkorea.png",
             "link":"",
-            "path":"posts12.md"
+            "path":"posts12"
         },
      
         {
@@ -98,7 +98,7 @@
             "goal":"리액트에 대한 프로젝트를 full-stack구현",
             "icon":"./assets/image/personal.png",
             "link":"https://www.npmjs.com/package/style-crawl",
-            "path":"posts5.md"
+            "path":"posts5"
         },
 
         {
@@ -110,7 +110,7 @@
             "goal":"컴포넌트 설계 및 재활용 , 모듈화 작업",
             "icon":"./assets/image/firts.jpg",
             "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"posts8.md"
+            "path":"posts8"
         },
         {
             "name":"한국총판 시스템 고도화",
@@ -121,7 +121,7 @@
             "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
             "icon":"./assets/image/samsung.png",
             "link":"./",
-            "path":"posts6.md"
+            "path":"posts6"
         },
         {
             "name":"리타케팅 플랫폼 구축 및 광고 플랫폼 구축",
@@ -132,7 +132,7 @@
             "goal":"크로스브라우징 고도화 작업 및 타 플랫폼 asp페이지 jsp편입작업",
             "icon":"./assets/image/ebay.png",
             "link":"https://www.npmjs.com/package/scss-cleans",
-            "path":"posts7.md"
+            "path":"posts7"
         }
     ]
 }

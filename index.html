@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>웹 퍼블리셔 박정아</title>
   <link rel="stylesheet" href="./assets/style/main.min.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -43,10 +45,31 @@
         </article>
         <article class="hdr-exp">
           <h3>실시간 데이터</h3>
-          <h4>npm 다운로드</h4>
-          <p class="npm">
-            <!-- 여기에 키워드 들어옴 -->
-          </p>
+          <ul class="tab">
+            <li class="sel">패키지 다운로드</li>
+            <li>방문자</li>
+            <li>rank</li>
+          </ul>
+          <div class="texts">
+            <div class="npm selected">
+              <!-- 여기에 키워드 들어옴 -->
+            </div>
+            <div class="cnts">
+              <p class="total">
+                <span>누적 방문자</span>
+                <span class="icons"></span>
+                <span class="val">0명</span>
+              </p>
+              <p class="today">
+                <span>오늘 방문자</span>
+                <span class="icons"></span>
+                <span class="val">0명</span>
+              </p>
+            </div>
+            <div class="ranks">
+              <div id="hot-prj">랭킹</div>
+            </div>
+          </div>
         </article>
       </header>
       <section class="cont01">
@@ -64,6 +87,9 @@
           <div class="projects" data-year="ALL">
             <!-- 프로젝트 데이터 들어가는 자리 -->
           </div>
+
+
+
         </section>
       </section>
     </div>

@@ -16,7 +16,9 @@ function uiWorks(prd){
     const cont01 = document.querySelector('.cont01 .chart-prog');
     const prj = document.querySelector('.cont01 .projects');
     const dev = fn.checkWin();
-    const keys= document.querySelectorAll('.hdr-exp p span');
+    const dtTab = document.querySelectorAll('.hdr-exp li');
+    const dtDetails = document.querySelectorAll('.hdr-exp .texts>div');
+
 
     opt.addEventListener('click',(e)=>{
         fn.toggleClass(e.currentTarget,'tool');
@@ -46,7 +48,7 @@ function uiWorks(prd){
     cont1Art.forEach((e,i)=>{
         e.addEventListener('click',()=>{
             modal.classList.remove('close');
-            fn.setModal(prd[i].name,prd[i].company,`${prd[i].year}.${prd[i].month}`,prd[i].hashes,prd[i].path,prd[i].goal);
+            fn.setModal(prd[i].name,prd[i].company,`${prd[i].year}.${prd[i].month}`,prd[i].hashes,`${prd[i].path}.md`,prd[i].goal);
         })
     });
 
@@ -72,6 +74,19 @@ function uiWorks(prd){
             fn.addClass(prj,'single')
             :
             fn.removeClass(prj,'single');
+        })
+    })
+
+
+    // 실시간 데이터 탭 인터렉션
+    dtTab.forEach((e,i,a)=>{
+        e.addEventListener('click',()=>{
+            a.forEach((f,id)=>{
+                fn.removeClass(dtDetails[id],'selected');
+                fn.removeClass(f,'sel');
+            })
+            fn.addClass(e,'sel');
+            fn.addClass(dtDetails[i],'selected');
         })
     })
 

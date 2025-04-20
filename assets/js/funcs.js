@@ -68,6 +68,10 @@ export default{
                 }
             });
     },
+    setLineChart:()=>{
+        
+    }
+    ,
     setModal:(name,company,date,hashes,details,goal)=>{
         dom.popHdrName.innerText =name;
         dom.popHdrCompany.innerText =company;
