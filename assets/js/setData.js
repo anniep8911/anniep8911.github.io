@@ -1,7 +1,6 @@
 import {getData,dataLoading} from './model.js';
 import {uiWorks,chatBot} from './main.js';
 import fire from './firebase-init.js';
-import fn from './funcs.js';
 
 getData('./assets/data/data.json').then(async res=>{
     let prd = await dataLoading(res.projects);

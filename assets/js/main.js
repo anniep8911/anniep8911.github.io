@@ -52,12 +52,22 @@ function uiWorks(prd){
         })
     });
 
-    document.querySelectorAll('.ranks p').forEach(e=>{
-        e.addEventListener('click',()=>{
-            modal.classList.remove('close');
-            fn.setModal(e.dataset.name,e.dataset.company,`${e.dataset.year}.${e.dataset.month}`,[e.dataset.hashes],`${e.dataset.path}.md`,e.dataset.goal);
-        })
-    })
+    // 동적 데이터용 이벤트 
+    document.querySelector('.ranks').addEventListener('click', (e) => {
+        let el = e.target.closest('p');
+        if (!el) return;
+        console.log(el);
+        modal.classList.remove('close');
+        fn.setModal(
+            el.dataset.name,
+            el.dataset.company,
+            `${el.dataset.year}.${el.dataset.month}`,
+            [el.dataset.hashes],
+            `${el.dataset.path}.md`,
+            el.dataset.goal
+          );
+    });
+  
 
     modalClose.addEventListener('click',()=>{
         modal.className += ' close';
