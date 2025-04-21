@@ -16,7 +16,13 @@ export default{
     
         // visits일 때만 날짜 체크해서 분기 처리
         if (col === "stats" && docId === "visits") {
-          const todayKey = new Date().toISOString().slice(0, 10);
+          // 한국기준 시간 만들기 
+          const now = new Date();
+          const year = now.getFullYear();
+          const month = String(now.getMonth() + 1).padStart(2, '0');
+          const day = String(now.getDate()).padStart(2, '0');
+          const todayKey = `${year}-${month}-${day}`;
+          console.log(todayKey);
           const visitKey = "visited-" + todayKey;
           
         //   사용자 구별(daily)
@@ -60,23 +66,22 @@ export default{
           });
         }
     },
-    ranking: async (limitCount = 3) => {
-        const snapshot = await db
-          .collection("projects")
-          .orderBy("clicks", "desc")   // 클릭수 기준 내림차순 정렬
-          .limit(limitCount)           // 상위 n개만 가져오기
-          .get();
-      
-        const result = [];
-        snapshot.forEach((doc) => {
-          result.push({
-            id: doc.id,
-            ...doc.data()
+    ranking:(cnt, callback) => {
+      return db
+        .collection("projects")
+        .orderBy("clicks", "desc")
+        .limit(cnt)
+        .onSnapshot(snapshot => {
+          const result = [];
+          snapshot.forEach(doc => {
+            result.push({
+              id: doc.id,
+              ...doc.data()
+            });
           });
+          callback(result); // 결과를 콜백으로 넘김
         });
-      
-        return result;
-      }
+    }
 }
 
 

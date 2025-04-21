@@ -47,30 +47,34 @@ getData('./assets/data/data.json').then(async res=>{
 
     
     prj = Array.from(prj);
-    // 핫 게시글 확인
-    const rank = await fire.ranking(5);
-    const ranks = document.querySelector('.ranks');
-
-    rank.forEach((e,i)=>{
-        const matchPrd =  prd.find(el=>el.path === e.id);
-        const ele = document.createElement('p');
-        ele.innerHTML = `
-            <i>${i+1}</i>
+    fire.ranking(5, (rank) => {
+        const ranks = document.querySelector('.ranks');
+        // 실시간 업데이트 초기화
+        ranks.innerHTML = '';       
+        rank.forEach((e, i) => {
+          const matchPrd = prd.find(el => el.path === e.id);
+          if (!matchPrd) return;
+      
+          const ele = document.createElement('p');
+          ele.innerHTML = `
+            <i>${i + 1}</i>
             <span>${matchPrd.name}</span>
-            <span >${e.clicks}회</span>
-        `
-
-        console.log(matchPrd)
-        ele.setAttribute('data-name',matchPrd.name);
-        ele.setAttribute('data-year',matchPrd.year);
-        ele.setAttribute('data-company',matchPrd.company);
-        ele.setAttribute('data-month',matchPrd.month);
-        ele.setAttribute('data-path',matchPrd.path);
-        ele.setAttribute('data-goal',matchPrd.goal);
-        ele.setAttribute('data-hashes',matchPrd.hashes);
-        ranks.append(ele);
-    })
-
+            <span>${e.clicks}회</span>
+          `;
+      
+            // 팝업용 속성
+          ele.setAttribute('data-name', matchPrd.name);
+          ele.setAttribute('data-year', matchPrd.year);
+          ele.setAttribute('data-company', matchPrd.company);
+          ele.setAttribute('data-month', matchPrd.month);
+          ele.setAttribute('data-path', matchPrd.path);
+          ele.setAttribute('data-goal', matchPrd.goal);
+          ele.setAttribute('data-hashes', matchPrd.hashes);
+      
+          ranks.append(ele);
+        });
+      });
+      
     // UI함수 실행
     return uiWorks(prd);
 });
@@ -96,6 +100,7 @@ fire.getVisit((data)=>{
         let dt = data[cat[i]];
         e.querySelector('.val').textContent = `${dt}명`;
         dt = Math.round(dt/10);
+        !dt?dt=1:'';
         Array(dt).fill(0).forEach(ee=>{
             let ele =  document.createElement('i');
             e.querySelector('.icons').append(ele);
