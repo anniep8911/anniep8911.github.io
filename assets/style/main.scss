@@ -387,10 +387,11 @@ html{
             line-height: 4rem;
             font-size: 1.5rem;
             span{
-                padding: 0 0.5rem;
-                background-color: rgba(62, 122, 164, 0.1);
+                padding: 0 0.8rem;
+                background-color: #5e5dbe;
+                color: #fff;
                 margin-right: 1rem;
-                border-radius: 1rem;
+                border-radius: 0.5rem;
             }
         }
     }
@@ -1154,4 +1155,104 @@ html{
         position: fixed;
         top: 0;
     }
+}
+
+// 마크다운 스타일
+$font-base: 1.4rem;       // 14px
+$font-heading: 2rem;      // 20px
+$font-subheading: 1.6rem; // 16px
+$line-height: 2.2rem;     // 22px
+$padding: 2rem;
+$radius: 0.8rem;
+$gray: #f4f4f4;
+$gray-dark: #e0e0e0;
+$code-font: 'Fira Code', monospace;
+$font-default: 'Pretendard', sans-serif;
+
+md-block {
+  font-family: $font-default;
+  font-size: $font-base;
+  line-height: $line-height;
+  color: #1e1e1e;
+  border-radius: $radius;
+
+  h2 {
+    font-size: $font-heading;
+    font-weight: 700;
+
+  }
+
+  h3 {
+    font-size: $font-subheading;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: #333;
+    line-height: 4rem;
+  }
+
+  p {
+
+    margin: 0.8rem 0;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 1.6rem;
+    list-style: circle;
+
+    li {
+      margin-bottom: 0.6rem;
+      line-height: $line-height;
+    }
+  }
+  ol{
+    list-style:armenian;
+    padding-left: 1.6rem;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #111;
+    font-size: $font-base;
+  }
+
+  code {
+    padding: 0.2rem 0.4rem;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+    color: #c7254e;
+    font-family: $code-font;
+  }
+
+  pre {
+    padding: 1.2rem;
+    border-radius: 0.6rem;
+    overflow-x: auto;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 1.2rem 0;
+
+    code {
+      font-family: $code-font;
+      color: #fff;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 0.6rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e4e4e4;
+    margin: 2rem 0;
+  }
+
+  a {
+    color: #1a73e8;
+    text-decoration: underline;
+    font-weight: 500;
+  }
 }
