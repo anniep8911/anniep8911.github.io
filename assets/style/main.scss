@@ -361,7 +361,7 @@ html{
         width: 100%;
     }
     header{
-        background-color: #c5b5e9;
+        background-color: #ece1ff;
         margin-top: 8rem;
         padding-top: 3rem;
         padding-left: 3rem;
@@ -377,7 +377,7 @@ html{
         }
         h4{
             span:nth-last-child(1){
-                background-color: #ccc;
+                background-color: #dbccf5;
                 padding: 0 1rem;
                 font-size: 1.3rem;
                 border-radius: 1rem;
@@ -400,7 +400,7 @@ html{
         height: calc(100% - 27rem);
         overflow-y: scroll;
         @include scroll();
-        background-color: #c5b5e9;
+        background-color: #ece1ff;
         .image{
             img{
                width: 100%;
@@ -426,10 +426,6 @@ html{
                     }
                 }
             }
-        }
-        p{
-            margin-left: 5px;
-            font-size: 1.3rem;
         }
     }
     .btn-close{
@@ -1158,7 +1154,7 @@ html{
 }
 
 // 마크다운 스타일
-$font-base: 1.4rem;       // 14px
+$font-base: 1.5rem;       // 14px
 $font-heading: 2rem;      // 20px
 $font-subheading: 1.6rem; // 16px
 $line-height: 2.2rem;     // 22px
@@ -1197,8 +1193,8 @@ md-block {
 
   ul {
     margin: 1rem 0;
-    padding-left: 1.6rem;
-    list-style: circle;
+    padding-left: 3.6rem;
+    list-style: square;
 
     li {
       margin-bottom: 0.6rem;
@@ -1237,12 +1233,21 @@ md-block {
       color: #fff;
     }
   }
-
-  img {
-    max-width: 100%;
-    border-radius: 0.6rem;
-    margin: 1rem 0 1.5rem;
+  .pics{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 2rem;
+    a{
+        width:calc(50% - 10px);
+        display: block;
+        img{
+            width: 100%;
+        }
+    }
   }
+
 
   hr {
     border: none;
