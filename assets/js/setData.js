@@ -46,7 +46,7 @@ getData('./assets/data/data.json').then(async res=>{
 
     
     prj = Array.from(prj);
-    fire.ranking(5, (rank) => {
+    fire.startRanking(5, (rank) => {
         const ranks = document.querySelector('.ranks');
         // 실시간 업데이트 초기화
         ranks.innerHTML = '';       

@@ -4,6 +4,7 @@ const firebaseConfig = JSON.parse(decodedConfig);
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+let unsubscribeRanking = null;
 
 export default{
     getVisit :(callback)=>{
@@ -68,8 +69,10 @@ export default{
           });
         }
     },
-    ranking:(cnt, callback) => {
-      return db
+    startRanking : (cnt, callback) => {
+      if (unsubscribeRanking) return; // 중복 방지
+    
+      unsubscribeRanking = db
         .collection("projects")
         .orderBy("clicks", "desc")
         .limit(cnt)
@@ -81,9 +84,31 @@ export default{
               ...doc.data()
             });
           });
-          callback(result); // 결과를 콜백으로 넘김
+          callback(result);
         });
+    },
+    stopRanking : () => {
+      if (unsubscribeRanking) {
+        unsubscribeRanking();
+        unsubscribeRanking = null;
+      }
     }
+    // ranking:(cnt, callback) => {
+    //   return db
+    //     .collection("projects")
+    //     .orderBy("clicks", "desc")
+    //     .limit(cnt)
+    //     .onSnapshot(snapshot => {
+    //       const result = [];
+    //       snapshot.forEach(doc => {
+    //         result.push({
+    //           id: doc.id,
+    //           ...doc.data()
+    //         });
+    //       });
+    //       callback(result); // 결과를 콜백으로 넘김
+    //     });
+    // }
 }
 
 
