@@ -18,16 +18,18 @@ export default{
         if (col === "stats" && docId === "visits") {
           // 한국기준 시간 만들기 
           const now = new Date();
-          const year = now.getFullYear();
-          const month = String(now.getMonth() + 1).padStart(2, '0');
-          const day = String(now.getDate()).padStart(2, '0');
+          const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000); // KST 보정
+
+          const year = kstNow.getUTCFullYear();
+          const month = String(kstNow.getUTCMonth() + 1).padStart(2, '0');
+          const day = String(kstNow.getUTCDate()).padStart(2, '0');
+
           const todayKey = `${year}-${month}-${day}`;
-          console.log(todayKey);
-          const visitKey = "visited-" + todayKey;
+
           
         //   사용자 구별(daily)
-          if (localStorage.getItem(visitKey)) return;
-          localStorage.setItem(visitKey, "true");
+          if (localStorage.getItem(todayKey)) return;
+          localStorage.setItem(todayKey, "true");
           
           ref.get().then((docSnap) => {
             if (docSnap.exists) {
@@ -44,7 +46,7 @@ export default{
                   today: 1,
                   todayDate: todayKey
                 });
-              }
+              } 
             } else {
               ref.set({
                 total: 1,
