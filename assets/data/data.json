@@ -154,17 +154,6 @@
             "icon": "./assets/image/samsung.png",
             "link": "./",
             "path": "posts6"
-        },        
-        {
-            "name": "리타게팅 및 광고 플랫폼 구축",
-            "hashes": ["반응형", "광고플랫폼", "UI개선", "웹표준", "크로스브라우징"],
-            "company": "이베이코리아",
-            "year": 2021,
-            "month": 9,
-            "goal": "광고 UI 표준화 및 신규 프레임 구축으로 광고 계약 1년 연장 확보",
-            "icon": "./assets/image/ebay.png",
-            "link": "https://www.npmjs.com/package/scss-cleans",
-            "path": "posts7"
-        }        
+        }
     ]
 }

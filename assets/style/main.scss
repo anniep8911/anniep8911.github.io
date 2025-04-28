@@ -846,14 +846,14 @@ html{
                 &[data-year='ALL']{
                     article{
                         display: flex;
-                        @for $i from 2026 through 2021{
+                        @for $i from 2026 through 2022{
                             &[data-year='#{$i}']{
-                                margin-left: calc((100% / 6) * (2026 - #{$i}));
+                                margin-left: calc((100% / 5) * (2026 - #{$i}));
                             }
                         }
                     }
                 }
-                @for $i from 2026 through 2021{
+                @for $i from 2026 through 2022{
                     &[data-year='#{$i}']{
                         article{
                             &[data-year='#{$i}']{
