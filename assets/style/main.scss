@@ -620,27 +620,30 @@ html{
                     &.selected{
                         display: block;
                     }
+                    &.npm{
+                        p{
+                            height: 7rem;
+                            font-size: 2.5rem;
+                        }
+                    }
                     &.cnts{
                         p{
-                            line-height: 6rem;
+                            line-height: 7rem;
                             font-size: 2.5rem;
                             display: flex;
                             align-items: center;
-                            justify-content: space-between;
-                            &:nth-of-type(1){
-                                border-bottom: 0.5rem solid #b191eb;
-                                
-                            }
                             span{
-                                display: flex;
-                                flex-shrink: 0;
+                                width: calc(100% / 3);
                                 &:nth-of-type(1){
                                     font-size: 1.7rem;
+                                }
+                                &:nth-last-of-type(1){
+                                    text-align: right;
                                 }
                                 &.icons{
                                     display: flex;
                                     align-items: center;
-                                    height:3.5rem;
+                                    height:2.5rem;
                                     width: 40%;
                                     justify-content: center;
                                     overflow: hidden;

@@ -98,8 +98,8 @@ fire.getVisit((data)=>{
     dts.forEach((e,i)=>{
         let dt = data[cat[i]];
         e.querySelector('.val').textContent = `${dt}명`;
-        dt = Math.round(dt/10);
-        !dt?dt=1:'';
+        console.log(`${dt}`.length);
+        dt =`${dt}`.length;
         Array(dt).fill(0).forEach(ee=>{
             let ele =  document.createElement('i');
             e.querySelector('.icons').append(ele);
