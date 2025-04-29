@@ -1,5 +1,5 @@
 ## 예시
-<div class="hf">
+<div class="imgWrap" data-share="2">
   <iframe src="https://annie309409.github.io/javascript0201/quizzz.html">
   </iframe>
   <iframe src="https://annie309409.github.io/javascript0201/news.html">

@@ -1179,19 +1179,20 @@ md-block {
    
   }
 
-  .hf{
+  .imgWrap{
         display: flex;
         justify-content: space-between;
         margin-top: 1.2rem;
-        img{
-            width: calc(50% - 10px);
+        align-items: start;
+        @for $i from 1 through 10{
+            &[data-share='#{$i}']{
+                img,iframe,video{
+                    width: calc((100% / #{$i}) - 10px);
+                }
+            }
         }
-        iframe{
-            width: calc(50% - 10px);
-            height: 500px;
-        }
-
     }
+
 
   h2 {
     font-size: $font-heading;

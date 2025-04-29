@@ -1,3 +1,12 @@
+## 결과예시
+<div class="imgWrap" data-share="3">
+  <img src="/assets/image/tvc01.png">
+  <img src="/assets/image/tvc02.png">
+  <img src="/assets/image/tvc03.png">
+</div>
+
+---
+
 ## 설계 방향
 
 **이벤트 목적에 따라 다이나믹하게 반응하는 페이지 구성과  
@@ -61,9 +70,3 @@ const routes = [
   { path: '/event', component: EventPage }
 ];
 ```
----
-
-## 결과물 
-![/assets/image/tvc01.png](/assets/image/tvc01.png)
-![/assets/image/tvc02.png](/assets/image/tvc02.png)
-![/assets/image/tvc03.png](/assets/image/tvc03.png)

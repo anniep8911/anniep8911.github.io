@@ -1,5 +1,5 @@
 ## 사용예시
-<div class="hf">
+<div class="imgWrap" data-share="2">
   <img  src="../../portfolioImages/data_1.png">
   <img  src="../../portfolioImages/data_2.png">
 </div>
