@@ -1,3 +1,14 @@
+## 예시
+<div class="hf">
+  <iframe src="https://annie309409.github.io/javascript0201/quizzz.html">
+  </iframe>
+  <iframe src="https://annie309409.github.io/javascript0201/news.html">
+  </iframe>
+</div> 
+
+---
+
+
 ## 설계 방향  
 비전공자 및 초급 개발자 대상의 자바스크립트 입문 강의 콘텐츠를 직접 기획하고 제작함.
 수업은 개념 설명 후 실습으로 연결되는 구조이며,
@@ -62,16 +73,3 @@ buttons.forEach((btn) => {
   });
 });
 ```
----
-## 실제 실습내용 예시
-
-🔗 [GitHub – 전체 실습 코드](https://github.com/annie309409/javascript0201)
-<div class="pics">
-  <a  target="_blank " href="https://annie309409.github.io/javascript0201/news.html">
-    <img src="../../portfolioImages/newsCard.png">
-  </a>
-  <a   target="_blank " href="https://annie309409.github.io/javascript0201/quiz.html">
-    <img src="../../portfolioImages/quiz.png">
-  </a>
-</div>
-

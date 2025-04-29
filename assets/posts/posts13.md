@@ -1,3 +1,30 @@
+## 사용예시 
+<br>
+<iframe width="200" height="315" 
+        src="https://www.youtube.com/embed/xO3dCUZUQ24?si=sD8MH4bULGTstoCC" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+<iframe width="200" height="315" 
+        src="https://www.youtube.com/embed/7Q8hGcGZk74?si=rxGSKifZBFckFrBw" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+<iframe width="200" height="315" 
+        src="https://www.youtube.com/embed/buhZhWSSYH0?si=IxQfm3VxaPBeEJf5" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
+---
+
+
 ## 설계 방향
 
 **반복적인 쇼츠 영상 제작 과정을 자동화하여, 시간과 리소스를 절약하고  

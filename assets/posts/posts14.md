@@ -1,3 +1,15 @@
+## 사용예시
+<iframe width="200" height="315" 
+        src="https://www.youtube.com/embed/sXczKUltISI?si=9bvVFvd3-hvB5sQg" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+<video  height="315"  src="../../portfolioImages/unikey.mp4" controls> </video>
+
+---
+
 ## 설계 방향
 
 **Electron 기반의 데스크탑 앱으로, 실시간 키 입력 시각화를 통해  

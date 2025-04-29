@@ -71,6 +71,7 @@ function uiWorks(prd){
 
     modalClose.addEventListener('click',()=>{
         modal.className += ' close';
+        modal.querySelector('section').innerHTML ='';
     });
 
     let anc =0;

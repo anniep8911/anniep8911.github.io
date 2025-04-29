@@ -1174,6 +1174,24 @@ md-block {
   line-height: $line-height;
   color: #1e1e1e;
   border-radius: $radius;
+  img{
+    width: 100%;
+   
+  }
+
+  .hf{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.2rem;
+        img{
+            width: calc(50% - 10px);
+        }
+        iframe{
+            width: calc(50% - 10px);
+            height: 500px;
+        }
+
+    }
 
   h2 {
     font-size: $font-heading;

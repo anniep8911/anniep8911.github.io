@@ -1,3 +1,11 @@
+## 사용예시
+<div class="hf">
+  <img  src="../../portfolioImages/data_1.png">
+  <img  src="../../portfolioImages/data_2.png">
+</div>
+
+---
+
 ## 설계 방향
 
 **정적 HTML 기반 GitHub Pages 포트폴리오에 Firebase를 연결하여,  
