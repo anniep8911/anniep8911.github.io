@@ -1,3 +1,7 @@
+## 결과
+<iframe src="https://anniep8911.github.io/newtrip/">
+</iframe>
+
 ## 설계 방향
 
 **사용자 선택 내용을 기반으로 여행 상품을 추천하는 웹 애플리케이션을 리뉴얼했습니다.  
@@ -83,13 +87,3 @@ const routes = [
 
 - 🔗 GitHub: [https://github.com/anniep8911/mytrip](https://github.com/anniep8911/mytrip)  
 - 🌍 Demo Site: [https://anniep8911.github.io/newtrip/](https://anniep8911.github.io/newtrip/)
-
----
-
-## 대표 이미지
-
-### 🧩 반응형 Grid 및 SCSS 모듈화
-![반응형 SCSS](/assets/image/tripVue01.png)
-
-### 🧱 SPA 구조 / Vue 컴포넌트 모듈화
-![SPA 모듈화](/assets/image/tripVue02.png)

@@ -1,7 +1,6 @@
-## 결과예시
-<div class="imgWrap" data-share="3">
+## 결과
+<div class="imgWrap" data-share="2">
   <img src="/assets/image/tvc01.png">
-  <img src="/assets/image/tvc02.png">
   <img src="/assets/image/tvc03.png">
 </div>
 

@@ -1,3 +1,9 @@
+## 결과
+
+![툴팁 커스터마이징](./assets/image/hdiDash.png)  
+
+---
+
 ## 설계 방향
 
 **Chart.js의 기본 기능을 넘어, 실제 현업 요구사항에 맞춘 다양한 시각화 컴포넌트를 설계하고 구축했습니다.  
@@ -82,13 +88,3 @@ const deepCopy = (obj) => {
 > 📁 [코드 전체 보기 on GitHub](https://github.com/anniep8911/hdsun/blob/main/dist/assets/js/ui-functions.js)
 
 >📘 [사용자 가이드 보기 (UI 함수 모듈)](https://anniep8911.github.io/hdsun/guide/guide-stats.html)
-
----
-
-## 대표 이미지
-
-![대시보드 UI](./assets/image/hdi.png)  
-> *사용자 맞춤형 stacked bar chart 예시*
-
-![툴팁 커스터마이징](./assets/image/hdiDash.png)  
-> *툴팁 내용 및 스타일 커스터마이징 화면*
