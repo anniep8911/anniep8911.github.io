@@ -171,13 +171,38 @@ html{
         width: 20rem;
         height: 20rem;
         z-index: 2;
-        animation: robot 1.5s infinite;
-    }
-    &:hover .robot{
+        &::before{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: robot 1.5s infinite;
+
+        }
+        &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;left: 0;
         animation: unset;
         left: 0rem;
         @include img('../image/queicons2.png');
+        opacity: 0;
         filter: drop-shadow(4px 4px 0px #fc0);
+        }
+    }
+    &:hover .robot{
+        &::before{
+            opacity: 0;
+        }
+        &::after{
+            opacity: 1;
+        }
     }
     
     @keyframes robot {
