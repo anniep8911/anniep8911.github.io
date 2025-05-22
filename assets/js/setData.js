@@ -98,7 +98,6 @@ fire.getVisit((data)=>{
     dts.forEach((e,i)=>{
         let dt = data[cat[i]];
         e.querySelector('.val').textContent = `${dt}명`;
-        console.log(`${dt}`.length);
         dt =`${dt}`.length;
         Array(dt).fill(0).forEach(ee=>{
             let ele =  document.createElement('i');
