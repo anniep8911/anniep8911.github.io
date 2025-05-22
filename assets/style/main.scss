@@ -774,7 +774,7 @@ html{
                 &::after{
                     content: '';
                     display: block;
-                    width: calc(16.66% * var(--packman) - 2.5rem + 0.5%);
+                    width: calc(20% * var(--packman) - 2.5rem + 0.5%);
                     height: 5px;
                     background-color: #9c3264;
                     left: 0;
@@ -789,7 +789,7 @@ html{
                     width: 5rem;
                     height: 5rem;
                     position: absolute;
-                    left: calc(16.66% * var(--packman) - 2.5rem);
+                    left: calc(20% * var(--packman) - 2.5rem);
                     z-index: 3;
                     bottom: -2.5rem;
                     animation: packman 1s infinite;
