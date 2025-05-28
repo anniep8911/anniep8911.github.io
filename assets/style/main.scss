@@ -1167,7 +1167,8 @@ html{
             }
         }
         .answer{
-            height: calc(100vh - 18rem);
+            margin-top: 0;
+            height: calc(100vh - 9rem);
         }
     } 
 
@@ -1216,8 +1217,20 @@ html{
         overflow-x: scroll;
         width: 95%;
     }
-    md-block .imgWrap{
-        display: block;
+    .robot-response.open::before{
+        display: none;
+    }
+    .robot-response.open .hdr{
+        margin-top: 0;
+    }
+    .robot-response.open .answer{
+        margin-top: 10rem;
+    }
+    .robot-response.open .hdr .btn-close{
+        width: 4rem;
+        height: 4rem;
+        right: 2rem;
+        top: 3rem;
     }
 }
 
