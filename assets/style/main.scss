@@ -1092,18 +1092,20 @@ html{
                 .chart-prog{
                     border-bottom: 0px solid transparent;
                     border-left: 5px dotted #9c3264;
-                    display: block;
+                    // display: block;
+                    flex-wrap: wrap;
+                    height: 100%;
                     text-align: center;
                     &::after{
                         width: 5px;
                         top: 0;
                         left: -5px;
-                        height: calc(16.66%*var(--packman) - 2.5rem);
+                        height: calc(20%*var(--packman) - 2.5rem);
                         transition: height 0.5s;
                     }
                     &::before{
                         left: -18px;
-                        top: calc(16.66%*var(--packman) - 2.5rem);
+                        top: calc(19%*var(--packman) - 2.5rem);
                         transition: top 0.5s;
                     }
                     li{
@@ -1112,7 +1114,7 @@ html{
                         &::after{
                             left: -10px;
                             right: auto;
-                            bottom: 2rem;
+                            bottom: 4rem;
                         }
                     }
                 }
