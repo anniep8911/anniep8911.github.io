@@ -1100,16 +1100,18 @@ html{
                         width: 5px;
                         top: 0;
                         left: -5px;
-                        height: calc(20%*var(--packman) - 2.5rem);
+                        height: calc(21%*var(--packman) - 2.5rem);
                         transition: height 0.5s;
                     }
                     &::before{
                         left: -18px;
-                        top: calc(19%*var(--packman) - 2.5rem);
+                        top: calc(20%*var(--packman) - 2.5rem);
                         transition: top 0.5s;
                     }
                     li{
                         width: 100%;
+                        display: flex;
+                        align-items: center;
                         padding-left: 10px;
                         &::after{
                             left: -10px;
@@ -1181,6 +1183,42 @@ html{
         position: fixed;
         top: 0;
     }
+
+
+    .detailed-pops::before{
+        display: none;
+    }
+    .detailed-pops header{
+        margin-top: 0;
+    }
+    .detailed-pops header h2{
+        font-size: 1.8rem;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow-x:scroll;
+    }
+    .detailed-pops section{
+        height: calc(100vh - 20rem);
+    }
+    .detailed-pops .btn-close{
+        width: 5rem;
+        height: 5rem;
+        top: 3rem;
+        right: 1rem;
+    }
+    .detailed-pops header p{
+        overflow: scroll;
+        width: 95%;
+        white-space: nowrap;
+    }
+    .detailed-pops header h4, .detailed-pops header h3{
+        white-space: nowrap;
+        overflow-x: scroll;
+        width: 95%;
+    }
+    md-block .imgWrap{
+        display: block;
+    }
 }
 
 // 마크다운 스타일
@@ -1215,10 +1253,16 @@ md-block {
         justify-content: space-between;
         margin-top: 1.2rem;
         align-items: start;
+        @include mob(){
+            display: block;
+        }
         @for $i from 1 through 10{
             &[data-share='#{$i}']{
                 img,iframe,video{
                     width: calc((100% / #{$i}) - 10px);
+                    @include mob(){
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1248,6 +1292,9 @@ md-block {
     margin: 1rem 0;
     padding-left: 3.6rem;
     list-style: square;
+    @include mob(){
+        padding-left: 1.6rem;
+    }
 
     li {
       margin-bottom: 0.6rem;
@@ -1314,3 +1361,4 @@ md-block {
     font-weight: 500;
   }
 }
+
