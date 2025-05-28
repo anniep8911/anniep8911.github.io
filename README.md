@@ -62,7 +62,6 @@ db.collection("projects")
 ## 📊  차트 기반 데이터 시각화
 - Chart.js를 활용해 활동 내역과 프로젝트 데이터를 시각적으로 표현
 - Radar Chart를 사용하여 기술 스택 스킬맵 구현
-  
 ![image](https://github.com/user-attachments/assets/ed3043db-7347-4f36-a5da-d59df0b06b20)
 
 
@@ -72,6 +71,7 @@ db.collection("projects")
 - 데이터는 직접 작성하여 실제 경험 중심으로 구성
 - 인터페이스는 단순한 버튼과 말풍선 UI로 구성되어 직관적인 사용자 흐름 제공
 
+![image](https://github.com/user-attachments/assets/f4c4c582-06a7-4658-b7d7-d289eea40262)
 
 
 ```js
@@ -89,7 +89,7 @@ db.collection("projects")
 ![image](https://github.com/user-attachments/assets/4adb72b3-93c7-49e6-9377-62d9403ec164)
 
 
-🔒 Firestore 보안 설계
+## 🔒 Firestore 보안 설계
 ```js
 rules_version = '2';
 service cloud.firestore {
