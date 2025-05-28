@@ -34,6 +34,11 @@
 ## 🧱 주요 구성 요소
 
 ### 🔄 1. 실시간 트래킹 시스템
+![image](https://github.com/user-attachments/assets/77b03c1b-9035-4dcf-b347-8fe9092e0458)
+![image](https://github.com/user-attachments/assets/b72ad0fa-10f8-4237-a4a8-d2f2e2b58c55)
+![image](https://github.com/user-attachments/assets/cd5abb0f-f4a6-4f43-a7bd-9a94858251d8)
+
+
 
 - 방문자 수 및 콘텐츠 클릭 수를 Firebase Firestore에 기록
 - 하루 1회 중복 방지를 위해 LocalStorage 키(`visited-YYYY-MM-DD`) 활용
