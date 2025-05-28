@@ -34,12 +34,7 @@
 ## 🧱 주요 구성 요소
 
 ### 🔄 1. 실시간 트래킹 시스템
-![image](https://github.com/user-attachments/assets/77b03c1b-9035-4dcf-b347-8fe9092e0458)
-![image](https://github.com/user-attachments/assets/b72ad0fa-10f8-4237-a4a8-d2f2e2b58c55)
-![image](https://github.com/user-attachments/assets/cd5abb0f-f4a6-4f43-a7bd-9a94858251d8)
-
-
-
+![image](https://github.com/user-attachments/assets/b1ae9de3-7b8f-4e33-9b97-79a903e9671b)
 - 방문자 수 및 콘텐츠 클릭 수를 Firebase Firestore에 기록
 - 하루 1회 중복 방지를 위해 LocalStorage 키(`visited-YYYY-MM-DD`) 활용
 - 클릭 수 기반 인기 콘텐츠 Top 5를 실시간으로 DOM에 반영
@@ -61,17 +56,23 @@ db.collection("projects")
   .onSnapshot(snapshot => {
     // DOM 업데이트 처리
   });
+```
+
 
 ## 📊  차트 기반 데이터 시각화
 - Chart.js를 활용해 활동 내역과 프로젝트 데이터를 시각적으로 표현
 - Radar Chart를 사용하여 기술 스택 스킬맵 구현
-- 프로젝트 타임라인을 연도별로 시각화하여 흐름 전달
+  
+![image](https://github.com/user-attachments/assets/ed3043db-7347-4f36-a5da-d59df0b06b20)
 
-##🤖 JSON 기반 질문-응답 인터페이스
+
+## 🤖 JSON 기반 질문-응답 인터페이스
 - 사용자가 직접 질문을 선택하면 JSON 데이터 기반으로 응답 출력
 - 고정된 포트폴리오가 아닌, 동적 인터랙션 경험 제공
 - 데이터는 직접 작성하여 실제 경험 중심으로 구성
 - 인터페이스는 단순한 버튼과 말풍선 UI로 구성되어 직관적인 사용자 흐름 제공
+
+
 
 ```js
 [
@@ -84,6 +85,9 @@ db.collection("projects")
 - 외부 플러그인 없이 직접 구현한 인터랙션 애니메이션
 - 사용자 마우스/클릭 이벤트에 따라 구성 요소가 움직이고 변화
 - 모든 로직은 순수 JavaScript로 작성하여 퍼포먼스와 유지 보수성을 고려
+
+![image](https://github.com/user-attachments/assets/4adb72b3-93c7-49e6-9377-62d9403ec164)
+
 
 🔒 Firestore 보안 설계
 ```js
