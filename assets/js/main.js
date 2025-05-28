@@ -48,6 +48,7 @@ function uiWorks(prd){
     cont1Art.forEach((e,i)=>{
         e.addEventListener('click',()=>{
             modal.classList.remove('close');
+            console.log(prd[i].hashes)
             fn.setModal(prd[i].name,prd[i].company,`${prd[i].year}.${prd[i].month}`,prd[i].hashes,`${prd[i].path}.md`,prd[i].goal);
         })
     });
@@ -56,13 +57,12 @@ function uiWorks(prd){
     document.querySelector('.ranks').addEventListener('click', (e) => {
         let el = e.target.closest('p');
         if (!el) return;
-        console.log(el);
         modal.classList.remove('close');
         fn.setModal(
             el.dataset.name,
             el.dataset.company,
             `${el.dataset.year}.${el.dataset.month}`,
-            [el.dataset.hashes],
+            el.dataset.hashes.split(','),
             `${el.dataset.path}.md`,
             el.dataset.goal
           );
