@@ -581,8 +581,26 @@ html{
                 height: 10rem;
                 position: absolute;
                 right: 0;
-                bottom: 0; 
-                @include img('../image/skill.png');
+                bottom: 0;
+                &::after{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;left: 0;
+                    content: '';
+                    display: block;
+                    @include img('../image/skill.png');
+                } 
+                &::before{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;left: 0;
+                    content: '';
+                    display: block;
+                    @include img('../image/tool.png');
+                    opacity: 0;
+                } 
                 cursor: $pointers;
                 span{
                     background-color: #33959e;
@@ -597,7 +615,12 @@ html{
                     }
                 }
                 &.tool{
-                    @include img('../image/tool.png');
+                  &::after{
+                    opacity: 0;
+                  }
+                  &::before{
+                    opacity: 1;
+                  }
                 }
             }
         }
