@@ -1,3 +1,6 @@
+## 결과 
+[👉 잡코리아 브랜드 소개 페이지 바로가기](https://www.jobkorea.co.kr/brand/)
+
 ## 설계 방향
 
 **풀페이지/스크롤 기반 인터랙션 모션을 라이브러리 없이 직접 설계하고,  
@@ -21,6 +24,15 @@
 - 📅 기간: 2023.07.03 ~ 2023.07.14 (약 2주)
 - 👩‍💻 역할: 전체 설계 및 개발 100% 진행
 - ✅ 성과: 라이브러리 없이 전 구간 인터랙션 동작 / 요구사항 맞춤 설계
+
+---
+
+
+### 🖼️ 페이지 특징
+
+- 감각적인 스크롤 애니메이션  
+- 브랜드 메시지를 강조하는 타이포그래피 중심 구성  
+- 반응형 설계로 PC/모바일 최적화
 
 ---
 
@@ -76,13 +88,52 @@ element.addEventListener('transitionend', () => {
 
 ---
 
-## 대표 이미지
+## 주요 구조 요약 (간단 코드)
 
-![인트로 스크린](./assets/image/about_intro.png)  
-> *디자인 문구 등장 → 인터랙션 진입 → 다음 페이지로 자연스럽게 이동*
+```js
+// transitionend 이벤트 후 다음 동작을 연결하는 함수
+const animEnd = (el) => {
+  return new Promise((resolve) => {
+    el.addEventListener('transitionend', () => {
+      setTimeout(() => {
+        resolve();
+      }, 200);
+    }, { once: true });
+  });
+};
 
-![스크립트 구조](./assets/image/about_scroll_code.png)  
-> *페이지 진입 및 스크롤 동작 제어를 위한 `flag`, `transitionend` 활용 방식*
+// 현재 방향(dir)과 인덱스(idx)에 따라 페이지 이동 처리
+const pageMoveSync = (dir, idx) => {
+  if (dir === 'up' && idx > 0) {
+    idx--;
+  } else if (dir === 'down' && idx < pages.length - 1) {
+    idx++;
+  }
+  activeIndex = idx;
+  addClass(pages[idx], 'active');
+};
 
-![디바이스별 대응](./assets/image/about_mobtab.png)  
-> *디바이스 구간 분기 함수로 화면별 스크롤/탭 모션 동기화*
+// 전체 스크롤 이벤트 막고 일정 시간 후 해제
+const endMotion = (dir, done) => {
+  window.addEventListener('wheel', stopScroll, { passive: false });
+  setTimeout(() => {
+    done();
+    window.removeEventListener('wheel', stopScroll);
+  }, 1000);
+};
+
+// 디바이스 유형에 따라 액션 분기 처리
+const resWeb = (
+  { mobSize: mobWid, tabSize: tabWid },
+  { pcAction: pcAct, tabAction: tabAct, mobAction: mobAct }
+) => {
+  const brow = window.innerWidth;
+  if (brow > tabWid) {
+    pcAct();
+  } else if (brow > mobWid && brow <= tabWid) {
+    tabAct();
+  } else {
+    mobAct();
+  }
+};
+```
