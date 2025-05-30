@@ -9,6 +9,7 @@
             "goal": "정적 웹 기반 실시간 방문자 및 인기 콘텐츠 분석 시스템 구축",
             "icon": "./assets/image/personal.png",
             "link": "./",
+            "cat" : "기술실험",
             "path": "posts15"
         },        
         {
@@ -20,6 +21,7 @@
             "goal": "프롬프트 기반 자동화로 20초 내외 쇼츠 영상 10건 이상 제작 성공",
             "icon": "./assets/image/personal.png",
             "link": "./",
+            "cat" : "기술실험",
             "path": "posts13"
         },        
         {
@@ -31,6 +33,7 @@
             "goal": "비전공자 대상 실습형 JS 강의 콘텐츠 개발 및 수업 운영",
             "icon": "./assets/image/KG.png",
             "link": "./",
+            "cat" : "강의",
             "path": "posts16"
         },        
         {
@@ -42,6 +45,7 @@
             "goal": "단축키 실습 지원용 실시간 키보드 시각화 앱 설계 및 멀티 OS 대응",
             "icon": "./assets/image/personal.png",
             "link": "./",
+            "cat" : "기술실험",
             "path": "posts14"
         },        
         {
@@ -53,8 +57,9 @@
             "goal": "옵션 기반 구조의 타임라인 플러그인 설계 및 다중 페이지 적용",
             "icon": "./assets/image/HD.png",
             "link": "./",
+            "cat" : "인터랙션",
             "path": "posts17"
-          },
+        },
         {
             "name": "태양광 에너지 데이터 대시보드 구축",
             "hashes": ["Chart.js", "시각화모듈화", "딥카피구조", "UI템플릿화", "크로스브라우징"],
@@ -64,6 +69,7 @@
             "goal": "70개 통계 차트 기반 대시보드 구축 및 차트 모듈화 구조 설계",
             "icon": "./assets/image/HD.png",
             "link": "./",
+            "cat" : "인터랙션",
             "path": "posts11"
         },        
         {
@@ -75,6 +81,7 @@
             "goal": "초기 렌더링 속도 3.9초 개선, UI 재설계로 유지보수성 향상",
             "icon": "./assets/image/logo-jobkorea.png",
             "link": "https://www.jobkorea.co.kr/",
+            "cat" : "리팩토링",
             "path": "posts1"
         },
         {
@@ -86,6 +93,7 @@
             "goal": "라이브러리 없이 커스텀 인터랙션 구현으로 브랜딩 효과 강화 및 다운로드 1만건 이상 유도",
             "icon": "./assets/image/logo-jobkorea.png",
             "link": "https://www.jobkorea.co.kr/brand/",
+            "cat" : "인터랙션",
             "path": "posts3"
         },
         {
@@ -97,6 +105,7 @@
             "goal": "Figma JSON 기반 아이콘 SCSS/HTML 자동화로 평균 작업시간 2일 이상 절감",
             "icon": "./assets/image/logo-jobkorea.png",
             "link": "https://anniep8911.github.io/absolutWebpack/dist/",
+            "cat" : "리팩토링",
             "path": "posts2"
         },
         {
@@ -108,6 +117,7 @@
             "goal": "Webpack 설정 자동화로 CSS/JS 작업시간 파일당 10분 이상 단축",
             "icon": "./assets/image/logo-jobkorea.png",
             "link": "https://www.npmjs.com/package/scss-cleans",
+            "cat" : "리팩토링",
             "path": "posts4"
         },        
         {
@@ -119,6 +129,7 @@
             "goal": "재활용 가능한 컴포넌트 설계 및 프로모션 전용 Vue 구조 모듈화",
             "icon": "./assets/image/logo-jobkorea.png",
             "link": "",
+            "cat" : "SPA",
             "path": "posts12"
         },        
         {
@@ -130,9 +141,10 @@
             "goal": "위치 기반 운동시설 탐색 서비스 SSR 구조로 Full-Stack 구현",
             "icon": "./assets/image/personal.png",
             "link": "https://www.npmjs.com/package/style-crawl",
+            "cat" : "SPA",
             "path": "posts5"
         },        
-
+        
         {
             "name": "myrtip 여행사이트 Vue3 마이그레이션",
             "hashes": ["Vue3", "SPA", "SCSS모듈화", "반응형웹", "컴포넌트화"],
@@ -142,6 +154,7 @@
             "goal": "SPA 구조로 리뉴얼 및 반응형 UI, SCSS/Vue 컴포넌트 모듈화",
             "icon": "./assets/image/firts.jpg",
             "link": "https://www.npmjs.com/package/scss-cleans",
+            "cat" : "SPA",
             "path": "posts8"
         },        
         {
@@ -153,6 +166,7 @@
             "goal": "JSP 기반 시스템 유지와 반응형 UI/스타일 모듈화 설계로 호환성 및 생산성 개선",
             "icon": "./assets/image/samsung.png",
             "link": "./",
+            "cat" : "리팩토링",
             "path": "posts6"
         }
     ]

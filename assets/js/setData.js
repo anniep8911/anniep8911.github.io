@@ -19,6 +19,7 @@ getData('./assets/data/data.json').then(async res=>{
         art.setAttribute('data-month', p.month);
         art.setAttribute('data-year', p.year);
         art.setAttribute('data-cat', p.company);
+        art.setAttribute('data-main', p.cat);
         art.setAttribute('data-hasy', p.hashes);
         art.setAttribute('data-cat2', p.path);
         art.innerHTML = `

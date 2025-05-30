@@ -87,7 +87,7 @@ function uiWorks(prd){
             fn.addClass(cont01,'prev'):fn.removeClass(cont01,'prev'):'';
             
             document.querySelector('.cont01').style.setProperty('--packman', now);
-            prj.setAttribute('data-year',e.innerText);
+            prj.setAttribute('data-main',e.innerText);
             e.innerText!=='ALL'?
             fn.addClass(prj,'single')
             :

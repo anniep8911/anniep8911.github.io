@@ -822,7 +822,7 @@ html{
                 &::after{
                     content: '';
                     display: block;
-                    width: calc(20% * var(--packman) - 2.5rem + 0.5%);
+                    width: calc(16.67% * var(--packman) - 2.5rem + 0.5%);
                     height: 5px;
                     background-color: #9c3264;
                     left: 0;
@@ -837,7 +837,7 @@ html{
                     width: 5rem;
                     height: 5rem;
                     position: absolute;
-                    left: calc(20% * var(--packman) - 2.5rem);
+                    left: calc(16.67% * var(--packman) - 2.5rem);
                     z-index: 3;
                     bottom: -2.5rem;
                     animation: packman 1s infinite;
@@ -857,7 +857,7 @@ html{
                     }
                 }
                 li{
-                    width: calc(100% / 3);
+                    width: calc(100% / 6);
                     text-align: center;
                     line-height: 6rem;
                     font-size: 1.5rem;
@@ -891,25 +891,40 @@ html{
             .projects{
                 margin-top: 3rem;        
 
-                &[data-year='ALL']{
-                    article{
-                        display: flex;
-                        @for $i from 2026 through 2022{
-                            &[data-year='#{$i}']{
-                                margin-left: calc((100% / 5) * (2026 - #{$i}));
-                            }
+                // &[data-year='ALL']{
+                //     article{
+                //         display: flex;
+                //         @for $i from 2026 through 2022{
+                //             &[data-year='#{$i}']{
+                //                 margin-left: calc((100% / 5) * (2026 - #{$i}));
+                //             }
+                //         }
+                //     }
+                // }
+
+                $cat: ('SPA','인터랙션','리팩토링','기술실험','강의');
+
+                &[data-main='ALL']{
+                    @for $i from 1 through length($cat){
+                        $crn:nth($cat, $i);
+                        article[data-main="#{$crn}"]{
+                            display: flex;
+                            margin-left: calc((100% / 6)*#{$i});
                         }
                     }
                 }
-                @for $i from 2026 through 2022{
-                    &[data-year='#{$i}']{
-                        article{
-                            &[data-year='#{$i}']{
-                                display: flex;
-                            }
+                
+                @for $i from 1 through length($cat){
+                    $crn:nth($cat, $i);
+                    &[data-main='#{$crn}']{
+                        article[data-main="#{$crn}"]{
+                            display: flex;
                         }
                     }
                 }
+                
+
+
                 article{
                     overflow: hidden;
                     width: calc(100% / var(--cnt-art));
@@ -1115,7 +1130,6 @@ html{
                 .chart-prog{
                     border-bottom: 0px solid transparent;
                     border-left: 5px dotted #9c3264;
-                    // display: block;
                     flex-wrap: wrap;
                     height: 100%;
                     text-align: center;
@@ -1123,23 +1137,24 @@ html{
                         width: 5px;
                         top: 0;
                         left: -5px;
-                        height: calc(21%*var(--packman) - 2.5rem);
+                        height: calc(18%*var(--packman) - 2.5rem);
                         transition: height 0.5s;
                     }
                     &::before{
                         left: -18px;
-                        top: calc(20%*var(--packman) - 2.5rem);
+                        top: calc(16.67%*var(--packman) - 2.5rem);
                         transition: top 0.5s;
                     }
                     li{
                         width: 100%;
+                        font-size: 12px;
                         display: flex;
                         align-items: center;
                         padding-left: 10px;
                         &::after{
                             left: -10px;
                             right: auto;
-                            bottom: 4rem;
+                            bottom: 3rem;
                         }
                     }
                 }
@@ -1150,7 +1165,7 @@ html{
                 padding: 0;
                 height: 100%;
                 .projects{
-                    &[data-year='ALL']{
+                    &[data-main='ALL']{
                         article{
                             display: flex;
                             align-items: center;
