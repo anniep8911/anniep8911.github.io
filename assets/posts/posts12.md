@@ -1,6 +1,10 @@
 ## 결과
+  [👉Storybook 확인 하기](https://anniep8911.github.io/tvcEvent/?path=/docs/%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B6%81-%EC%84%A4%EB%AA%85--docs)
 <div class="imgWrap" data-share="2">
+  
+  
   <img src="/assets/image/tvc01.png">
+  
   <img src="/assets/image/tvc03.png">
 </div>
 
@@ -19,7 +23,7 @@ Vue3 Composition API와 모듈화를 적극 활용하여 유지보수가 용이�
 - 🖥 Frontend: HTML, SCSS, JavaScript (ES6)
 - 🔧 Framework: Vue3 (Composition API)
 - 📦 Build: Vite
-- 🧰 Tool: GitHub, VS Code
+- 🧰 Tool: GitHub, VS Code, Storybook 8.6.4
 - 🌐 환경: 반응형 웹 / 크로스브라우징
 
 ---
@@ -44,7 +48,7 @@ Vue3 Composition API와 모듈화를 적극 활용하여 유지보수가 용이�
 
 - **페이지별 공통 요소를 컴포넌트 단위로 분리**  
   → form, alert, modal 등 기본 UI를 공용화  
-- **유틸 및 이벤트 처리 로직 모듈화 (`useXXX`)**  
+- **유틸 및 이벤트 처리 로직 모듈화 (`useFn`)**  
   → Composition API 활용  
 - **라우터 및 환경 초기 세팅 자동화**  
   → 프로모션마다 경로만 바꾸면 자동 적용되도록 구조 설계
@@ -68,4 +72,3 @@ const routes = [
   { path: '/', component: MainPage },
   { path: '/event', component: EventPage }
 ];
-```
