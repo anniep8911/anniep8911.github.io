@@ -57,19 +57,47 @@ Vue3 Composition API와 모듈화를 적극 활용하여 유지보수가 용이�
 ---
 
 ## 주요 구조 요약 (간단 코드)
+```vue
+<template>
+  <article :class="[{ light }, artType]">
+    <Typography name="ArticleTitleBold">
+      <Icons :iconName="icon" size="medium" />
+      <template v-if="artType === 'pay'">
+        <span class="name"><span class="inner">{{ name }}</span> 님</span>
+        <span class="msg">네이버페이 1만원 당첨!</span>
+      </template>
+      <template v-else>
+        <span class="msg">{{ rank }}번째 100만원 원픽,</span>
+        <span class="name">{{ name }}님</span>
+      </template>
+    </Typography>
+    <span v-if="time" class="time">{{ time }} 전</span>
+  </article>
+</template>
 
-```js
-// 알림 팝업 공용 함수
-export const useAlert = () => {
-  const alertMsg = ref('');
-  const openAlert = (msg) => {
-    alertMsg.value = msg;
-  };
-  return { alertMsg, openAlert };
-};
+<script setup lang="ts">
+const props = defineProps<{
+  icon: string,
+  name: string,
+  time?: string,
+  light?: boolean,
+  rank: number,
+  artType: string
+}>();
+</script>
+
+// Article 컴포넌트 사용 예시
+<Article
+  :name="'김*영'"
+  :icon="'cash'"
+  :artType="'money'"
+  :rank="1"
+  :light="true"
+/>
 
 // 라우터 기본 구성
 const routes = [
   { path: '/', component: MainPage },
   { path: '/event', component: EventPage }
 ];
+```
