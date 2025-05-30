@@ -1,3 +1,6 @@
+📌 현재 프로젝트는 종료 상태이며, 컴포넌트 작성 방식과 구조는  
+[WAKAUT 컴포넌트 가이드](https://github.com/annie309409/WAKAUT/wiki/Component_Guid)에서 확인할 수 있습니다.
+
 ### 설계 방향
 
 **내 위치 탐색을 기반으로 실시간으로 주변 운동시설 정보를 추천해주는 사이트로,  
@@ -54,7 +57,21 @@ Next.js v10 기반 SSR 방식, 로그인 인증을 포함한 인터페이스를 
 ### 주요 구조 요약 (간단 코드)
 
 ```jsx
-// 리스트 컴포넌트
+// Content 컴포넌트 (react-bootstrap 기반)
+import { Container, Button } from 'react-bootstrap';
+
+const Content = () => {
+  return (
+    <Container className="content-wrap">
+      <h2>🏋️‍♀️ 주변 운동시설 추천</h2>
+      <Button variant="primary">내 위치로 찾기</Button>
+    </Container>
+  );
+};
+
+export default Content;
+
+// 리스트 렌더링 컴포넌트
 export default function List({ props }) {
   return (
     <div className={`article ${props.match ? 'match' : ''}`}>
@@ -63,7 +80,7 @@ export default function List({ props }) {
   );
 }
 
-// 검색 자동완성
+// 검색 자동완성 함수
 const findInd = async (ind) => {
   setListFns(lists.filter(f => f.indexOf(ind) !== -1));
 };
