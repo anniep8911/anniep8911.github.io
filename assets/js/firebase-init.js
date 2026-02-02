@@ -27,7 +27,7 @@ export default{
 
           const todayKey = `${year}-${month}-${day}`;
 
-          
+
         //   사용자 구별(daily)
           if (localStorage.getItem(todayKey)) return;
           localStorage.setItem(todayKey, "true");
