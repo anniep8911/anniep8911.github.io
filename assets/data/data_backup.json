@@ -1,0 +1,197 @@
+{
+    "projects":[
+        {
+            "name": "Firebase 기반 실시간 포트폴리오 트래킹 시스템",
+            "hashes": ["Firebase", "Firestore", "VanillaJS", "실시간업데이트", "데이터분석", "퍼포먼스트래킹"],
+            "company": "개인작업",
+            "year": 2025,
+            "month": 4,
+            "goal": "정적 웹 기반 실시간 방문자 및 인기 콘텐츠 분석 시스템 구축",
+            "icon": "./assets/image/hddept.jpg",
+            "link": "./",
+            "cat" : "기술실험",
+            "path": "posts15"
+        },        
+        {
+            "name": "현대면세점 퍼블리싱가이드",
+            "hashes": ["storybook","컴포넌트","html","csss","jquery"],
+            "company": "개인작업",
+            "year": 2025,
+            "month": 4,
+            "goal": "정적 웹 기반 실시간 방문자 및 인기 콘텐츠 분석 시스템 구축",
+            "icon": "./assets/image/hddept.jpg",
+            "link": "./",
+            "cat" : "퍼블리싱가이드",
+            "path": "posts15"
+        },        
+        {
+            "name": "현대면세점 이벤트페이지",
+            "hashes": ["Firebase", "Firestore", "VanillaJS", "실시간업데이트", "데이터분석", "퍼포먼스트래킹"],
+            "company": "개인작업",
+            "year": 2025,
+            "month": 4,
+            "goal": "정적 웹 기반 실시간 방문자 및 인기 콘텐츠 분석 시스템 구축",
+            "icon": "./assets/image/hddept.jpg",
+            "link": "./",
+            "cat" : "이벤트(랜딩)",
+            "path": "posts15"
+        },        
+        {
+            "name": "쇼츠 자동제작 프로그램",
+            "hashes": ["Python", "moviepy", "자동화", "GPT활용", "영상제작"],
+            "company": "개인작업",
+            "year": 2025,
+            "month": 1,
+            "goal": "프롬프트 기반 자동화로 20초 내외 쇼츠 영상 10건 이상 제작 성공",
+            "icon": "./assets/image/personal.png",
+            "link": "./",
+            "cat" : "기술실험",
+            "path": "posts13"
+        },        
+        {
+            "name": "자바스크립트 강의",
+            "hashes": ["JavaScript", "DOM", "강의기획", "실습중심", "브라우저API"],
+            "company": "KG아이티뱅크",
+            "year": 2025,
+            "month": 1,
+            "goal": "비전공자 대상 실습형 JS 강의 콘텐츠 개발 및 수업 운영",
+            "icon": "./assets/image/KG.png",
+            "link": "./",
+            "cat" : "강의",
+            "path": "posts16"
+        },        
+        {
+            "name": "가상 키보드 시각화 프로그램 (uniKey)",
+            "hashes": ["JavaScript", "Electron", "단축키시각화", "교육보조도구", "cross-platform"],
+            "company": "개인작업",
+            "year": 2024,
+            "month": 12,
+            "goal": "단축키 실습 지원용 실시간 키보드 시각화 앱 설계 및 멀티 OS 대응",
+            "icon": "./assets/image/personal.png",
+            "link": "./",
+            "cat" : "기술실험",
+            "path": "posts14"
+        },        
+        {
+            "name": "타임라인 플러그인 설계 및 적용",
+            "hashes": ["JavaScript모듈화", "이벤트(랜딩)구현", "옵션기반자동렌더링", "툴팁모듈", "비용절감"],
+            "company": "현대태양광에너지(프리랜서)",
+            "year": 2024,
+            "month": 9,
+            "goal": "옵션 기반 구조의 타임라인 플러그인 설계 및 다중 페이지 적용",
+            "icon": "./assets/image/HD.png",
+            "link": "./",
+            "cat" : "어드민/대시보드",
+            "path": "posts17"
+        },
+        {
+            "name": "태양광 에너지 데이터 대시보드 구축",
+            "hashes": ["Chart.js", "시각화모듈화", "딥카피구조", "UI템플릿화", "크로스브라우징"],
+            "company": "현대태양광에너지(프리랜서)",
+            "year": 2024,
+            "month": 7,
+            "goal": "70개 통계 차트 기반 대시보드 구축 및 차트 모듈화 구조 설계",
+            "icon": "./assets/image/HD.png",
+            "link": "./",
+            "cat" : "어드민/대시보드",
+            "path": "posts11"
+        },        
+        {
+            "name": "메인 고도화 및 UI개편",
+            "hashes": ["반응형", "모바일우선", "웹표준", "크로스브라우징"],
+            "company": "잡코리아",
+            "year": 2023,
+            "month": 12,
+            "goal": "초기 렌더링 속도 3.9초 개선, UI 재설계로 유지보수성 향상",
+            "icon": "./assets/image/logo-jobkorea.png",
+            "link": "https://www.jobkorea.co.kr/",
+            "cat" : "이커머스/포탈",
+            "path": "posts1"
+        },
+        {
+            "name": "리브랜딩 마이크로사이트 설계/구축",
+            "hashes": ["커스텀스크립트", "스크롤이벤트", "반응형", "크로스브라우징"],
+            "company": "잡코리아",
+            "year": 2023,
+            "month": 7,
+            "goal": "라이브러리 없이 커스텀 인터랙션 구현으로 브랜딩 효과 강화 및 다운로드 1만건 이상 유도",
+            "icon": "./assets/image/logo-jobkorea.png",
+            "link": "https://www.jobkorea.co.kr/brand/",
+            "cat" : "이벤트(랜딩)",
+            "path": "posts3"
+        },
+        {
+            "name": "아이콘 자동생성기 CLI 툴 개발",
+            "hashes": ["JavaScript", "Node.js", "CLI", "자동화", "Figma연동"],
+            "company": "잡코리아",
+            "year": 2023,
+            "month": 10,
+            "goal": "Figma JSON 기반 아이콘 SCSS/HTML 자동화로 평균 작업시간 2일 이상 절감",
+            "icon": "./assets/image/logo-jobkorea.png",
+            "link": "https://anniep8911.github.io/absolutWebpack/dist/",
+            "cat" : "",
+            "path": "posts2"
+        },
+        {
+            "name": "Webpack용 BuildMaker 자동화 도구 개발",
+            "hashes": ["JavaScript", "Node.js", "Webpack", "CLI", "업무자동화"],
+            "company": "잡코리아",
+            "year": 2023,
+            "month": 10,
+            "goal": "Webpack 설정 자동화로 CSS/JS 작업시간 파일당 10분 이상 단축",
+            "icon": "./assets/image/logo-jobkorea.png",
+            "link": "https://www.npmjs.com/package/scss-cleans",
+            "cat" : "",
+            "path": "posts4"
+        },        
+        {
+            "name": "TVC 이벤트 페이지 Vue3 개발",
+            "hashes": ["Vue3", "반응형", "컴포넌트화", "모듈화", "웹프로모션"],
+            "company": "잡코리아",
+            "year": 2023,
+            "month": 11,
+            "goal": "재활용 가능한 컴포넌트 설계 및 프로모션 전용 Vue 구조 모듈화",
+            "icon": "./assets/image/logo-jobkorea.png",
+            "link": "",
+            "cat" : "VUE/REACT",
+            "path": "posts12"
+        },        
+        {
+            "name": "WAKAUT (내 주변 운동시설 추천 서비스) 개발",
+            "hashes": ["React.js", "Next.js", "SSR", "AWS", "인증처리", "자동완성"],
+            "company": "personal",
+            "year": 2022,
+            "month": 12,
+            "goal": "위치 기반 운동시설 탐색 서비스 SSR 구조로 Full-Stack 구현",
+            "icon": "./assets/image/personal.png",
+            "link": "https://www.npmjs.com/package/style-crawl",
+            "cat" : "VUE/REACT",
+            "path": "posts5"
+        },        
+        
+        {
+            "name": "myrtip 여행사이트 Vue3 마이그레이션",
+            "hashes": ["Vue3", "VUE/REACT", "SCSS모듈화", "반응형웹", "컴포넌트화"],
+            "company": "퍼스트컴퓨터바리스타학원",
+            "year": 2022,
+            "month": 4,
+            "goal": "VUE/REACT 구조로 리뉴얼 및 반응형 UI, SCSS/Vue 컴포넌트 모듈화",
+            "icon": "./assets/image/firts.jpg",
+            "link": "https://www.npmjs.com/package/scss-cleans",
+            "cat" : "VUE/REACT",
+            "path": "posts8"
+        },        
+        {
+            "name": "한국총판 시스템 고도화",
+            "hashes": ["JSP", "반응형", "크로스브라우징", "모듈화", "웹표준"],
+            "company": "삼성SDS(프리랜서)",
+            "year": 2022,
+            "month": 7,
+            "goal": "JSP 기반 시스템 유지와 반응형 UI/스타일 모듈화 설계로 호환성 및 생산성 개선",
+            "icon": "./assets/image/samsung.png",
+            "link": "./",
+            "cat" : "어드민/대시보드",
+            "path": "posts6"
+        }
+    ]
+}

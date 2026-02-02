@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Watch SCSS and compile to minified CSS with sourcemap",
+            "type": "shell",
+            "command": "sass assets/style/main.scss assets/style/main.min.css --style=compressed --source-map --watch",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

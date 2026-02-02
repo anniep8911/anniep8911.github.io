@@ -1,3 +1,18 @@
 {
     "liveServer.settings.port": 5501
+    ,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/assets/style"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": true,
+    "liveSassCompile.settings.autoprefix": false,
+    "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**",
+        "**/main.css",
+        "**/main.css.map"
+    ]
 }

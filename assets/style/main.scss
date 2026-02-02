@@ -522,8 +522,8 @@ html{
                 height:18rem;
                 border-radius: 50%;
                 background-image: url('../image/annie.jpg');
-                background-size: 200%;
-                background-position: center;
+                background-size: 135%;
+                background-position: 55% 32%;
                 color: transparent;
                 position: relative;
                 font-size: 0;
@@ -889,20 +889,8 @@ html{
             padding-bottom: 2rem;
             padding-right: 7rem;
             .projects{
-                margin-top: 3rem;        
-
-                // &[data-year='ALL']{
-                //     article{
-                //         display: flex;
-                //         @for $i from 2026 through 2022{
-                //             &[data-year='#{$i}']{
-                //                 margin-left: calc((100% / 5) * (2026 - #{$i}));
-                //             }
-                //         }
-                //     }
-                // }
-
-                $cat: ('SPA','인터랙션','리팩토링','기술실험','강의');
+                margin-top: 3rem;
+                $cat: ('퍼블리싱가이드','VUE/REACT','이벤트(랜딩)','이커머스/포탈','어드민/대시보드');
 
                 &[data-main='ALL']{
                     @for $i from 1 through length($cat){
