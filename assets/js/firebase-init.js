@@ -12,63 +12,94 @@ export default{
             callback(doc.data());
         });
     },
+    
     cntUpdate: (col, docId, field = "clicks") => {
-        const ref = db.collection(col).doc(docId);
-    
-        // visits일 때만 날짜 체크해서 분기 처리
-        if (col === "stats" && docId === "visits") {
-          // 한국기준 시간 만들기 
-          const now = new Date();
-          const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000); // KST 보정
+  const ref = db.collection(col).doc(docId);
 
-          const year = kstNow.getUTCFullYear();
-          const month = String(kstNow.getUTCMonth() + 1).padStart(2, '0');
-          const day = String(kstNow.getUTCDate()).padStart(2, '0');
+  // KST 기준 todayKey 만들기 함수
+  const getTodayKey = () => {
+    const now = new Date();
+    const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+    const year = kstNow.getUTCFullYear();
+    const month = String(kstNow.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(kstNow.getUTCDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
 
-          const todayKey = `${year}-${month}-${day}`;
+  // 방문자
+  if (col === "stats" && docId === "visits") {
+    const todayKey = getTodayKey();
+    const lsKey = `visits:${todayKey}`;
+
+    if (localStorage.getItem(lsKey)) return;
+
+    ref.get().then((docSnap) => {
+      if (docSnap.exists) {
+        const data = docSnap.data();
+
+        const p = (data.todayDate === todayKey)
+          ? ref.update({
+              total: firebase.firestore.FieldValue.increment(1),
+              today: firebase.firestore.FieldValue.increment(1),
+            })
+          : ref.update({
+              total: firebase.firestore.FieldValue.increment(1),
+              today: 1,
+              todayDate: todayKey,
+            });
+
+        // 성공 후에만 저장
+        p.then(() => localStorage.setItem(lsKey, "true"))
+         .catch((err) => console.error("[visits update FAIL]", err));
+      } else {
+        ref.set({
+          total: 1,
+          today: 1,
+          todayDate: todayKey,
+        })
+          .then(() => localStorage.setItem(lsKey, "true"))
+          .catch((err) => console.error("[visits set FAIL]", err));
+      }
+    });
+
+    return;
+  }
+
+  // 프로젝트 클릭수(조회수) - 사람(브라우저)별 하루 1회만
+  if (col === "projects") {
+    const todayKey = getTodayKey();
+    const lsKey = `click:${docId}:${todayKey}`; // 프로젝트별 + 날짜별
+
+    if (localStorage.getItem(lsKey)) return;
+
+    // 문서 있든 없든 merge+increment로 처리하는 게 안전하지만
+    // 네 기존 스타일 유지하려면 get->update/set도 가능
+    ref.get().then((docSnap) => {
+      const p = docSnap.exists
+        ? ref.update({ [field]: firebase.firestore.FieldValue.increment(1) })
+        : ref.set({ [field]: 1 }, { merge: true });
+
+      p.then(() => localStorage.setItem(lsKey, "true"))
+       .catch((err) => console.error("[project click update FAIL]", err));
+    });
+
+    return;
+  }
+
+  // 기타 컬렉션 기본 동작(매번 증가)
+  ref.get().then((docSnap) => {
+    if (docSnap.exists) {
+      ref.update({
+        [field]: firebase.firestore.FieldValue.increment(1),
+      }).catch((err) => console.error("[cntUpdate update FAIL]", err));
+    } else {
+      ref.set({ [field]: 1 }, { merge: true })
+        .catch((err) => console.error("[cntUpdate set FAIL]", err));
+    }
+  });
+},
 
 
-        //   사용자 구별(daily)
-          if (localStorage.getItem(todayKey)) return;
-          localStorage.setItem(todayKey, "true");
-          
-          ref.get().then((docSnap) => {
-            if (docSnap.exists) {
-              const data = docSnap.data();
-    
-              if (data.todayDate === todayKey) {
-                ref.update({
-                  total: firebase.firestore.FieldValue.increment(1),
-                  today: firebase.firestore.FieldValue.increment(1)
-                });
-              } else {
-                ref.update({
-                  total: firebase.firestore.FieldValue.increment(1),
-                  today: 1,
-                  todayDate: todayKey
-                });
-              } 
-            } else {
-              ref.set({
-                total: 1,
-                today: 1,
-                todayDate: todayKey
-              });
-            }
-          });
-        } else {
-          // 일반 클릭수 증가
-          ref.get().then((docSnap) => {
-            if (docSnap.exists) {
-              ref.update({
-                [field]: firebase.firestore.FieldValue.increment(1)
-              });
-            } else {
-              ref.set({ [field]: 1 });
-            }
-          });
-        }
-    },
     startRanking : (cnt, callback) => {
       if (unsubscribeRanking) return; // 중복 방지
     
