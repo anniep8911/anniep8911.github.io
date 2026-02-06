@@ -1135,14 +1135,15 @@ html{
                     }
                     li{
                         width: 100%;
-                        font-size: 12px;
+                        font-size: 1.5rem;
                         display: flex;
                         align-items: center;
                         padding-left: 10px;
+                        line-height: 2rem;
                         &::after{
                             left: -10px;
                             right: auto;
-                            bottom: 3rem;
+                            bottom: 4.2rem;
                         }
                     }
                 }
