@@ -1115,6 +1115,7 @@ html{
             height: calc(100vh - 40rem);
             header{
                 width: 20%;
+                display: none;
                 .chart-prog{
                     border-bottom: 0px solid transparent;
                     border-left: 5px dotted #9c3264;
@@ -1149,7 +1150,8 @@ html{
                 }
             }
             section{
-                width: calc(80% - 10px);
+                // width: calc(80% - 10px);
+                width: 100%;
                 margin-left: 10px;
                 padding: 0;
                 height: 100%;
